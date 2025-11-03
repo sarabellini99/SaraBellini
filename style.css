@@ -1,0 +1,3955 @@
+/* -----------------------------------------------------------
+   RESET di base (non rimuovere)
+----------------------------------------------------------- */
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  color: black;
+}
+
+canvas, img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  overflow-wrap: break-word;
+}
+
+/* -----------------------------------------------------------
+   FONT
+----------------------------------------------------------- */
+html, body { 
+scroll-behavior: smooth;
+ }
+
+@font-face {
+  font-family: 'GEIST';
+  src: url(font/Geist-Regular.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'GEISTsemi';
+  src: url(font/Geist-SemiBold.woff) format('woff');
+}
+
+
+@font-face {
+  font-family: 'GEISTlight';
+  src: url(font/Geist-Light.woff) format('woff');
+}
+
+/* -----------------------------------------------------------
+   BODY
+----------------------------------------------------------- */
+
+.line-break {
+  display: block;
+}
+
+#page-wrapper {    scroll-margin-top: 280px;
+}
+
+  .page-wrapper {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: inherit ; /* mantiene lo sfondo del body */
+}
+
+
+body {
+  margin: 0;
+  max-width:100vw;
+    background-color: #FAFAED;
+  transition: background-color 1s ease;
+}
+
+
+/* font */
+h1 { 
+  font-family:'GEISTsemi';
+  font-size:20px;
+  font-weight:bold;
+  line-height: 1;
+  letter-spacing: -1px;
+color:black;
+
+  }
+
+
+   h2 {  
+    font-family:'GEIST';
+    font-size: 14px;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+color:black;
+  }
+
+  h3 {  
+    font-family:'GEISTlight';
+    font-size: 12px;
+  line-height: 1.1;
+  letter-spacing: 0px;
+color:black;
+  }
+
+  p {  
+    font-family:'GEIST';
+    font-size: 16px;
+    font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+color:black;
+  }
+
+
+
+/* SPLASH PAGE */
+#splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #F88000; /* arancione */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap:20px;
+  align-items: center;
+  z-index: 10000; /* sopra tutto */
+  cursor: pointer; /* indica click */
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#splash.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#splash-logo {
+  max-width: 1%;
+  max-height: 1%;
+  object-fit: contain;
+    animation: blink 1s infinite;
+}
+
+#splash h2 {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+  text-decoration: none; 
+  transition: text-decoration-color 0.3s ease;
+}
+
+
+#splash h2:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px; /* più marcata */
+  text-underline-offset: 4px; /* distanza dal testo */
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* -----------------------------------------------------------
+   NAVBAR
+----------------------------------------------------------- */
+
+.navbar {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #FAFAED;
+  box-shadow: 0 0.5px 1px rgba(0,0,0,0.1);
+  z-index: 6000;
+}
+
+body.white-bg .navbar {
+
+display:flex;
+
+}
+
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+.nav-links li {
+  cursor: pointer;
+
+}
+
+.navbar a {
+  text-decoration: none;  
+  color: black;        
+  font-family:'GEISTlight';
+  font-size: 12px;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #F88000;           /* arancione al passaggio */
+}
+
+
+
+
+/* -----------------------------------------------------------
+   SEZIONE PRINCIPALE (I believe + freccia)
+----------------------------------------------------------- */
+
+
+#logoanimation  { display: flex;
+  flex-direction: column;
+  margin-top: 220px;
+  margin-bottom: 20px;
+      width:80px;
+    margin-left: -28px;
+  }
+
+
+
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: start; 
+  margin-top: 0px;
+  gap:20px; 
+}
+
+.arrow {
+  width: 20px;
+  margin-top: 60px;
+}
+
+/* -----------------------------------------------------------
+   CURSORE PERSONALIZZATO 375
+----------------------------------------------------------- */
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  background-color: #F88000;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, border-radius 0.2s, background-color 0.2s, padding 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'GEISTsemi';
+  font-size: 13px;
+}
+
+#custom-cursor.project-hover {
+  width: auto;
+  height: auto;
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: black;
+}
+
+#cursor-text {
+  display: none;
+}
+
+#custom-cursor.project-hover #cursor-text {
+  display: inline-block;
+}
+
+
+
+
+/* -----------------------------------------------------------
+   SEZIONE MY DESK
+----------------------------------------------------------- */
+#mydesk {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1400px;
+  position: relative;
+    margin-top: 120px;
+    padding: 0 0px;
+      scroll-margin-top: 80px;
+
+}
+
+
+
+.orange {
+  color: #F88000;
+}
+
+
+  #desk-images {
+    margin-top:20px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; /* immagini una sotto l'altra */
+    gap: 10px;
+    position: relative; /* annulla eventuale absolute */
+    height: auto;
+  }
+
+
+
+.desk-image {
+  width: 100%;
+  height: 300px;     
+  object-fit: cover;            
+  filter: grayscale(100%);
+  transition: flter 0.4s ease;
+}
+
+
+.desk-image.colored {
+filter: grayscale(0%);
+
+}
+
+
+  /* Wrapper singola immagine */
+  .desk-image-wrapper {
+    position: relative; 
+    width: 90%;       
+    top: auto;           /* reset top */
+    left: auto;          /* reset left */
+    animation: none;    
+    z-index: auto;
+  }
+
+
+
+.section-subtitle {
+  position: relative;
+  display:flex;
+  justify-content: flex-end;
+  z-index: 1000;
+    font-size: 12px;
+  font-family: 'GEISTlight';
+  margin-top: 20px;
+}
+
+
+
+
+
+  .desk-image {
+    width: 100%;
+    transform: none;
+    filter: grayscale(100%);
+  }
+
+
+
+
+/* -----------------------------------------------------------
+   ABOUT SECTION
+----------------------------------------------------------- */
+#me {
+    scroll-margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 200px;
+  width: 100%;
+  background-color: #FAFAED;
+  max-width: 1400px;
+    margin-left: auto;
+margin-right: auto;
+}
+
+
+#pt2 {
+  display: flex;
+  flex-direction: column;
+    gap: 10px;
+    width:100%;
+}
+
+.description {
+  margin-top: 20px;
+}
+
+
+#binomiofantastico {
+  margin-top: 40px;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 20px;
+    line-height: 1.2;
+      text-underline-offset: 3px;
+
+}
+
+
+
+#binomiofantastico:hover {
+  color: #F88000;
+}
+
+.about-video {
+  margin-top: 60px;
+}
+
+/* Overlay binomio */
+#overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(250, 250, 237, 0.95);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+#overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#overlay-img {
+  max-width: 70%;
+  max-height: 70%;
+  transform: scale(0.95);
+  transition: transform 0.4s ease;
+}
+
+
+
+#overlay.show #overlay-img {
+  transform: scale(1);
+}
+
+
+
+/* -----------------------------------------------------------
+   CONTACT + FOOTER
+----------------------------------------------------------- */
+#final {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 500px;
+  background-color: #F88000;
+  color: black;
+  margin-top: 160px;
+
+ 
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+
+  padding:0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Contenitore interno */
+#final .final-inner {
+  max-width: none; 
+padding-left: 40px;
+padding-right: 40px;   
+  margin: 0;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 50px;
+    gap:20px;
+
+}
+
+
+#partone {
+  display: flex;
+flex-direction: row;
+justify-content:left;
+}
+
+
+
+#contact-title {
+  min-width:20px;
+}
+
+
+
+#heart {
+  margin-left: 4px;
+}
+
+#heart-png {
+  width: 3vh;
+  height: 3vh;
+  margin-top: 0px;
+}
+
+#writeme {
+    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 16px;
+  font-family: 'GEIST';
+  width:100%;
+
+}
+
+#writeme hr {
+  border: none;
+  border-top: 1px solid black;
+}
+
+.contact-item a {
+  text-decoration: none;
+  color: black;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+
+
+#end {
+  display: flex;
+  flex-direction: column;
+  gap:12px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+#end h3{
+     font-family:'GEISTlight';
+  font-size:10px;
+  line-height: 0.1;
+  letter-spacing: 0px;
+color:#252525;
+
+}
+
+#blackbounce {
+  width: 15px;
+  margin-top: -1px;
+}
+
+
+#right {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+}
+
+
+
+/* -----------------------------------------------------------
+   ANIMAZIONI FLOAT
+----------------------------------------------------------- */
+/* (le tue animazioni originali, non modificate) */
+@keyframes float-eco { 0%,100%{transform:rotate(0deg)translateY(0);}50%{transform:rotate(0deg)translateY(-6px);} }
+@keyframes float-realista { 0%,100%{transform:rotate(0deg)translateY(0);}50%{transform:rotate(0deg)translateY(-5px);} }
+@keyframes float-tesi { 0%,100%{transform:rotate(0deg)translateY(0);}50%{transform:rotate(0deg)translateY(-5px);} }
+@keyframes float-cat { 0%,100%{transform:rotate(0deg)translateY(0);}50%{transform:rotate(0deg)translateY(-6px);} }
+@keyframes float-ettore { 0%,100%{transform:rotate(0deg)translateY(0);}50%{transform:rotate(0deg)translateY(-9px);} }
+@keyframes float-astory { 0%,100%{transform:rotate(0deg)translateY(0);}50%{transform:rotate(0deg)translateY(-7px);} }
+@keyframes float-urania { 0%,100%{transform:rotate(0deg)translateY(0);}50%{transform:rotate(0deg)translateY(-9px);} }
+
+
+
+
+section, nav, div {
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+/* --- STILI PAGINA INTERNA PROGETTI --- */
+
+
+body.project-page {
+  background-color: #FAFAED !important;
+}
+
+
+
+/* Sfondo bianco solo sulle pagine interne */
+body.project-page .page-wrapper {
+  background-color: #FAFAED;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* Navbar sempre visibile nelle pagine interne */
+body.project-page .navbar {
+  display: flex !important;
+  opacity: 1 !important;
+  position: fixed;
+ top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #FAFAED;
+  padding: 10px 30px;
+  box-shadow: 0 0.5px 1px rgba(0,0,0,0.1);
+  z-index: 6000;
+    align-items: center;
+      justify-content: space-between;
+
+}
+
+
+
+
+/* Spazio per evitare che il contenuto salga sotto la navbar */
+body.project-page .page-wrapper {
+  padding-top: 120px; /* adatta all’altezza effettiva della tua navbar */
+}
+
+
+
+/* --- SUB-NAVBAR SECONDA --- */
+.sub-navbar {
+  position: relative;       /* resta fissa durante lo scroll */
+  top: 0px;              /* lascia spazio alla navbar principale */
+  z-index: 1000;
+  background-color: #FAFAED;
+  padding: 20px 0px;
+    font-family:'GEIST';
+  font-size: 11px;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  transition: none;
+
+}
+
+.sub-navbar.fixed {
+  position: fixed;
+  top: 44px; /* sotto la navbar principale */
+
+  width: 100%;
+  box-shadow: 0 0.5px 1px rgba(0,0,0,0);
+}
+
+
+.sub-navbar a {
+  text-decoration: none;
+  color: #9C9C9A;
+  transition: color 0.3s;
+ 
+}
+
+.sub-navbar ul {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.sub-navbar a:hover,
+.sub-navbar a.active {
+  color: #ff6600; /* arancione attivo */
+}
+
+#sub-navbar-trigger {
+  height: 1px;
+}
+
+#research{
+  scroll-margin-top: 130px; /* distanza dalla parte alta, pari alla somma delle navbar */
+}
+
+
+
+#storyboard,
+#output {
+  scroll-margin-top: 130px; /* distanza dalla parte alta, pari alla somma delle navbar */
+}
+
+#last {
+  scroll-margin-top: 130px; /* distanza dalla parte alta, pari alla somma delle navbar */
+}
+
+
+.project-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.project-subtitle {
+margin-top: 5px;
+
+}
+
+.project-subtitle {
+  color: #9C9C9A;
+  font-size: 10px;
+  transition: color 0.3s;
+   font-family:'GEISTlight';
+
+}
+
+.project-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 40px;
+
+}
+
+
+
+.tag {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap:20px;
+  margin-top: 20px;
+
+
+
+}
+
+
+.year { 
+  
+  display: flex;
+
+  margin-top: 5px;
+
+
+
+}
+
+
+/* --- VIDEO WRAPPER --- */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+/* video */
+.video-wrapper video {
+  width: 100%;
+  display: block;
+}
+
+/* bottone PLAY */
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #F88000; /* arancione */
+  color: white;
+  border: none;
+  border-radius: 0;
+  padding: 10px 30px;
+  font-family: 'GEIST', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 2;
+}
+
+.play-button:hover {
+  background-color: #000; /* nero al passaggio */
+}
+
+/* nascondi bottone quando non serve */
+.play-button.hidden {
+  display: none;
+}
+
+
+
+
+
+
+
+.workflow {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  position:relative;
+
+}
+
+
+
+#research {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+
+}
+
+#palette{
+  margin-top: 30px;
+}
+
+#palette-amorfosi{
+
+width:170px;
+height: 10px;
+}
+
+
+
+#lettere{
+  margin-top: 80px;
+}
+
+#lettere-amorfosi{
+
+width:100%;
+
+}
+
+#history {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap:5px;
+  width: 100%;
+  overflow:hidden;
+    box-sizing: border-box;
+
+}
+
+.history-amorfosi {
+height: 100%;              /* l’altezza si adatta al contenitore */
+  width: auto;               /* la larghezza si ridimensiona proporzionalmente */
+  object-fit: contain;       /* l’immagine resta intera */
+  max-width: calc(50% - 2px);
+
+}
+
+
+
+
+#storyboard {
+  display: flex;
+  flex-direction: column;
+  gap:5px;
+  margin-top: 60px;
+width:100%;
+box-sizing:border-box;
+}
+
+.disegni
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:1px;
+  width: 100%;
+  overflow:hidden;
+    box-sizing: border-box;
+
+}
+
+.disegni-amorfosi {
+  flex:1;
+height: auto;              /* l’altezza si adatta al contenitore */
+  width: auto;               /* la larghezza si ridimensiona proporzionalmente */
+max-width: calc((100% - 3px) / 3); /* 3 immagini + 2 gap da 10px */
+  object-fit: contain;            /* non viene tagliata */
+  object-position: center;
+  display: block;
+
+}
+
+
+#output {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 60px;
+
+}
+
+.anni {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+
+.frames {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap:5px;
+
+}
+
+.other {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 40px;
+
+
+}
+
+.back-link {
+  color: black; /* colore di base */
+  text-decoration: underline; /* sottolineato */
+  text-underline-offset: 4px; /* spaziatura elegante */
+  transition: color 0.3s ease; /* transizione fluida */
+}
+
+.back-link:hover {
+  color: #F88000; /* arancione */
+}
+
+
+
+
+/* ECO */
+
+.info-eco  { 
+
+
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:20px;
+width:100%;
+}
+
+
+#scritta-eco  { 
+display:flex;
+justify-content: flex-start;
+width:100%;
+
+}
+
+#logo-eco {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 90px;
+  width: 100%;
+  overflow:hidden;
+    box-sizing: border-box;
+    margin-bottom: 50px;
+
+}
+
+
+
+#brandidentity{
+
+width:180px;
+
+}
+
+.scritte-eco {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 130px;
+  width: 100%;
+  overflow:hidden;
+    box-sizing: border-box;
+
+}
+
+#sistema
+{
+  display: flex;
+   justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+  overflow:hidden;
+    box-sizing: border-box;
+
+}
+
+#spiegazione-eco{
+  display: flex;
+    flex-direction: column;
+   justify-content: center;
+  margin-top: 30px;
+}
+
+.partecipazione
+{
+  display: flex;
+    flex-direction: column;
+   justify-content: center;
+   gap:5px;
+  margin-top: 30px;
+}
+
+.partecipazione h3{
+font-size: 13px;
+    font-family:'GEISTlight';
+  line-height: 1.2;
+  letter-spacing: -0px;
+color:black;
+}
+
+.eco-adv {
+  display: flex;
+     flex-direction: column;
+gap:20px;
+  overflow:hidden;
+    box-sizing: border-box;
+    margin-top: 20px;
+
+}
+
+
+.campaign {
+  display: flex;
+     flex-direction: column;
+  margin-top: 20px;
+gap:10px;
+  overflow:hidden;
+    box-sizing: border-box;
+}
+
+.info-amorfosi  { 
+
+   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap:20px;
+
+}
+
+#dettagli-amorfosi  { 
+
+width:40%;
+
+}
+
+#palette-eco{
+  margin-top: 0px;
+
+}
+
+
+#palette-appeco{
+width:170px;
+height: 10px;
+}
+
+
+.style-app {
+  display: flex;
+     flex-direction: column;
+  margin-top: 20px;
+gap:80px;
+  overflow:hidden;
+    box-sizing: border-box;
+}
+
+.tabbar-eco {
+  display: flex;
+     flex-direction: column;
+gap:10px;
+}
+
+
+.specifiche-app {
+  display: flex;
+     flex-direction: column;
+gap:40px;
+  overflow:hidden;
+    box-sizing: border-box;
+}
+
+
+
+.video-app {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* spazio tra le due sezioni */
+  width: 100%;
+  align-items: center;
+}
+
+/* --- Sezione con 4 immagini (2 per riga) --- */
+.sezioni-app {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 2 colonne uguali */
+  gap: 5px; /* spazio tra le immagini */
+  width: 70%;
+}
+
+/* --- Sezione con 2 immagini (una sola riga) --- */
+.mockup-app {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+}
+
+#mockup-app {
+  display: flex;
+
+  width: 100%;
+}
+
+/* --- Stile immagini --- */
+.sezioni {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  cursor:pointer;
+
+}
+
+
+#foursection {
+  display: flex;
+  flex-direction: column;
+  gap:5px;
+  margin-top: 60px;
+width:100%;
+box-sizing:border-box;
+}
+
+
+.video-web {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* spazio tra le due sezioni */
+  width: 100%;
+  margin-top: 20px;
+  align-items: center;
+}
+
+
+#fivesection {
+  display: flex;
+  flex-direction: column;
+  gap:5px;
+  margin-top: 60px;
+width:100%;
+box-sizing:border-box;
+}
+
+.ecopoint {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* spazio tra le due sezioni */
+  width: 100%;
+  margin-top: 20px;
+  align-items: center;
+}
+
+#last {
+  display: flex;
+  flex-direction: column;
+  gap:5px;
+  margin-top: 60px;
+width:100%;
+box-sizing:border-box;
+}
+
+
+/* URANIA */
+
+
+
+.presentazione {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; 
+margin-bottom: 30px;
+}
+
+
+#sono-urania {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.portoghese {
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+}
+
+.fotografie-urania{
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+}
+
+.sezioni-urania {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+  margin-bottom: 30px;
+}
+
+.group-project {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+  margin-bottom: 30px;
+  margin-top: 30px;
+  width:70%
+}
+
+.group-project h3 {
+color:#9C9C9A;
+  line-height: 1.15;
+  letter-spacing: 0px;
+
+}
+
+
+/* PLASTIZ */
+
+.intro-plastiz {
+  display: flex;
+  flex-direction: column;
+
+}
+
+#slide-foto {
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+    align-items: center;
+
+}
+
+
+
+.slide{
+max-width: 90%;
+
+}
+
+.catalogo-plastiz {
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+
+}
+
+
+.foto-catalogo {
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+
+}
+
+.fotografie-plastiz {
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+
+}
+
+
+.comunicazione-pl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+gap:20px;
+}
+
+#reel-plastiz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+gap:10px;
+}
+
+.social-plastiz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+gap:20px;
+}
+
+.ig-smartphone {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+gap:10px;
+width:100%;
+}
+.smart{
+max-width: 50%;
+  box-sizing: border-box;    
+  overflow: hidden;  
+}
+
+.poli h3{
+color: #9C9C9A; 
+}
+
+.pubblicato{
+display: flex;
+flex-direction: column;
+gap: 30px;
+width:60%;
+}
+
+.pubblicato h3{
+  line-height: 1.15;
+  letter-spacing: 0px;
+}
+
+
+.link-pub{
+display: flex;
+flex-direction: column;
+gap: 10px;
+
+}
+
+.pubblicazione a {
+  color: #000; /* colore del testo */
+  text-decoration: underline; /* mantiene la sottolineatura */
+  text-decoration-color: #000; /* colore della sottolineatura */
+  text-underline-offset: 3px; /* distanza tra testo e linea */
+  transition: color 0.3s, text-decoration-color 0.3s;
+}
+
+/* colore e sottolineatura al passaggio del mouse */
+.pubblicazione a:hover {
+  color: #F88000;; /* cambia il colore del testo */
+  text-decoration-color: #F88000; /* cambia il colore della linea */
+}
+
+
+/* INTRECCI */
+
+.testo-moda {
+  display: flex;
+  flex-direction: column;
+gap:20px;
+}
+
+
+#sono-moda {
+  display: flex;
+  flex-direction: column;
+gap:10px;
+}
+
+.doppia-tesi {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;         /* le allinea verticalmente */
+  gap: 5px;                   /* spazio di 10px tra le immagini */
+  width: 100%;                 /* occupa tutta la larghezza disponibile */
+  box-sizing: border-box;      /* padding e bordo inclusi nel calcolo */
+  overflow: hidden;            /* impedisce che escano dal contenitore */
+}
+
+.two-tesi {
+  flex: 1 1 0;                 /* le immagini si dividono lo spazio in parti uguali */
+  max-width: calc(50% - 5px);  /* due immagini con gap di 10px totale */
+  width: 100%;
+  height: auto;
+  object-fit: cover;           /* mantiene le proporzioni senza deformare */
+  display: block;
+}
+
+#presentazione-tesi {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+gap:50px;
+width: 100%;
+  box-sizing: border-box;
+}
+
+
+/* REALISTA */
+
+
+.fotografie-realista {
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  margin-top:20px;
+
+}
+
+.lebasi {
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+  margin-bottom:20px;
+
+}
+
+
+
+.sezioni-realista {
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  width:100%;
+
+}
+
+.sezioni-social {
+  display: flex;
+  justify-content: center;   /* centra il contenuto */
+  width: 100%;
+  box-sizing: border-box;
+
+}
+
+#reel-realista {
+  display: flex;
+  flex-direction: row;       /* le mette affiancate */
+  justify-content: center;   /* le centra orizzontalmente */
+  align-items: center;
+  gap: 10px;                 /* spazio tra le due immagini */
+  width: 60%;                /* occupa solo parte della sezione */
+  box-sizing: border-box;
+
+}
+
+.ig-realista {
+  width: 60%;             
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;       /* bordo stondato */
+  border: 0.3px solid black;   /* "stroke" nero */
+
+
+}
+
+.social-realista{
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  width:100%;
+    align-items: center;
+
+}
+
+
+
+
+
+ /*
+----------------------------------------------------------
+   RESPONSIVE BASE
+----------------------------------------------------------- */
+
+
+/* Small devices RIPARTI DA QUI(landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+
+  .break-desktop {
+  display: none;
+}
+
+ .page-wrapper {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 80px;
+  padding-right: 80px;
+  background-color: inherit ; /* mantiene lo sfondo del body */
+}
+
+
+
+/* font */
+h1 { 
+  font-family:'GEISTsemi';
+  font-size:28px;
+  font-weight:bold;
+  line-height: 1;
+  letter-spacing: -1px;
+color:black;
+
+  }
+
+
+   h2 {  
+    font-family:'GEIST';
+    font-size: 18px;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+color:black;
+  }
+
+  h3 {  
+    font-family:'GEISTlight';
+    font-size: 14px;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+color:black;
+  }
+
+  p {  
+    font-family:'GEIST';
+    font-size: 18px;
+    font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+color:black;
+  }
+
+.desk-image-wrapper {
+    position: relative;
+    width: 100%;
+ 
+}
+
+#desk-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* prima riga con 4 immagini */
+  grid-auto-rows: 170px; /* tutte le celle alte uguali */
+  gap: 10px;
+  width: 100%;
+  margin-top: 120px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.desk-image-wrapper:nth-child(n+5) {
+  grid-column: span 1; /* serve per la seconda riga */
+}
+
+.desk-image {
+  width: 100%;
+  height: 170px;
+  object-fit: cover; /* ritaglia mantenendo proporzioni */
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+}
+
+.desk-image.colored {
+  filter: grayscale(0%);
+}
+
+
+
+
+/* --- STILI PAGINA INTERNA PROGETTI --- */
+
+
+
+/* Sfondo bianco solo sulle pagine interne */
+body.project-page .page-wrapper {
+  background-color: #FAFAED;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+/* Navbar sempre visibile nelle pagine interne */
+body.project-page .navbar {
+  display: flex !important;
+  opacity: 1 !important;
+  position: fixed;
+ top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #FAFAED;
+  padding: 10px 30px;
+  box-shadow: 0 0.5px 1px rgba(0,0,0,0.1);
+  z-index: 6000;
+    align-items: center;
+      justify-content: space-between;
+
+}
+
+/* ECO */
+.specifiche-app {
+  display: flex;
+     flex-direction: row;
+gap:20px;
+  overflow:hidden;
+    box-sizing: border-box;
+}
+
+/* PLASTIZ */
+
+.fotografie-plastiz {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* distribuisce in modo uniforme */
+  width: 100%;
+  gap:10px;
+  box-sizing: border-box;
+  overflow: hidden; /* evita che escano */
+}
+.foto-plastiz {
+  flex: 1 1 0;                 /* tutte le immagini prendono uguale spazio */
+  width: 100%;
+  max-width: calc(33.333% - 10px); /* calcola 3 immagini con gap */
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+#slide-foto {
+  display: flex;
+  flex-direction: row;
+  gap:20px;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+
+}
+
+
+
+.slide{
+max-width: 60%;
+  box-sizing: border-box;    
+  overflow: hidden;  
+
+}
+
+#reel-plastiz {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* distribuisce in modo uniforme */
+  width: 100%;
+  gap:10px;
+  box-sizing: border-box;
+  overflow: hidden; /* evita che escano */
+}
+
+.reel {
+  display: felx;
+  flex: 1 1 0;                 /* tutte le immagini prendono uguale spazio */
+  width: 100%;
+  max-width: calc(33.333%); /* calcola 3 immagini con gap */
+  height: auto;
+
+
+}
+
+
+/* REALISTA */
+
+.fotografie-realista {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap:10px;
+  margin-top:20px;
+  width:100%;
+
+
+}
+
+/* INTRECCI */
+#presentazione-tesi {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+gap:50px;
+width: 100%;
+  box-sizing: border-box;
+}
+
+
+
+#sono-moda h1 {
+font-size: 22px;
+}
+
+#sono-moda h3 {
+color: #9C9C9A;
+}
+
+
+#sono-moda {
+  display: flex;
+  flex-direction: column;
+gap:10px;
+}
+
+.intrecci-illu {
+width:100%;          /* occupa il resto dello spazio */
+  display: flex;
+  justify-content: center;    /* centra l’immagine orizzontalmente */
+  align-items: center;        /* centra verticalmente */
+}
+
+  
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+
+.break-desktop {
+  display: none;
+}
+
+ .page-wrapper {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 120px;
+  padding-right: 120px;
+  background-color: inherit ; /* mantiene lo sfondo del body */
+}
+#desk-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* prima riga con 4 immagini */
+  grid-auto-rows: 150px; /* tutte le celle alte uguali */
+  gap: 10px;
+  width: 100%;
+  margin-top: 120px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.desk-image-wrapper:nth-child(n+5) {
+  grid-column: span 1; /* serve per la seconda riga */
+}
+
+.desk-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover; /* ritaglia mantenendo proporzioni */
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+}
+
+.desk-image.colored {
+  filter: grayscale(0%);
+}
+
+
+
+
+/* --- STILI PAGINA INTERNA PROGETTI --- */
+
+
+
+/* Sfondo bianco solo sulle pagine interne */
+body.project-page .page-wrapper {
+  background-color: #FAFAED;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+/* Navbar sempre visibile nelle pagine interne */
+body.project-page .navbar {
+  display: flex !important;
+  opacity: 1 !important;
+  position: fixed;
+ top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #FAFAED;
+  padding: 10px 30px;
+  box-shadow: 0 0.5px 1px rgba(0,0,0,0.1);
+  z-index: 6000;
+    align-items: center;
+      justify-content: space-between;
+
+}
+
+
+
+
+/* ECO */
+.specifiche-app {
+  display: flex;
+     flex-direction: row;
+gap:40px;
+  overflow:hidden;
+    box-sizing: border-box;
+}
+
+/* PLASTIZ */
+
+.fotografie-plastiz {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* distribuisce in modo uniforme */
+  width: 100%;
+  gap:10px;
+  box-sizing: border-box;
+  overflow: hidden; /* evita che escano */
+}
+.foto-plastiz {
+  flex: 1 1 0;                 /* tutte le immagini prendono uguale spazio */
+  width: 100%;
+  max-width: calc(33.333% - 10px); /* calcola 3 immagini con gap */
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+#slide-foto {
+  display: flex;
+  flex-direction: row;
+  gap:20px;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+
+}
+
+
+
+.slide{
+max-width: 60%;
+  box-sizing: border-box;    
+  overflow: hidden;  
+
+}
+
+#reel-plastiz {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* distribuisce in modo uniforme */
+  width: 100%;
+  gap:10px;
+  box-sizing: border-box;
+  overflow: hidden; /* evita che escano */
+}
+
+.reel {
+  display: felx;
+  flex: 1 1 0;                 /* tutte le immagini prendono uguale spazio */
+  width: 100%;
+  max-width: calc(33.333%); /* calcola 3 immagini con gap */
+  height: auto;
+
+
+}
+
+
+/* REALISTA */
+
+.fotografie-realista {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap:10px;
+  margin-top:20px;
+  width:100%;
+
+
+}
+
+/* INTRECCI */
+#presentazione-tesi {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+gap:90px;
+width: 100%;
+  box-sizing: border-box;
+}
+
+
+
+#sono-moda h1 {
+font-size: 22px;
+}
+
+#sono-moda h3 {
+color: #9C9C9A;
+}
+
+
+#sono-moda {
+  display: flex;
+  flex-direction: column;
+gap:10px;
+}
+
+.intrecci-illu {
+width:100%;          /* occupa il resto dello spazio */
+  display: flex;
+  justify-content: center;    /* centra l’immagine orizzontalmente */
+  align-items: center;        /* centra verticalmente */
+}
+
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+
+.break-desktop {
+  display: none;
+}
+
+.page-wrapper {
+  padding-left: 220px;
+  padding-right: 220px;
+ 
+}
+
+h1 { 
+  font-family:'GEISTsemi';
+  font-size:40px;
+  font-weight:bold;
+  line-height: 1;
+  letter-spacing: -1px;
+color:black;
+
+  }
+
+
+   h2 {  
+    font-family:'GEISTlight';
+    font-size: 23px;
+  line-height: 1.1;
+  letter-spacing: -0.2px;
+color:black;
+  }
+
+  h3 {  
+    font-family:'GEISTlight';
+    font-size: 15px;
+  line-height: 1.1;
+  letter-spacing: 0px;
+color:black;
+  }
+
+  p {  
+    font-family:'GEIST';
+    font-size: 18px;
+    font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+color:black;
+  }
+
+
+/* -----------------------------------------------------------
+   SEZIONE MY DESK
+----------------------------------------------------------- */
+
+#desk-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* prima riga con 4 immagini */
+  grid-auto-rows: 150px; /* tutte le celle alte uguali */
+  gap: 10px;
+  width: 100%;
+  margin-top: 120px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.desk-image-wrapper:nth-child(n+5) {
+  grid-column: span 1; /* serve per la seconda riga */
+}
+
+.desk-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover; /* ritaglia mantenendo proporzioni */
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+}
+
+.desk-image.colored {
+  filter: grayscale(0%);
+}
+
+
+
+
+
+
+/* -----------------------------------------------------------
+   CONTACT + FOOTER
+----------------------------------------------------------- */
+#final {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 700px;
+  background-color: #F88000;
+  color: black;
+  margin-top: 350px;
+
+  /* ❤️ TRUCCO: sfondo a tutta larghezza, anche dentro page-wrapper */
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  /* Mantiene i contenuti centrati come page-wrapper */
+  padding:0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+#final .final-inner {
+  max-width: 100%;
+  max-width: 1360px;  /* stesso limite della .page-wrapper base */
+padding: 0 220px;  /* stessi padding laterali base */
+  margin: 0;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+
+/* --- STILI PAGINA INTERNA PROGETTI --- */
+
+
+
+/* Sfondo bianco solo sulle pagine interne */
+body.project-page .page-wrapper {
+  background-color: #FAFAED;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 220px;
+  padding-right: 220px;
+}
+
+/* Navbar sempre visibile nelle pagine interne */
+body.project-page .navbar {
+  display: flex !important;
+  opacity: 1 !important;
+  position: fixed;
+ top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #FAFAED;
+  padding: 10px 30px;
+  box-shadow: 0 0.5px 1px rgba(0,0,0,0.1);
+  z-index: 6000;
+    align-items: center;
+      justify-content: space-between;
+
+}
+
+
+
+/* ECO */
+.specifiche-app {
+  display: flex;
+     flex-direction: row;
+gap:70px;
+  overflow:hidden;
+    box-sizing: border-box;
+}
+
+/* PLASTIZ */
+
+.fotografie-plastiz {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* distribuisce in modo uniforme */
+  width: 100%;
+  gap:10px;
+  box-sizing: border-box;
+  overflow: hidden; /* evita che escano */
+}
+.foto-plastiz {
+  flex: 1 1 0;                 /* tutte le immagini prendono uguale spazio */
+  width: 100%;
+  max-width: calc(33.333% - 10px); /* calcola 3 immagini con gap */
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+#slide-foto {
+  display: flex;
+  flex-direction: row;
+  gap:20px;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+
+}
+
+
+
+.slide{
+max-width: 60%;
+  box-sizing: border-box;    
+  overflow: hidden;  
+
+}
+
+
+#reel-plastiz {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* distribuisce in modo uniforme */
+  width: 100%;
+  gap:10px;
+  box-sizing: border-box;
+  overflow: hidden; /* evita che escano */
+}
+
+.reel {
+  display: felx;
+  flex: 1 1 0;                 /* tutte le immagini prendono uguale spazio */
+  width: 100%;
+  max-width: calc(33.333%); /* calcola 3 immagini con gap */
+  height: auto;
+
+
+}
+
+
+/* REALISTA */
+
+.fotografie-realista {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap:10px;
+  margin-top:20px;
+  width:100%;
+
+
+}
+
+/* INTRECCI */
+
+#presentazione-tesi {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+gap:90px;
+width: 100%;
+  box-sizing: border-box;
+}
+
+
+.testo-moda {
+ flex: 1 1 50%;              /* occupa circa 60% dello spazio */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#sono-moda h1 {
+font-size: 25px;
+}
+
+#sono-moda h3 {
+color: #9C9C9A;
+}
+
+
+#sono-moda {
+  display: flex;
+  flex-direction: column;
+gap:10px;
+}
+
+.intrecci-illu {
+  flex: 1 1 50%;              /* occupa il resto dello spazio */
+  display: flex;
+  justify-content: center;    /* centra l’immagine orizzontalmente */
+  align-items: center;        /* centra verticalmente */
+}
+
+
+
+}
+
+
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1200px) { 
+
+.break-desktop {
+  display: none;
+}
+
+.page-wrapper {
+  padding-left: 220px;
+  padding-right: 220px;
+ 
+}
+
+/* -----------------------------------------------------------
+   SEZIONE PRINCIPALE (I believe + freccia)
+----------------------------------------------------------- */
+
+#logoanimation  { display: flex;
+  flex-direction: column;
+  margin-top: 450px;
+  margin-bottom: 30px;
+      width:130px;
+    margin-left: -45px;
+  }
+
+
+
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: start; /* centra orizzontalmente */
+  margin-top: 0px;
+  gap:20px; /* un po’ meno margine, se vuoi farla rientrare nello schermo */
+}
+
+
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: start; /* centra orizzontalmente */
+  margin-top: 0px;
+  gap:20px; /* un po’ meno margine, se vuoi farla rientrare nello schermo */
+}
+
+
+
+h1 { 
+  font-family:'GEISTsemi';
+  font-size:40px;
+  font-weight:bold;
+  line-height: 1;
+  letter-spacing: -1px;
+color:black;
+
+  }
+
+
+   h2 {  
+    font-family:'GEISTlight';
+    font-size: 23px;
+  line-height: 1.1;
+  letter-spacing: -0.2px;
+color:black;
+  }
+
+  h3 {  
+    font-family:'GEISTlight';
+    font-size: 15px;
+  line-height: 1.1;
+  letter-spacing: 0px;
+color:black;
+  }
+
+  p {  
+    font-family:'GEIST';
+    font-size: 18px;
+    font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+color:black;
+  }
+
+
+  /* -----------------------------------------------------------
+   NAVBAR
+----------------------------------------------------------- */
+.navbar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 70px;
+  background-color: #FAFAED;
+  box-shadow: 0 0.5px 1px rgba(0,0,0,0.1);
+  z-index: 6000;
+}
+
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links li {
+  cursor: pointer;
+
+}
+
+.navbar a {
+  text-decoration: none;    /* rimuove sottolineatura */
+  color: black;             /* colore testo */
+  font-family:'GEISTlight';
+  font-size: 18px;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #F88000;           /* arancione al passaggio */
+}
+
+
+
+
+
+
+/* -----------------------------------------------------------
+   CURSORE PERSONALIZZATO
+----------------------------------------------------------- */
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 13px;
+  height: 13px;
+  background-color: #F88000;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, border-radius 0.2s, background-color 0.2s, padding 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'GEISTsemi';
+  font-size: 18px;
+}
+
+#custom-cursor.project-hover {
+  width: auto;
+  height: auto;
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: black;
+}
+
+#cursor-text {
+  display: none;
+}
+
+#custom-cursor.project-hover #cursor-text {
+  display: inline-block;
+}
+
+
+/* -----------------------------------------------------------
+   SEZIONE MY DESK
+----------------------------------------------------------- */
+
+
+.arrow {
+  width: 30px;
+  margin-top: 50px;
+}
+
+
+#mydesk {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #FAFAED;
+  scroll-margin-top: 170px;
+  max-width: 1400px;
+  position: relative;
+  margin-top: 350px;
+      margin-left: auto;
+          padding: 0 0px;
+margin-right: auto;
+}
+
+
+
+.orange {
+  color: #F88000;
+}
+
+
+
+
+#desk-images {
+  position: relative;
+  width: 100%;
+  height: 1000px;
+      gap: 0px;
+      margin-top: 80px;
+      
+}
+
+.desk-image-wrapper {
+  position: absolute;
+  transition: z-index 0.2s ease;
+}
+
+.desk-image-wrapper:hover {
+  z-index: 999;
+}
+
+.desk-image {
+  width: 100%;
+    height: auto; 
+  filter: grayscale(100%);
+  opacity: 1;
+  transition: transform 0.4s, filter 0.4s;
+}
+
+.desk-image-wrapper:hover .desk-image {
+  transform: scale(1.3);
+  filter: grayscale(0%);
+}
+
+/* Posizionamento singole immagini + animazioni */
+.desk-image-wrapper.eco { top: 0; left: 40%; width: 260px; animation: float-eco 3s ease-in-out infinite; }
+.desk-image-wrapper.realista { top: 330px; left: 73%; width: 270px; animation: float-realista 2.5s ease-in-out infinite; }
+.desk-image-wrapper.tesi { top: 40px; left: 65%; width: 210px; animation: float-tesi 1.5s ease-in-out infinite; }
+.desk-image-wrapper.cat { top: 570px; left: 22%; width: 250px; animation: float-cat 4s ease-in-out infinite; }
+.desk-image-wrapper.ettore { top: 650px; left: 57%; width: 180px; animation: float-ettore 2s ease-in-out infinite; }
+.desk-image-wrapper.astory { top: 290px; left: 20%; width: 440px; animation: float-astory 4s ease-in-out infinite; }
+.desk-image-wrapper.editoria { top: 360px; left: 2%; width: 200px; animation: float-urania 3.5s ease-in-out infinite; }
+
+.section-subtitle {
+  position: relative;
+  display:flex;
+  justify-content: flex-end;
+  font-size: 18px;
+  font-family: 'GEISTlight';
+  color:black;
+  z-index: 1000;
+  margin-top: -50px;
+}
+
+/* -----------------------------------------------------------
+   ABOUT SECTION
+----------------------------------------------------------- */
+#me {
+  scroll-margin-top: 170px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 350px;
+  width: 100%;
+  background-color: #FAFAED;
+  max-width: 1400px;
+
+}
+
+
+.description {
+  margin-top: 10px;
+}
+
+#binomiofantastico {
+  margin-top: 40px;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 20px;
+    line-height: 1.2;
+
+}
+
+#binomiofantastico:hover {
+  color: #F88000;
+}
+
+.about-video {
+  margin-top: 90px;
+}
+
+/* Overlay binomio */
+#overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(250, 250, 237, 0.95);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+#overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#overlay-img {
+  max-width: 50%;
+  max-height: 70%;
+  transform: scale(0.95);
+  transition: transform 0.4s ease;
+}
+
+#overlay.show #overlay-img {
+  transform: scale(1);
+}
+
+/* -----------------------------------------------------------
+   CONTACT + FOOTER
+----------------------------------------------------------- */
+#final {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 700px;
+  background-color: #F88000;
+  color: black;
+  margin-top: 350px;
+
+  /* ❤️ TRUCCO: sfondo a tutta larghezza, anche dentro page-wrapper */
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  /* Mantiene i contenuti centrati come page-wrapper */
+  padding:0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+#final .final-inner {
+  max-width: 100%;
+  max-width: 1360px;  /* stesso limite della .page-wrapper base */
+padding: 0 220px;  /* stessi padding laterali base */
+  margin: 0;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+
+
+
+#contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 70px;
+  scroll-margin-top: 170px;
+  gap:0px;
+}
+
+
+#partone {
+  display: flex;
+
+}
+
+#contact-title {
+  min-width:120px;
+}
+
+#heart {
+  margin-left: 10px;
+}
+
+#heart-png {
+  width: 3.5vh;
+  height: 3.5vh;
+  margin-top: 4.5px;
+}
+
+#writeme {
+  margin-top: 0px;
+  gap: 20px;
+  font-size: 22px;
+  font-family: 'GEIST';
+  width:68%;
+
+}
+
+#writeme hr {
+  border: none;
+  border-top: 1.3px solid black;
+}
+
+#end {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+#end h3{
+     font-family:'GEISTlight';
+  font-size:14px;
+  line-height: 0.1;
+  letter-spacing: 0px;
+color:#252525;
+
+}
+
+
+#blackbounce {
+  width: 19px;
+  margin-top: 1px;
+}
+
+
+
+#right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+
+
+ /* --- STILI PAGINA INTERNA PROGETTI --- */
+
+/* Sfondo bianco solo sulle pagine interne */
+body.project-page .page-wrapper {
+  background-color: #FAFAED;
+  max-width: 1480px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 220px;
+  padding-right: 220px;
+}
+
+/* Navbar sempre visibile nelle pagine interne */
+body.project-page .navbar {
+  display: flex !important;
+  opacity: 1 !important;
+  position: fixed;
+ top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #FAFAED;
+  padding: 20px 70px;
+  box-shadow: 0 0.5px 1px rgba(0,0,0,0.1);
+  z-index: 6000;
+    align-items: center;
+      justify-content: space-between;
+
+}
+
+
+
+
+/* Spazio per evitare che il contenuto salga sotto la navbar */
+body.project-page .page-wrapper {
+  padding-top: 300px;
+ /* adatta all’altezza effettiva della tua navbar */
+}
+
+
+
+/* --- SUB-NAVBAR SECONDA --- */
+.sub-navbar {
+  position: relative;       /* resta fissa durante lo scroll */
+  top: 0px;              /* lascia spazio alla navbar principale */
+  z-index: 1000;
+  background-color: #FAFAED;
+  padding: 60px 0px;
+    font-family:'GEIST';
+  font-size: 16px;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  transition: none;
+
+}
+
+.sub-navbar.fixed {
+  position: fixed;
+  top: 50px; /* sotto la navbar principale */
+  width: 100%;
+  box-shadow: 0 0.5px 1px rgba(0,0,0,0);
+}
+
+
+.sub-navbar a {
+  text-decoration: none;
+  color: #9C9C9A;
+  transition: color 0.2s;
+ 
+}
+
+.sub-navbar ul {
+  display: flex;
+  justify-content: flex-start;
+  gap: 60px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.sub-navbar a:hover,
+.sub-navbar a.active {
+  color: #ff6600; /* arancione attivo */
+}
+
+#sub-navbar-trigger {
+  height: 1px;
+}
+
+#research{
+  scroll-margin-top: 240px; /* distanza dalla parte alta, pari alla somma delle navbar */
+}
+
+
+
+#storyboard,
+#output {
+  scroll-margin-top: 240px; /* distanza dalla parte alta, pari alla somma delle navbar */
+}
+
+#last {
+  scroll-margin-top: 240px; /* distanza dalla parte alta, pari alla somma delle navbar */
+}
+
+
+
+.project-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.introduzione {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap:20px;
+
+}
+
+.spiegazione {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+width:68%;
+
+}
+
+
+.tag {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap:20px;
+  margin-top: 10px;
+
+
+
+}
+
+
+.tag h3{
+
+    font-family:'GEISTlight';
+    font-size: 15px;
+  line-height: 1.3;
+  letter-spacing: 0px;
+
+
+}
+
+.project-subtitle {
+margin-top: 5px;
+
+}
+
+.project-subtitle {
+  color: #9C9C9A;
+  font-size: 16px;
+  transition: color 0.3s;
+   font-family:'GEISTlight';
+   margin-top: 30px;
+
+}
+
+.project-description {
+  display: flex;
+  margin-top: 0px;
+
+}
+
+
+.video-wrapper {
+  margin-top: 100px;
+}
+
+
+
+
+
+.workflow {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  position:relative;
+
+}
+
+
+
+#research {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 50px;
+
+}
+
+
+.info-amorfosi  { 
+
+   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  gap:20px;
+
+}
+
+#scritta-amorfosi  { 
+
+width:40%;
+
+}
+
+#palette{
+  margin-top: 0px;
+}
+
+#palette-amorfosi{
+
+width:340px;
+height: 30px;
+}
+
+
+
+#lettere{
+  margin-top: 100px;
+}
+
+#lettere-amorfosi{
+
+width:100%;
+
+}
+
+#history {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0px;
+  gap:5px;
+  width: 100%;
+  overflow:hidden;
+    box-sizing: border-box;
+    margin-top: 120px;
+
+}
+
+.history-amorfosi {
+height: 100%;              /* l’altezza si adatta al contenitore */
+  width: auto;               /* la larghezza si ridimensiona proporzionalmente */
+  object-fit: contain;       /* l’immagine resta intera */
+  max-width: calc(50% - 2px);
+
+}
+
+#last {
+  display: flex;
+  flex-direction: column;
+  gap:5px;
+  margin-top: 170px;
+width:100%;
+box-sizing:border-box;
+}
+
+
+#storyboard {
+  display: flex;
+  flex-direction: column;
+  gap:5px;
+  margin-top: 170px;
+width:100%;
+box-sizing:border-box;
+}
+
+.disegni
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:1px;
+  width: 100%;
+  overflow:hidden;
+    box-sizing: border-box;
+
+}
+
+.disegni-amorfosi {
+  flex:1;
+height: auto;              /* l’altezza si adatta al contenitore */
+  width: auto;               /* la larghezza si ridimensiona proporzionalmente */
+max-width: calc((100% - 3px) / 3); /* 3 immagini + 2 gap da 10px */
+  object-fit: contain;            /* non viene tagliata */
+  object-position: center;
+  display: block;
+
+}
+
+
+#output {
+  display: flex;
+  flex-direction: column;
+    gap:10px;
+width:100%;
+margin-top: 170px;
+
+}
+
+.anni, .frames {
+  width: 100%;
+  overflow: hidden; /* impedisce ai video di uscire */
+}
+
+.anni-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.frames
+{
+  display: flex;
+flex-direction:row;
+  gap:30px;
+  overflow: hidden;
+}
+
+.frames-amorfosi {
+  flex: 1 1 50%;
+  width: 50%;
+  height: auto;
+  object-fit: cover; /* mantiene proporzioni riempiendo lo spazio */
+  display: block;
+}
+
+.other {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 90px;
+
+
+}
+
+
+
+
+
+/* ECO */
+
+
+.info-eco  { 
+
+
+   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:center;
+  gap:20px;
+  margin-bottom: 80px;
+}
+
+
+#scritta-eco  { 
+display:flex;
+justify-content: flex-start;
+width:80%;
+
+}
+
+#scritta-eco h1 { 
+font-size: 30px;
+
+}
+
+
+
+#logo-eco {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 0px;
+  width: 100%;
+  overflow:hidden;
+    box-sizing: border-box;
+
+}
+
+
+#brandidentity{
+
+width:250px;
+
+}
+
+.scritte-eco {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 130px;
+  width: 100%;
+  overflow:hidden;
+    box-sizing: border-box;
+
+}
+
+
+
+#spiegazione-eco{
+  display: flex;
+    flex-direction: row;
+   justify-content: space-between;
+   align-items: flex-start;
+   gap:70px;
+  margin-top: 120px;
+  width:100%;
+  box-sizing: border-box;
+}
+
+.partecipazione
+{
+  display: flex;
+    flex-direction: column;
+   justify-content: flex-start;
+   flex:1;
+   gap:10px;
+  margin-top: 0px;
+}
+
+.partecipazione h3{
+font-size: 13px;
+    font-family:'GEISTlight';
+  line-height: 1.2;
+  letter-spacing: -0px;
+color:black;
+}
+
+.eco-adv {
+gap:10px;
+
+}
+
+
+.campaign {
+  display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: flex-start;
+  margin-top: 60px;
+gap:10px;
+  overflow:hidden;
+    box-sizing: border-box;
+}
+
+.approfondimento {
+  display: flex;
+       flex-direction: column;
+     justify-content: space-between;
+     align-items: flex-start;
+  overflow:hidden;
+    box-sizing: border-box;
+    gap:10px;
+    width:80%;
+}
+
+
+
+.campagna-eco {
+  display: flex;
+     justify-content: space-between;
+     align-items: flex-start;
+         width:100%;
+
+  overflow:hidden;
+    box-sizing: border-box;
+    margin-top: -50px;;
+
+}
+
+
+.affissioni {
+  display: flex;
+     justify-content: space-between;
+     align-items: flex-start;
+         width:100%;
+
+  overflow:hidden;
+    box-sizing: border-box;
+    margin-top: 0px;;
+
+}
+
+
+
+.descrizione-campaign {
+  display: flex;
+  overflow:hidden;
+    box-sizing: border-box;
+    gap:10px;
+    width:80%;
+}
+
+
+
+.editorial-eco {
+  display: flex;
+     justify-content: space-between;
+     align-items: flex-start;
+         width:700px;
+height: 90%;
+  overflow:hidden;
+    box-sizing: border-box;
+    margin-left: 70px;
+}
+
+.dettagli-eco 
+{
+  display: flex;
+       flex-direction: column;
+     justify-content: space-between;
+     align-items: flex-start;
+  overflow:hidden;
+    box-sizing: border-box;
+    gap:10px;
+    width:50%;
+
+}
+
+.info-amorfosi  { 
+
+   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap:20px;
+
+}
+
+#dettagli-amorfosi  { 
+
+width:40%;
+
+}
+
+
+
+.style-app {
+  display: flex;
+     flex-direction: column;
+  margin-top: 0px;
+gap:80px;
+  overflow:hidden;
+    box-sizing: border-box;
+}
+
+.tabbar-eco {
+  display: flex;
+     flex-direction: column;
+gap:20px;
+  overflow:hidden;
+    box-sizing: border-box;
+}
+
+
+.specifiche-app {
+  display: flex;
+     flex-direction: row;
+gap:70px;
+  overflow:hidden;
+    box-sizing: border-box;
+}
+
+
+.video-app {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 90px; /* spazio tra le due sezioni */
+  width: 100%;
+  margin-top: 120px;
+  align-items: flex-start;
+}
+
+/* --- Sezione con 4 immagini (2 per riga) --- */
+.sezioni-app {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colonne uguali */
+  gap: 10px; /* spazio tra le immagini */
+  width: 40%;
+}
+
+/* --- Sezione con 2 immagini (una sola riga) --- */
+.mockup-app {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+}
+/* --- Sezione con 2 immagini (una sola riga) --- */
+
+
+/* --- Stile immagini --- */
+.sezioni, .mockup-appeco {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  cursor:pointer;
+
+}
+
+
+
+
+.video-web {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* spazio tra le due sezioni */
+  width: 100%;
+  margin-top: 20px;
+  align-items: center;
+}
+
+
+
+.ecopoint {
+  display: flex;
+    flex-direction: row;
+  gap: 10px;
+  width: 100%;
+  align-items: stretch;
+}
+
+
+.ecopoint img {
+  flex: 1;
+  object-fit: cover;
+  height: auto;
+}
+
+.ecopoint img:first-child {
+  height: 100%;
+}
+
+
+
+
+
+
+/* URANIA */
+
+
+
+.presentazione {
+  display: flex;
+  flex-direction: column;
+  gap: 90px; 
+margin-bottom: 50px;
+
+}
+
+
+#sono-urania {
+  display: flex;
+  flex-direction: column;
+  width:80%;
+  margin-bottom: 90px;
+
+}
+
+.portoghese {
+  display: flex;              /* le mette una accanto all’altra */
+  flex-direction: row;        /* direzione orizzontale */
+  justify-content: center;    /* le centra orizzontalmente */
+  align-items: center;        /* le allinea verticalmente */
+  gap: 10px;                  /* spazio tra le immagini */
+  width: 100%;                /* prende tutta la larghezza del contenitore */
+  box-sizing: border-box;     /* include padding e border nel calcolo della larghezza */
+  overflow: hidden; 
+  margin-bottom:0px;          /* evita che escano */
+}
+
+.foto-urania {
+  width: 100%;
+  max-width: 50%;             /* ciascuna prende al massimo metà dello spazio */
+  height: auto;
+  object-fit: cover;          /* si adattano senza deformarsi */
+  display: block;
+}
+
+
+.foto-imperf{
+    width: 100%;
+  max-width: 33.33%;   /* 100 / 3 immagini */
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+
+.sezioni-urania {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap:40px;
+  margin-bottom: 120px;
+  width:100%;
+  box-sizing:border-box;
+}
+
+.capitolo {
+  flex: 1; /* si adatta allo spazio rimanente */
+  min-width: 70px; /* evita che si restringa troppo */
+
+}
+
+.capitolo h2 {
+color:#9C9C9A;
+font-size: 16px;
+  line-height: 1.15;
+  letter-spacing: 0px;
+}
+
+
+/* blocco della descrizione */
+.spiegazione {
+  flex: 0 0 58%; /* occupa sempre il 45% della sezione */
+  max-width: 600px; /* larghezza massima per leggere bene il testo */
+}
+
+.urania-description {
+  margin: 0;
+}
+
+
+
+.group-project {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
+  margin-bottom: 30px;
+  margin-top: 30px;
+  width:70%
+}
+
+.group-project h3 {
+color:#9C9C9A;
+  line-height: 1.15;
+  letter-spacing: 0px;
+
+}
+
+
+/* PLASTIZ */
+
+.intro-plastiz {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+}
+
+#slide-foto {
+  display: flex;
+  flex-direction: row;
+  gap:20px;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+
+}
+
+
+
+.slide{
+max-width: 60%;
+  box-sizing: border-box;    
+  overflow: hidden;  
+
+}
+
+.catalogo-plastiz {
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+  width:100%;
+  box-sizing: border-box;
+
+}
+
+
+.foto-catalogo {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap:20px;
+width:100%;
+box-sizing: border-box;
+}
+
+#catalogo{
+  width: 70%;          
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.cat-descrizione {
+  flex: 1;              /* prende lo spazio restante */
+  max-width: 30%;       /* evita che si allarghi troppo */
+  display: flex;
+  align-items: center; 
+    justify-content: flex-end; /* spinge il contenuto verso destra */
+  text-align: right; /* centra verticalmente il testo rispetto all’immagine */
+}
+
+
+.fotografie-plastiz {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* distribuisce in modo uniforme */
+  width: 100%;
+  gap:10px;
+  box-sizing: border-box;
+  overflow: hidden; /* evita che escano */
+}
+
+.foto-plastiz {
+  flex: 1 1 0;                 /* tutte le immagini prendono uguale spazio */
+  width: 100%;
+  max-width: calc(33.333% - 10px); /* calcola 3 immagini con gap */
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+
+.comunicazione-pl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+gap:160px;
+}
+
+#reel-plastiz {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* distribuisce in modo uniforme */
+  width: 100%;
+  gap:10px;
+  box-sizing: border-box;
+  overflow: hidden; /* evita che escano */
+}
+
+.reel {
+  display: felx;
+  flex: 1 1 0;                 /* tutte le immagini prendono uguale spazio */
+  width: 100%;
+  max-width: calc(33.333%); /* calcola 3 immagini con gap */
+  height: auto;
+
+
+}
+
+
+
+
+.social-plastiz {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+gap:70px;
+}
+
+ .griglia-plastiz {
+width:60%;
+}
+
+ .mockup-ig {
+width:70%;
+}
+
+
+.ig-smartphone {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+gap:10px;
+width:100%;
+}
+.smart{
+max-width: 50%;
+  box-sizing: border-box;    
+  overflow: hidden;  
+}
+
+
+
+/* INTRECCI */
+
+#presentazione-tesi {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+gap:90px;
+width: 100%;
+  box-sizing: border-box;
+}
+
+
+
+.testo-moda {
+ flex: 1 1 50%;              /* occupa circa 60% dello spazio */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#sono-moda h1 {
+font-size: 28px;
+}
+
+#sono-moda h3 {
+color: #9C9C9A;
+}
+
+
+#sono-moda {
+  display: flex;
+  flex-direction: column;
+gap:10px;
+}
+
+.intrecci-illu {
+  flex: 1 1 50%;              /* occupa il resto dello spazio */
+  display: flex;
+  justify-content: center;    /* centra l’immagine orizzontalmente */
+  align-items: center;        /* centra verticalmente */
+}
+
+.illustrazione {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+
+.doppia-tesi {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;         /* le allinea verticalmente */
+  gap: 5px;                   /* spazio di 10px tra le immagini */
+  width: 100%;                 /* occupa tutta la larghezza disponibile */
+  box-sizing: border-box;      /* padding e bordo inclusi nel calcolo */
+  overflow: hidden;            /* impedisce che escano dal contenitore */
+}
+
+.two-tesi {
+  flex: 1 1 0;                 /* le immagini si dividono lo spazio in parti uguali */
+  max-width: calc(50% - 5px);  /* due immagini con gap di 10px totale */
+  width: 100%;
+  height: auto;
+  object-fit: cover;           /* mantiene le proporzioni senza deformare */
+  display: block;
+}
+
+
+
+
+/* REALISTA */
+
+.fotografie-realista {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap:10px;
+  margin-top:20px;
+  width:100%;
+
+
+}
+
+.lebasi {
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+  margin-bottom:20px;
+  max-width: 60%;
+  margin-bottom: 90px;
+}
+
+.sezioni-realista {
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  width:100%;
+
+}
+
+.sezioni-social {
+  display: flex;
+  justify-content: center;   /* centra il contenuto */
+  width: 100%;
+  box-sizing: border-box;
+
+}
+
+#reel-realista {
+  display: flex;
+  flex-direction: row;       /* le mette affiancate */
+  justify-content: center;   /* le centra orizzontalmente */
+  align-items: center;
+  gap: 10px;                 /* spazio tra le due immagini */
+  width: 60%;                /* occupa solo parte della sezione */
+  box-sizing: border-box;
+
+}
+
+.ig-realista {
+  width: 60%;             
+  height: auto;
+  object-fit: cover;
+  display: block;
+
+}
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1900px) { 
+
+  .break-desktop {
+    display: inline;
+  }
+
+
+.page-wrapper {
+  max-width:1480px;
+  padding-left: 220px;
+  padding-right: 220px;
+ 
+}
+
+
+h1 { 
+  font-family:'GEISTsemi';
+  font-size:42px;
+  font-weight:bold;
+  line-height: 1;
+  letter-spacing: -1px;
+color:black;
+
+  }
+
+
+   h2 {  
+    font-family:'GEISTlight';
+    font-size: 26px;
+  line-height: 1.1;
+  letter-spacing: -0.2px;
+color:black;
+  }
+
+  h3 {  
+    font-family:'GEISTlight';
+    font-size: 15px;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+color:black;
+  }
+
+  p {  
+    font-family:'GEIST';
+    font-size: 20px;
+    font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+color:black;
+  }
+
+
+
+
+  /* -----------------------------------------------------------
+   NAVBAR
+----------------------------------------------------------- */
+.navbar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 100px;
+  background-color: #FAFAED;
+  box-shadow: 0 0.5px 1px rgba(0,0,0,0.1);
+  z-index: 6000;
+}
+
+
+
+
+/* -----------------------------------------------------------
+   SEZIONE PRINCIPALE (I believe + freccia)
+----------------------------------------------------------- */
+
+
+
+.arrow {
+  width: 30px;
+  margin-top: 150px;
+}
+
+
+/* -----------------------------------------------------------
+   SEZIONE MY DESK
+----------------------------------------------------------- */
+
+
+/* Posizionamento singole immagini + animazioni */
+.desk-image-wrapper.eco { top: 0; left: 40%; width: 260px; animation: float-eco 3s ease-in-out infinite; }
+.desk-image-wrapper.realista { top: 330px; left: 73%; width: 270px; animation: float-realista 2.5s ease-in-out infinite; }
+.desk-image-wrapper.tesi { top: 40px; left: 65%; width: 210px; animation: float-tesi 1.5s ease-in-out infinite; }
+.desk-image-wrapper.cat { top: 570px; left: 22%; width: 250px; animation: float-cat 4s ease-in-out infinite; }
+.desk-image-wrapper.ettore { top: 650px; left: 57%; width: 180px; animation: float-ettore 2s ease-in-out infinite; }
+.desk-image-wrapper.astory { top: 290px; left: 25%; width: 440px; animation: float-astory 4s ease-in-out infinite; }
+.desk-image-wrapper.editoria { top: 360px; left: 5%; width: 200px; animation: float-urania 3.5s ease-in-out infinite; }
+
+.section-subtitle {
+  position: relative;
+  display:flex;
+  justify-content: flex-end;
+  font-size: 20px;
+  font-family: 'GEIST';
+  color:black;
+  z-index: 1000;
+}
+
+
+
+/* -----------------------------------------------------------
+   CONTACT + FOOTER
+----------------------------------------------------------- */
+#final {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 700px;
+  background-color: #F88000;
+  color: black;
+  margin-top: 350px;
+
+
+
+  /* ❤️ TRUCCO: sfondo a tutta larghezza, anche dentro page-wrapper */
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  /* Mantiene i contenuti centrati come page-wrapper */
+  padding:0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+#final .final-inner {
+  width:100%;
+  max-width:1480px;  /* stesso limite della .page-wrapper base */
+padding: 0 220px;   /* stessi padding laterali base */
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+
+
+
+#end h3{
+     font-family:'GEISTlight';
+  font-size:16px;
+  line-height: 0.1;
+  letter-spacing: -0.3px;
+color:#252525;
+
+}
+
+
+/* Navbar sempre visibile nelle pagine interne */
+body.project-page .navbar {
+  display: flex !important;
+  opacity: 1 !important;
+  position: fixed;
+ top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #FAFAED;
+  padding: 20px 100px;
+  box-shadow: 0 0.5px 1px rgba(0,0,0,0.1);
+  z-index: 6000;
+    align-items: center;
+      justify-content: space-between;
+
+}
+
+
+}
