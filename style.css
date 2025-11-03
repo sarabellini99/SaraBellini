@@ -53,8 +53,10 @@ scroll-behavior: smooth;
    BODY
 ----------------------------------------------------------- */
 
-.line-break {
-  display: block;
+
+
+  .break-desktop {
+  display: none;
 }
 
 #page-wrapper {    scroll-margin-top: 280px;
@@ -1515,6 +1517,12 @@ width: 100%;
 }
 
 
+/* Disattiva il cursore personalizzato su mobile */
+@media (hover: none) and (pointer: coarse) {
+  #custom-cursor {
+    display: none !important;
+  }
+}
 
 
 
@@ -2281,7 +2289,7 @@ gap:10px;
 
 #logoanimation  { display: flex;
   flex-direction: column;
-  margin-top: 450px;
+  margin-top: 380px;
   margin-bottom: 30px;
       width:130px;
     margin-left: -45px;
