@@ -37,18 +37,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // Sempre bianco nella sezione finale
     const isInFinalSection = elementBelow.closest("#final") !== null;
 
-    const whiteRGB = "rgb(250, 250, 237)";
-    const orangeRGB = "rgb(248, 128, 0)";
+    const whiteRGB = "rgb(255, 255, 255)";
+    const orangeRGB = "rgb(227, 6, 19)";
     const bgColor = window.getComputedStyle(elementBelow).backgroundColor;
 
     if (isInFinalSection) {
-      cursor.style.backgroundColor = "#FAFAED";
+      cursor.style.backgroundColor = "#FFFFFF";
     } else if (bgColor === whiteRGB) {
-      cursor.style.backgroundColor = "#F88000";
+      cursor.style.backgroundColor = "#E30613";
     } else if (bgColor === orangeRGB) {
-      cursor.style.backgroundColor = "#FAFAED";
+      cursor.style.backgroundColor = "#FFFFFF";
     } else {
-      cursor.style.backgroundColor = "#F88000";
+      cursor.style.backgroundColor = "#E30613";
     }
   });
 
