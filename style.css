@@ -4003,3 +4003,201 @@ body.nav-hidden.project-page .navbar {
 body.nav-hidden .sub-navbar.fixed {
   top: 0;
 }
+
+
+/* -----------------------------------------------------------
+   FOOTER (ripreso dalla versione di prova)
+   Sta in fondo al file apposta: sovrascrive le vecchie regole
+   del footer rosso a tutte le dimensioni dello schermo.
+----------------------------------------------------------- */
+#final {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  background-color: rgba(37, 37, 37, 0.05);
+  color: #000000;
+  margin-top: 160px;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#final .final-inner {
+  width: 100%;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  padding: 0 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#final #contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 50px;
+  gap: 20px;
+}
+
+#final #partone {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#final #contact-title {
+  min-width: 20px;
+  font-family: 'TITOLI';
+  font-size: 20px;
+  line-height: 1.1;
+  letter-spacing: 0;
+  color: #000000;
+}
+
+.back-to-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  text-decoration: none;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.back-to-top:hover {
+  transform: translateY(-4px);
+  color: #E30613;
+}
+
+#final #writeme {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  font-family: 'ETICHETTE';
+  font-size: 16px;
+}
+
+#final .contact-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#final .contact-label {
+  font-family: 'TESTI';
+  font-size: 12px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9C9C9A;
+}
+
+#final .contact-item a {
+  font-family: 'ETICHETTE';
+  font-size: 16px;
+  line-height: 1.2;
+  text-decoration: none;
+  color: #000000;
+}
+
+#final .contact-item a:hover {
+  text-decoration: underline;
+}
+
+#final .contact-item a svg {
+  display: inline-block;
+  margin-right: 6px;
+  vertical-align: -1px;
+}
+
+#final .contact-email h4 {
+  font-family: 'ETICHETTE';
+  font-size: 24px;
+  line-height: 1.1;
+  letter-spacing: 0;
+  color: #9C9C9A;
+}
+
+#final .contact-email:hover h4 {
+  color: #000000;
+}
+
+#final .contact-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#final #end {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 90px;
+  margin-bottom: 50px;
+}
+
+#final #end h3 {
+  font-family: 'ETICHETTE';
+  font-size: 11px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: #9C9C9A;
+}
+
+#final #right {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* comparsa morbida dei blocchi quando arrivano sullo schermo */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-group.reveal:nth-of-type(1) { transition-delay: 0s; }
+.contact-group.reveal:nth-of-type(2) { transition-delay: 0.1s; }
+.contact-group.reveal:nth-of-type(3) { transition-delay: 0.2s; }
+
+@media (min-width: 576px) {
+  #final #end h3 { font-size: 13px; }
+  #final .contact-email h4 { font-size: 32px; }
+}
+
+@media (min-width: 768px) {
+  #final .final-inner { padding: 0 60px; }
+  #final .contact-label { font-size: 14px; }
+  #final .contact-item a { font-size: 18px; }
+  #final #coding { font-size: 15px; }
+}
+
+@media (min-width: 1200px) {
+  #final .final-inner { padding: 0 70px; }
+}
+
+@media (min-width: 1900px) {
+  #final .final-inner { padding: 0 100px; }
+  #final .contact-label { font-size: 16px; }
+  #final .contact-item a { font-size: 20px; }
+  #final #end h3 { font-size: 15px; }
+}

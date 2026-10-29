@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const elementBelow = document.elementFromPoint(e.clientX, e.clientY);
     if (!elementBelow) return;
 
-    // Sempre bianco nella sezione finale
+    // Nella sezione finale (sfondo chiaro) il cursore resta rosso
     const isInFinalSection = elementBelow.closest("#final") !== null;
 
     const whiteRGB = "rgb(255, 255, 255)";
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const bgColor = window.getComputedStyle(elementBelow).backgroundColor;
 
     if (isInFinalSection) {
-      cursor.style.backgroundColor = "#FFFFFF";
+      cursor.style.backgroundColor = "#E30613";
     } else if (bgColor === whiteRGB) {
       cursor.style.backgroundColor = "#E30613";
     } else if (bgColor === orangeRGB) {
@@ -237,4 +237,26 @@ if (lettereImg) {
     }
     if (Math.abs(delta) > 5) lastY = y;
   }, { passive: true });
+})();
+
+
+// =========================
+// COMPARSA MORBIDA (.reveal) quando un blocco entra nello schermo
+// =========================
+(function () {
+  const els = document.querySelectorAll(".reveal");
+  if (!els.length) return;
+  if (!("IntersectionObserver" in window)) {
+    els.forEach(el => el.classList.add("in-view"));
+    return;
+  }
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  els.forEach(el => obs.observe(el));
 })();
