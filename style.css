@@ -4231,3 +4231,51 @@ body.nav-hidden .sub-navbar.fixed {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
 }
+
+
+/* -----------------------------------------------------------
+   HOVER SUI PROGETTI DI "MY DESK" (ripreso dalla versione di prova)
+----------------------------------------------------------- */
+/* etichetta rossa con il nome del progetto, al posto del pallino */
+#custom-cursor.project-hover {
+  width: auto;
+  height: auto;
+  min-width: 0;
+  padding: 2px 8px;
+  border-radius: 0;
+  border: 0;
+  background-color: #E30613 !important;
+  transform: translate(-80%, -80%);
+}
+
+#custom-cursor.project-hover #cursor-text {
+  display: inline-block;
+  font-family: 'ETICHETTE', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #000000;
+  white-space: nowrap;
+}
+
+/* la foto torna a colori e si ingrandisce leggermente */
+@media (min-width: 768px) {
+  .desk-image-wrapper {
+    transition: z-index 0.2s ease;
+  }
+
+  .desk-image-wrapper:hover {
+    z-index: 999;
+  }
+
+  .desk-image {
+    transition: transform 0.4s, filter 0.4s;
+  }
+
+  .desk-image-wrapper:hover .desk-image {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+  }
+}
