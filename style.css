@@ -4250,9 +4250,9 @@ body.nav-hidden .sub-navbar.fixed {
 
 #custom-cursor.project-hover #cursor-text {
   display: inline-block;
-  font-family: 'ETICHETTE', sans-serif;
+  font-family: 'TESTI', sans-serif;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: normal;
   line-height: 1.5;
   text-transform: uppercase;
   letter-spacing: 0.5px;
