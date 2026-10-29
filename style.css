@@ -186,7 +186,7 @@ color:black;
   align-items: center;
   padding: 10px 30px;
   background-color: #FFFFFF;
-  box-shadow: 0 0.5px 1px rgba(0,0,0,0.1);
+  box-shadow: none;
   z-index: 6000;
 }
 
@@ -652,7 +652,7 @@ body.project-page .navbar {
   width: 100%;
   background-color: #FFFFFF;
   padding: 10px 30px;
-  box-shadow: 0 0.5px 1px rgba(0,0,0,0.1);
+  box-shadow: none;
   z-index: 6000;
     align-items: center;
       justify-content: space-between;
@@ -1650,7 +1650,7 @@ body.project-page .navbar {
   width: 100%;
   background-color: #FFFFFF;
   padding: 10px 30px;
-  box-shadow: 0 0.5px 1px rgba(0,0,0,0.1);
+  box-shadow: none;
   z-index: 6000;
     align-items: center;
       justify-content: space-between;
@@ -1848,7 +1848,7 @@ body.project-page .navbar {
   width: 100%;
   background-color: #FFFFFF;
   padding: 10px 30px;
-  box-shadow: 0 0.5px 1px rgba(0,0,0,0.1);
+  box-shadow: none;
   z-index: 6000;
     align-items: center;
       justify-content: space-between;
@@ -2132,7 +2132,7 @@ body.project-page .navbar {
   width: 100%;
   background-color: #FFFFFF;
   padding: 10px 30px;
-  box-shadow: 0 0.5px 1px rgba(0,0,0,0.1);
+  box-shadow: none;
   z-index: 6000;
     align-items: center;
       justify-content: space-between;
@@ -2371,7 +2371,7 @@ color:black;
   align-items: center;
   padding: 20px 70px;
   background-color: #FFFFFF;
-  box-shadow: 0 0.5px 1px rgba(0,0,0,0.1);
+  box-shadow: none;
   z-index: 6000;
 }
 
@@ -2743,7 +2743,7 @@ body.project-page .navbar {
   width: 100%;
   background-color: #FFFFFF;
   padding: 20px 70px;
-  box-shadow: 0 0.5px 1px rgba(0,0,0,0.1);
+  box-shadow: none;
   z-index: 6000;
     align-items: center;
       justify-content: space-between;
@@ -3843,7 +3843,7 @@ color:black;
   align-items: center;
   padding: 20px 100px;
   background-color: #FFFFFF;
-  box-shadow: 0 0.5px 1px rgba(0,0,0,0.1);
+  box-shadow: none;
   z-index: 6000;
 }
 
@@ -3954,7 +3954,7 @@ body.project-page .navbar {
   width: 100%;
   background-color: #FFFFFF;
   padding: 20px 100px;
-  box-shadow: 0 0.5px 1px rgba(0,0,0,0.1);
+  box-shadow: none;
   z-index: 6000;
     align-items: center;
       justify-content: space-between;
@@ -3962,4 +3962,44 @@ body.project-page .navbar {
 }
 
 
+}
+
+/* -----------------------------------------------------------
+   NAVBAR: tre colonne e comparsa allo scroll
+----------------------------------------------------------- */
+.nav-links {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links li {
+  line-height: 1;
+}
+
+.nav-links a {
+  display: block;
+}
+
+.navbar,
+body.project-page .navbar {
+  transition: transform 0.35s ease;
+}
+
+body.nav-hidden .navbar,
+body.nav-hidden.project-page .navbar {
+  transform: translateY(-100%);
+}
+
+.sub-navbar.fixed {
+  transition: top 0.35s ease;
+}
+
+body.nav-hidden .sub-navbar.fixed {
+  top: 0;
 }

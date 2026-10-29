@@ -218,3 +218,23 @@ if (lettereImg) {
   }
 });
 
+
+
+// =========================
+// NAVBAR: sparisce scorrendo in giù, ricompare scorrendo in su
+// =========================
+(function () {
+  let lastY = window.scrollY;
+  window.addEventListener("scroll", () => {
+    const y = window.scrollY;
+    const delta = y - lastY;
+    if (y < 80) {
+      document.body.classList.remove("nav-hidden");
+    } else if (delta > 5) {
+      document.body.classList.add("nav-hidden");
+    } else if (delta < -5) {
+      document.body.classList.remove("nav-hidden");
+    }
+    if (Math.abs(delta) > 5) lastY = y;
+  }, { passive: true });
+})();
