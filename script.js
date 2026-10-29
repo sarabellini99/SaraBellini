@@ -1,3 +1,58 @@
+// =========================
+// PAROLA ANIMATA NEL TITOLO (visual → graphic → systemic)
+// =========================
+let roleWordStarted = false;
+function startRoleWord() {
+  const roleWordEl = document.getElementById("role-word");
+  if (!roleWordEl || roleWordStarted) return;
+  roleWordStarted = true;
+
+  const roleWords = ["visual", "graphic", "systemic"];
+  const TYPE_SPEED = 80;          // ms per lettera, mentre scrive
+  const DELETE_SPEED = 45;        // ms per lettera, mentre cancella
+  const PAUSE_AFTER_TYPE = 1100;  // pausa a parola completa, prima di cancellare
+  let wordIndex = 0;
+
+  const typeWord = (word, i, callback) => {
+    if (i <= word.length) {
+      roleWordEl.textContent = word.slice(0, i);
+      setTimeout(() => typeWord(word, i + 1, callback), TYPE_SPEED);
+    } else {
+      callback();
+    }
+  };
+
+  const deleteWord = (word, i, callback) => {
+    if (i >= 0) {
+      roleWordEl.textContent = word.slice(0, i);
+      setTimeout(() => deleteWord(word, i - 1, callback), DELETE_SPEED);
+    } else {
+      callback();
+    }
+  };
+
+  const playNextWord = () => {
+    const word = roleWords[wordIndex];
+    const isLast = wordIndex === roleWords.length - 1;
+
+    typeWord(word, 0, () => {
+      if (isLast) {
+        // "systemic" resta scritta: il cursore smette di lampeggiare
+        roleWordEl.classList.add("role-word-final");
+        return;
+      }
+      setTimeout(() => {
+        deleteWord(word, word.length, () => {
+          wordIndex++;
+          playNextWord();
+        });
+      }, PAUSE_AFTER_TYPE);
+    });
+  };
+
+  playNextWord();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // =========================
   // 1️⃣ GESTIONE SPLASH PAGE
@@ -10,10 +65,14 @@ document.addEventListener("DOMContentLoaded", () => {
       splash.addEventListener("click", () => {
         splash.classList.add("hide");
         sessionStorage.setItem("splashSeen", "true");
+        startRoleWord(); // la parola animata parte quando si entra nel sito
       });
+    } else {
+      startRoleWord();
     }
-  } else if (splash) {
-    splash.style.display = "none"; // Nascondi subito se già vista
+  } else {
+    if (splash) splash.style.display = "none"; // Nascondi subito se già vista
+    startRoleWord();
   }
 
   // =========================

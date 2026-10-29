@@ -4201,3 +4201,33 @@ body.nav-hidden .sub-navbar.fixed {
   #final .contact-item a { font-size: 20px; }
   #final #end h3 { font-size: 15px; }
 }
+
+
+/* -----------------------------------------------------------
+   PAROLA ANIMATA NEL TITOLO: visual / graphic / systemic
+----------------------------------------------------------- */
+.role-word {
+  display: inline-block;
+  color: #E30613;
+}
+
+.role-word::after {
+  content: "|";
+  display: inline-block;
+  margin-left: 2px;
+  animation: role-word-cursor 0.9s step-end infinite;
+}
+
+.role-word.role-word-final::after {
+  content: "";
+  display: none;
+}
+
+.designer-word {
+  color: #E30613;
+}
+
+@keyframes role-word-cursor {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
