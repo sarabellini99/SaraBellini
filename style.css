@@ -4705,7 +4705,7 @@ h1 {
     font-size: 14px;
     line-height: 1;
     text-transform: uppercase;
-    letter-spacing: 0.02em;
+    letter-spacing: -0.02em;
     color: #9C9C9A;
     transition: color 0.3s ease;
   }
