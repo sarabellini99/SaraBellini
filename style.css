@@ -86,7 +86,6 @@ body {
 h1 { 
   font-family:'TITOLI';
   font-size:20px;
-  font-weight:bold;
   line-height: 1;
   letter-spacing: 0;
 color:black;
@@ -1556,7 +1555,6 @@ width: 100%;
 h1 { 
   font-family:'TITOLI';
   font-size:28px;
-  font-weight:bold;
   line-height: 1;
   letter-spacing: 0;
 color:black;
@@ -1995,7 +1993,6 @@ width:100%;          /* occupa il resto dello spazio */
 h1 { 
   font-family:'TITOLI';
   font-size:40px;
-  font-weight:bold;
   line-height: 1;
   letter-spacing: 0;
 color:black;
@@ -2323,7 +2320,6 @@ gap:10px;
 h1 { 
   font-family:'TITOLI';
   font-size:40px;
-  font-weight:bold;
   line-height: 1;
   letter-spacing: 0;
 color:black;
@@ -3793,7 +3789,6 @@ gap:10px;
 h1 { 
   font-family:'TITOLI';
   font-size:42px;
-  font-weight:bold;
   line-height: 1;
   letter-spacing: 0;
 color:black;
@@ -4306,16 +4301,7 @@ body.nav-hidden .sub-navbar.fixed {
   line-height: 1;
 }
 
-/* quadratino rosso accanto al titolo */
-.intro h1::before {
-  content: "";
-  position: absolute;
-  left: -20px;
-  top: 0.2em;
-  width: 8px;
-  height: 8px;
-  background-color: #E30613;
-}
+
 
 #mydesk {
   margin-top: 80px;
@@ -4327,7 +4313,6 @@ body.nav-hidden .sub-navbar.fixed {
 
 @media (min-width: 768px) {
   .intro h1 { font-size: 46px; }
-  .intro h1::before { left: -24px; width: 10px; height: 10px; }
 }
 
 @media (min-width: 992px) {
@@ -4343,4 +4328,11 @@ body.nav-hidden .sub-navbar.fixed {
 
 @media (min-width: 1900px) {
   .intro h1 { font-size: 74px; }
+}
+
+
+/* I font caricati hanno un solo peso ciascuno: niente grassetto
+   simulato dal browser su titoli e sottotitoli */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
 }
