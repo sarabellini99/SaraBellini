@@ -4577,3 +4577,15 @@ h1 {
 @media (min-width: 1900px) {
   .hero-enter { font-size: 22px; }
 }
+
+
+/* -----------------------------------------------------------
+   TITOLETTI ("From my Desk", "Yep, that's me", "Say Hello")
+   Switzer Medium, spaziatura tra le lettere più stretta.
+----------------------------------------------------------- */
+#section-title,
+#about-title,
+#final #contact-title {
+  font-family: 'TESTI';
+  letter-spacing: -0.04em;
+}
