@@ -35,7 +35,7 @@ scroll-behavior: smooth;
 
 @font-face {
   font-family: 'TITOLI';
-  src: url(font/NeueHaasDisplay-Roman.woff2) format('woff2');
+  src: url(font/Switzer-Regular.woff2) format('woff2');
   font-display: swap;
 }
 
@@ -4055,7 +4055,7 @@ body.nav-hidden .sub-navbar.fixed {
   font-family: 'TITOLI';
   font-size: 20px;
   line-height: 1.1;
-  letter-spacing: 0;
+  letter-spacing: -0.03em;
   color: #000000;
 }
 
@@ -4447,4 +4447,14 @@ body.project-page .page-wrapper {
 
 @media (min-width: 1900px) {
   .intro h2 { max-width: 620px; }
+}
+
+
+/* -----------------------------------------------------------
+   TITOLI IN SWITZER REGULAR
+   Spaziatura tra le lettere un po' più stretta: lo Switzer
+   nasce per i testi e in grande risulta troppo arioso.
+----------------------------------------------------------- */
+h1 {
+  letter-spacing: -0.03em;
 }
