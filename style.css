@@ -4399,3 +4399,33 @@ body.project-page .page-wrapper {
     padding-right: 100px;
   }
 }
+
+
+/* -----------------------------------------------------------
+   MARGINI DEI CONTENUTI: via di mezzo
+   Navbar e footer restano vicini ai bordi (fanno da cornice),
+   i contenuti rientrano un po' di più.
+----------------------------------------------------------- */
+@media (min-width: 768px) {
+  .page-wrapper,
+  body.project-page .page-wrapper {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .page-wrapper,
+  body.project-page .page-wrapper {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .page-wrapper,
+  body.project-page .page-wrapper {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+}
