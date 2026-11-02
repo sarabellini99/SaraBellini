@@ -4515,3 +4515,64 @@ h1 {
 @media (min-width: 1900px) {
   .introduzione > h1 { font-size: 46px; }
 }
+
+
+/* -----------------------------------------------------------
+   APERTURA: link "Make yourself at home" e frase sulla scrivania
+   Su telefono e tablet stanno uno sotto l'altro, da desktop il
+   link va a sinistra e la frase a destra.
+----------------------------------------------------------- */
+.intro h1 {
+  letter-spacing: -0.045em;
+}
+
+.hero-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+  width: 100%;
+}
+
+.hero-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hero-enter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'ETICHETTE';
+  font-size: 17px;
+  line-height: 1.2;
+  color: #E30613;
+  text-decoration: none;
+}
+
+.hero-enter:hover {
+  text-decoration: underline;
+}
+
+.intro h2.hero-desk {
+  font-family: 'TESTI';
+}
+
+.dim-text {
+  color: #9C9C9A;
+}
+
+@media (min-width: 992px) {
+  .hero-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+  }
+  .hero-enter { font-size: 20px; }
+}
+
+@media (min-width: 1900px) {
+  .hero-enter { font-size: 22px; }
+}
