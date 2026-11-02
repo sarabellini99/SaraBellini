@@ -319,3 +319,72 @@ if (lettereImg) {
   }, { threshold: 0.15 });
   els.forEach(el => obs.observe(el));
 })();
+
+
+// =========================
+// MY DESK: "Tidy up my desk" mette le foto in fila al centro,
+// un secondo clic le sparpaglia di nuovo (solo da desktop)
+// =========================
+(function () {
+  const button = document.getElementById("desk-tidy");
+  const desk = document.getElementById("desk-images");
+  const section = document.getElementById("mydesk");
+  if (!button || !desk || !section) return;
+
+  const label = button.querySelector(".desk-tidy-label");
+  const wrappers = [...desk.querySelectorAll(".desk-image-wrapper")];
+  const desktop = window.matchMedia("(min-width: 1200px)");
+  const GAP = 12;
+  let tidy = false;
+
+  const ratioOf = (wrapper) => {
+    const img = wrapper.querySelector("img");
+    return img && img.naturalWidth ? img.naturalWidth / img.naturalHeight : 1;
+  };
+
+  const placeTidy = () => {
+    const width = desk.clientWidth;
+    const height = desk.clientHeight;
+    const ratios = wrappers.map(ratioOf);
+    const sum = ratios.reduce((a, b) => a + b, 0);
+    // stessa altezza per tutte, la più grande che ci sta in una riga
+    const rowHeight = Math.min(260, (width - GAP * (wrappers.length - 1)) / sum);
+    const rowWidth = rowHeight * sum + GAP * (wrappers.length - 1);
+    let x = (width - rowWidth) / 2;
+    const y = (height - rowHeight) / 2;
+    wrappers.forEach((wrapper, i) => {
+      const w = rowHeight * ratios[i];
+      wrapper.style.left = x + "px";
+      wrapper.style.top = y + "px";
+      wrapper.style.width = w + "px";
+      x += w + GAP;
+    });
+  };
+
+  const placeMessy = () => {
+    wrappers.forEach((wrapper) => {
+      wrapper.style.left = "";
+      wrapper.style.top = "";
+      wrapper.style.width = "";
+    });
+  };
+
+  const render = () => {
+    desk.classList.toggle("is-tidy", tidy);
+    section.classList.toggle("is-tidy", tidy);
+    button.setAttribute("aria-pressed", String(tidy));
+    if (label) label.textContent = tidy ? "Mess it up again" : "Tidy up my desk";
+    if (tidy && desktop.matches) placeTidy();
+    else placeMessy();
+  };
+
+  button.addEventListener("click", () => {
+    tidy = !tidy;
+    render();
+  });
+
+  window.addEventListener("resize", () => {
+    if (!desktop.matches && tidy) tidy = false;
+    render();
+  });
+})();
