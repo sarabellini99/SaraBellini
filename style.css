@@ -4763,3 +4763,102 @@ h1 {
 @media (min-width: 1900px) {
   .desk-tidy.desk-tidy-text { font-size: 16px; padding: 0; }
 }
+
+
+/* -----------------------------------------------------------
+   DIMENSIONI DEI TESTI DA DESKTOP
+   Tutto un po' più grande, e interlinea più stretta nel "Ciao!".
+----------------------------------------------------------- */
+@media (min-width: 1200px) {
+  /* home */
+  .intro h1 { font-size: 70px; line-height: 0.92; }
+  .intro h2.hero-desk { font-size: 25px; max-width: 600px; }
+  .hero-enter { font-size: 22px; }
+  #mydesk #section-title,
+  #me #about-title,
+  #final #contact-title { font-size: 22px; }
+  #me #binomiofantastico { font-size: 22px; }
+  #me .spiegazione p.description { font-size: 20px; }
+  .navbar a,
+  body.project-page .navbar a { font-size: 19px; }
+  #mydesk .desk-tidy.desk-tidy-text { font-size: 15px; }
+
+  /* footer */
+  #final .contact-email h4 { font-size: 36px; }
+  #final .contact-label { font-size: 15px; }
+  #final .contact-item a { font-size: 20px; }
+  #final #end h3 { font-size: 14px; }
+
+  /* pagine progetto */
+  body.project-page .introduzione > h1 { font-size: 50px; }
+  body.project-page .spiegazione p,
+  body.project-page .spiegazione-tesi p,
+  body.project-page p.project-description,
+  body.project-page p.urania-description,
+  body.project-page p.plastiz-description,
+  body.project-page p.trend,
+  body.project-page .pubblicazione a { font-size: 20px; }
+  body.project-page h3.project-subtitle,
+  body.project-page .group-project h3,
+  body.project-page .back-link,
+  body.project-page .tabbar-eco h3,
+  body.project-page #sono-moda h3,
+  body.project-page .link-pub h3,
+  body.project-page .poli h3,
+  body.project-page h3.plastiz-description { font-size: 16px; }
+  body.project-page .capitolo h2 { font-size: 18px; }
+  body.project-page .sub-navbar a { font-size: 17px; }
+  body.project-page #sono-moda h1 { font-size: 32px; }
+  body.project-page #scritta-eco h1 { font-size: 34px; }
+  body.project-page #sono-urania h1,
+  body.project-page #scritta-amorfosi h1,
+  body.project-page .lebasi h1 { font-size: 45px; }
+  body.project-page .play-button { font-size: 15px; }
+}
+
+@media (min-width: 1900px) {
+  /* home */
+  .intro h1 { font-size: 82px; line-height: 0.92; }
+  .intro h2.hero-desk { font-size: 28px; max-width: 680px; }
+  .hero-enter { font-size: 24px; }
+  #mydesk #section-title,
+  #me #about-title,
+  #final #contact-title { font-size: 24px; }
+  #me #binomiofantastico { font-size: 24px; }
+  #me .spiegazione p.description { font-size: 22px; }
+  .navbar a,
+  body.project-page .navbar a { font-size: 20px; }
+  #mydesk .desk-tidy.desk-tidy-text { font-size: 17px; }
+
+  /* footer */
+  #final .contact-email h4 { font-size: 40px; }
+  #final .contact-label { font-size: 17px; }
+  #final .contact-item a { font-size: 22px; }
+  #final #end h3 { font-size: 16px; }
+
+  /* pagine progetto */
+  body.project-page .introduzione > h1 { font-size: 54px; }
+  body.project-page .spiegazione p,
+  body.project-page .spiegazione-tesi p,
+  body.project-page p.project-description,
+  body.project-page p.urania-description,
+  body.project-page p.plastiz-description,
+  body.project-page p.trend,
+  body.project-page .pubblicazione a { font-size: 22px; }
+  body.project-page h3.project-subtitle,
+  body.project-page .group-project h3,
+  body.project-page .back-link,
+  body.project-page .tabbar-eco h3,
+  body.project-page #sono-moda h3,
+  body.project-page .link-pub h3,
+  body.project-page .poli h3,
+  body.project-page h3.plastiz-description { font-size: 17px; }
+  body.project-page .capitolo h2 { font-size: 19px; }
+  body.project-page .sub-navbar a { font-size: 18px; }
+  body.project-page #sono-moda h1 { font-size: 34px; }
+  body.project-page #scritta-eco h1 { font-size: 36px; }
+  body.project-page #sono-urania h1,
+  body.project-page #scritta-amorfosi h1,
+  body.project-page .lebasi h1 { font-size: 48px; }
+  body.project-page .play-button { font-size: 16px; }
+}
