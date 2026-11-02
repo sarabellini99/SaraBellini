@@ -4544,6 +4544,7 @@ h1 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  letter-spacing: -0.02em;
   font-family: 'ETICHETTE';
   font-size: 17px;
   line-height: 1.2;
@@ -4669,16 +4670,16 @@ h1 {
 }
 
 
-/* "*TIDY UP" / "*MESS IT UP": stesso stile di "From my Desk",
-   in maiuscolo per far capire che si può cliccare */
+/* "*Tidy up" / "*Mess it up": stesso stile di "Make yourself at home"
+   (rosso, Regular), con la spaziatura tra le lettere più stretta */
 @media (min-width: 1200px) {
   .desk-tidy {
     gap: 0;
-    font-family: 'TESTI';
+    font-family: 'ETICHETTE';
     font-size: 20px;
     letter-spacing: -0.02em;
-    text-transform: uppercase;
-    color: #000000;
+    text-transform: none;
+    color: #E30613;
   }
 
   .desk-tidy:hover .desk-tidy-label {
