@@ -4891,3 +4891,60 @@ body.project-page .pubblicazione a {
   color: #E30613;
   text-decoration: none;
 }
+
+
+/* -----------------------------------------------------------
+   "I was once asked..." in grigio, rosso al passaggio del mouse
+----------------------------------------------------------- */
+#me #binomiofantastico {
+  color: #9C9C9A;
+  transition: color 0.25s ease;
+}
+
+#me #binomiofantastico:hover {
+  color: #E30613;
+}
+
+/* -----------------------------------------------------------
+   ETICHETTE GRIGIE DEI PROGETTI (ambiti, anno, capitoli)
+   in Switzer Medium
+----------------------------------------------------------- */
+body.project-page h3.project-subtitle,
+body.project-page .capitolo h2,
+body.project-page #sono-moda h3 {
+  font-family: 'TESTI';
+}
+
+/* -----------------------------------------------------------
+   APERTURA DELLE PAGINE PROGETTO (da desktop)
+   Nome del progetto più grande e testo più vicino: la colonna
+   del testo è più larga e parte prima.
+----------------------------------------------------------- */
+@media (min-width: 1200px) {
+  body.project-page .introduzione {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 63.5%;
+    column-gap: 40px;
+    align-items: start;
+  }
+
+  body.project-page .introduzione > .spiegazione {
+    width: auto;
+    max-width: none;
+    flex: none;
+  }
+
+  body.project-page .introduzione > h1 {
+    font-size: clamp(46px, 4vw, 58px);
+  }
+}
+
+@media (min-width: 1900px) {
+  body.project-page .introduzione {
+    grid-template-columns: minmax(0, 1fr) 780px;
+  }
+
+  body.project-page .introduzione > h1 {
+    font-size: 64px;
+  }
+}
