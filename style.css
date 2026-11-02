@@ -4458,3 +4458,30 @@ body.project-page .page-wrapper {
 h1 {
   letter-spacing: -0.03em;
 }
+
+
+/* -----------------------------------------------------------
+   MARGINI DELLE PAGINE PROGETTO
+   Un po' più ampi della home, così immagini e testi
+   non diventano troppo grandi.
+----------------------------------------------------------- */
+@media (min-width: 768px) {
+  body.project-page .page-wrapper {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+}
+
+@media (min-width: 1200px) {
+  body.project-page .page-wrapper {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+}
+
+@media (min-width: 1900px) {
+  body.project-page .page-wrapper {
+    padding-left: 280px;
+    padding-right: 280px;
+  }
+}
