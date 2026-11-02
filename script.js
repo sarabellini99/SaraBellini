@@ -378,12 +378,60 @@ if (lettereImg) {
   };
   fitToScreen();
 
+  // ---- il segno a mano: un ricciolo con tre anelli che, cliccando,
+  // si srotola in una linea dritta (e viceversa) ----
+  const squigglePath = button.querySelector(".squiggle path");
+  let squiggleState = 0;     // 0 = ricciolo, 1 = linea dritta
+  let squiggleFrame = null;
+
+  // piccole irregolarità fisse, per l'effetto "tracciato a mano"
+  const wobble = (i) => Math.sin(i * 0.19) * 0.45 + Math.sin(i * 0.067 + 1) * 0.55;
+
+  const drawSquiggle = (s) => {
+    if (!squigglePath) return;
+    const r = 4.4 * (1 + 0.6 * s);       // avanzamento: si allunga mentre si srotola
+    const d = 11.5 * (1 - s);            // ampiezza degli anelli: sparisce
+    const slant = 0.32 * (1 - s);        // anelli inclinati come una "e" in corsivo
+    const t0 = 0.75 * Math.PI, t1 = 7.25 * Math.PI;
+    const steps = 180;
+    const baseline = 29, startX = 4;
+    let path = "";
+    for (let i = 0; i <= steps; i++) {
+      const t = t0 + (t1 - t0) * (i / steps);
+      const lift = d * (1 + Math.cos(t));                      // quanto sale sopra la linea di base
+      const x = startX + r * (t - t0) - d * Math.sin(t) + d * Math.sin(t0) + slant * lift;
+      const y = baseline - lift + wobble(i) * (0.5 + 0.5 * s);
+      path += (i ? "L" : "M") + x.toFixed(2) + " " + y.toFixed(2);
+    }
+    squigglePath.setAttribute("d", path);
+  };
+
+  const animateSquiggle = (target) => {
+    if (squiggleFrame) cancelAnimationFrame(squiggleFrame);
+    const from = squiggleState;
+    const start = performance.now();
+    const DURATION = 900;
+    const ease = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+    const step = (now) => {
+      const p = Math.min(1, (now - start) / DURATION);
+      squiggleState = from + (target - from) * ease(p);
+      drawSquiggle(squiggleState);
+      if (p < 1) squiggleFrame = requestAnimationFrame(step);
+    };
+    squiggleFrame = requestAnimationFrame(step);
+  };
+
+  drawSquiggle(0);
+
   const render = () => {
     desk.classList.toggle("is-tidy", tidy);
     section.classList.toggle("is-tidy", tidy);
     button.setAttribute("aria-pressed", String(tidy));
+    button.setAttribute("aria-label", tidy ? "Mess up my desk again" : "Tidy up my desk");
+    button.title = tidy ? "Mess it up again" : "Tidy up!";
     const label = button.querySelector(".desk-tidy-label");
     if (label) label.textContent = tidy ? "Mess it up again" : "Tidy up!";
+    animateSquiggle(tidy ? 1 : 0);
     if (tidy && desktop.matches) placeTidy();
     else placeMessy();
   };
