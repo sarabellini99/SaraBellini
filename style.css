@@ -4726,44 +4726,40 @@ h1 {
 
 
 /* -----------------------------------------------------------
-   SEGNO A MANO al posto del bottone (prova)
-   Un ricciolo in basso a sinistra: cliccandolo si srotola in
-   una linea dritta e le foto si mettono in ordine.
+   "*tidy up" / "*mess it up": semplice link grigio sottolineato,
+   in basso a sinistra sotto le foto (solo da desktop)
 ----------------------------------------------------------- */
 @media (min-width: 1200px) {
   #desk-images {
     margin-top: 30px;
   }
 
-  .desk-tidy.desk-squiggle {
+  .desk-tidy.desk-tidy-text {
     align-self: flex-start;
-    align-items: flex-start;
-    gap: 2px;
-    margin-top: 18px;
-    padding: 4px 6px 4px 0;
+    gap: 0;
+    margin-top: 20px;
+    padding: 0;
     background: none;
-    color: #000000;
+    font-family: 'TESTI';
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #9C9C9A;
+    transition: color 0.25s ease;
   }
 
-  .desk-tidy.desk-squiggle:hover {
+  .desk-tidy.desk-tidy-text .desk-tidy-label {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+
+  .desk-tidy.desk-tidy-text:hover {
     background: none;
+    color: #E30613;
   }
+}
 
-  .squiggle {
-    display: block;
-    overflow: visible;
-  }
-
-  .squiggle path {
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 3.2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    transition: stroke 0.3s ease;
-  }
-
-  .desk-tidy.desk-squiggle:hover .squiggle path {
-    stroke: #E30613;
-  }
+@media (min-width: 1900px) {
+  .desk-tidy.desk-tidy-text { font-size: 16px; padding: 0; }
 }
