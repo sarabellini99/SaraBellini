@@ -369,6 +369,16 @@ if (lettereImg) {
     });
   };
 
+  // rimpicciolisce la composizione perché titolo, foto e pulsante
+  // stiano insieme in una schermata
+  const NATURAL_HEIGHT = 888;   // altezza delle foto sparpagliate a grandezza piena
+  const RESERVED = 226;         // titolo, spazi, pulsante e un po' di respiro
+  const fitToScreen = () => {
+    const k = Math.min(1, Math.max(0.55, (window.innerHeight - RESERVED) / NATURAL_HEIGHT));
+    desk.style.setProperty("--desk-k", k.toFixed(3));
+  };
+  fitToScreen();
+
   const render = () => {
     desk.classList.toggle("is-tidy", tidy);
     section.classList.toggle("is-tidy", tidy);
@@ -385,6 +395,7 @@ if (lettereImg) {
 
   window.addEventListener("resize", () => {
     if (!desktop.matches && tidy) tidy = false;
+    fitToScreen();
     render();
   });
 })();

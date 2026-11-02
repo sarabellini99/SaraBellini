@@ -4631,3 +4631,39 @@ h1 {
 
 }
 
+
+
+/* -----------------------------------------------------------
+   MY DESK DA DESKTOP: tutto il blocco (titolo, foto, "*Tidy up")
+   deve stare in una schermata. La composizione resta la stessa,
+   ma viene rimpicciolita in proporzione all'altezza dello schermo:
+   lo script calcola --desk-k (tra 0.55 e 1).
+----------------------------------------------------------- */
+@media (min-width: 1200px) {
+  #desk-images {
+    margin-top: 50px;
+    height: calc(908px * var(--desk-k, 1));
+  }
+
+  .desk-image-wrapper.eco { top: calc(0px * var(--desk-k, 1)); width: calc(260px * var(--desk-k, 1)); }
+  .desk-image-wrapper.realista { top: calc(330px * var(--desk-k, 1)); width: calc(270px * var(--desk-k, 1)); }
+  .desk-image-wrapper.tesi { top: calc(40px * var(--desk-k, 1)); width: calc(210px * var(--desk-k, 1)); }
+  .desk-image-wrapper.cat { top: calc(570px * var(--desk-k, 1)); width: calc(250px * var(--desk-k, 1)); }
+  .desk-image-wrapper.ettore { top: calc(650px * var(--desk-k, 1)); width: calc(180px * var(--desk-k, 1)); }
+  .desk-image-wrapper.astory { top: calc(290px * var(--desk-k, 1)); width: calc(410px * var(--desk-k, 1)); }
+  .desk-image-wrapper.editoria { top: calc(360px * var(--desk-k, 1)); width: calc(230px * var(--desk-k, 1)); }
+
+  .desk-tidy {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .desk-image-wrapper.eco { top: calc(0px * var(--desk-k, 1)); width: calc(260px * var(--desk-k, 1)); }
+  .desk-image-wrapper.realista { top: calc(330px * var(--desk-k, 1)); width: calc(270px * var(--desk-k, 1)); }
+  .desk-image-wrapper.tesi { top: calc(40px * var(--desk-k, 1)); width: calc(210px * var(--desk-k, 1)); }
+  .desk-image-wrapper.cat { top: calc(570px * var(--desk-k, 1)); width: calc(250px * var(--desk-k, 1)); }
+  .desk-image-wrapper.ettore { top: calc(650px * var(--desk-k, 1)); width: calc(180px * var(--desk-k, 1)); }
+  .desk-image-wrapper.astory { top: calc(290px * var(--desk-k, 1)); width: calc(440px * var(--desk-k, 1)); }
+  .desk-image-wrapper.editoria { top: calc(360px * var(--desk-k, 1)); width: calc(200px * var(--desk-k, 1)); }
+}
