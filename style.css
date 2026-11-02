@@ -4686,7 +4686,7 @@ h1 {
   .desk-tidy {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
     margin: 0;
     padding: 0;
     background: none;
@@ -4718,26 +4718,35 @@ h1 {
   .desk-switch {
     position: relative;
     display: block;
-    width: 44px;
-    height: 24px;
-    border-radius: 12px;
-    background-color: #E30613;
+    width: 22px;
+    height: 11px;
+    border-radius: 6px;
+    background-color: #9C9C9A;
     flex: 0 0 auto;
+    transition: background-color 0.3s ease;
   }
 
   .desk-knob {
     position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 18px;
-    height: 18px;
+    top: 2px;
+    left: 2px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
     background-color: #FFFFFF;
     transition: transform 0.35s cubic-bezier(.65,0,.35,1);
   }
 
+  .desk-tidy:hover .desk-switch {
+    background-color: #000000;
+  }
+
+  .desk-tidy[aria-checked="true"] .desk-switch {
+    background-color: #E30613;
+  }
+
   .desk-tidy[aria-checked="true"] .desk-knob {
-    transform: translateX(20px);
+    transform: translateX(11px);
   }
 
   .desk-tidy:focus-visible .desk-switch {
@@ -4748,4 +4757,7 @@ h1 {
 
 @media (min-width: 1900px) {
   .desk-tidy-label { font-size: 16px; }
+  .desk-switch { width: 25px; height: 12px; }
+  .desk-knob { width: 8px; height: 8px; }
+  .desk-tidy[aria-checked="true"] .desk-knob { transform: translateX(13px); }
 }
