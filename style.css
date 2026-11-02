@@ -4667,3 +4667,26 @@ h1 {
   .desk-image-wrapper.astory { top: calc(290px * var(--desk-k, 1)); width: calc(440px * var(--desk-k, 1)); }
   .desk-image-wrapper.editoria { top: calc(360px * var(--desk-k, 1)); width: calc(200px * var(--desk-k, 1)); }
 }
+
+
+/* "*TIDY UP" / "*MESS IT UP": stesso stile di "From my Desk",
+   in maiuscolo per far capire che si può cliccare */
+@media (min-width: 1200px) {
+  .desk-tidy {
+    gap: 0;
+    font-family: 'TESTI';
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #000000;
+  }
+
+  .desk-tidy:hover .desk-tidy-label {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .desk-tidy:hover {
+    text-decoration: none;
+  }
+}

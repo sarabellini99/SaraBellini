@@ -372,7 +372,7 @@ if (lettereImg) {
   // rimpicciolisce la composizione perché titolo, foto e pulsante
   // stiano insieme in una schermata
   const NATURAL_HEIGHT = 888;   // altezza delle foto sparpagliate a grandezza piena
-  const RESERVED = 226;         // titolo, spazi, pulsante e un po' di respiro
+  const RESERVED = 300;         // titolo, spazi, pulsante e un po' di respiro
   const fitToScreen = () => {
     const k = Math.min(1, Math.max(0.55, (window.innerHeight - RESERVED) / NATURAL_HEIGHT));
     desk.style.setProperty("--desk-k", k.toFixed(3));
@@ -383,7 +383,7 @@ if (lettereImg) {
     desk.classList.toggle("is-tidy", tidy);
     section.classList.toggle("is-tidy", tidy);
     button.setAttribute("aria-pressed", String(tidy));
-    if (label) label.textContent = tidy ? "*Mess it up" : "*Tidy up";
+    if (label) label.textContent = tidy ? "Mess it up" : "Tidy up";
     if (tidy && desktop.matches) placeTidy();
     else placeMessy();
   };
