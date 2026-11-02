@@ -374,6 +374,7 @@ if (lettereImg) {
   const MAX_HEIGHT = 908;       // altezza della composizione su schermi molto alti
   const RESERVED = 290;         // titolo, spazi, link "tidy up" e un po' di respiro
   const BASE_WIDTH = 1040;      // larghezza per cui sono pensate le foto
+  const PHOTO_SCALE = 0.85;     // foto un po' più piccole delle misure originali
   const BASE_TOPS = { eco: 0, realista: 330, tesi: 40, cat: 570, ettore: 650, astory: 290, editoria: 360 };
   const BASE_WIDTHS = { eco: 260, realista: 270, tesi: 210, cat: 250, ettore: 180, astory: 410, editoria: 230 };
   const BASE_WIDTHS_XL = Object.assign({}, BASE_WIDTHS, { astory: 440, editoria: 200 });
@@ -383,7 +384,7 @@ if (lettereImg) {
     if (!desktop.matches) return;
     const height = Math.min(MAX_HEIGHT, Math.max(420, window.innerHeight - RESERVED));
     desk.style.setProperty("--desk-h", height + "px");
-    const w = Math.min(1, desk.clientWidth / BASE_WIDTH);
+    const w = Math.min(1, desk.clientWidth / BASE_WIDTH) * PHOTO_SCALE;
     desk.style.setProperty("--desk-w", w.toFixed(3));
     // quanto comprimere le posizioni perché ogni foto finisca dentro l'altezza
     let t = 1;
