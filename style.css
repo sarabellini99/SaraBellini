@@ -4862,3 +4862,20 @@ h1 {
   body.project-page .lebasi h1 { font-size: 48px; }
   body.project-page .play-button { font-size: 16px; }
 }
+
+
+/* -----------------------------------------------------------
+   PARAGRAFI IN SWITZER REGULAR (bio e descrizioni dei progetti)
+   Il Medium resta per i titoletti e le etichette.
+----------------------------------------------------------- */
+p,
+#me .spiegazione p.description,
+body.project-page .spiegazione p,
+body.project-page .spiegazione-tesi p,
+body.project-page p.project-description,
+body.project-page p.urania-description,
+body.project-page p.plastiz-description,
+body.project-page p.trend,
+body.project-page .pubblicazione a {
+  font-family: 'ETICHETTE';
+}
