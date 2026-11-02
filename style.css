@@ -4592,29 +4592,17 @@ h1 {
 
 
 /* -----------------------------------------------------------
-   MY DESK DA DESKTOP: foto più piccole e più sparse,
-   e il pulsante per riordinarle.
+   MY DESK DA DESKTOP: pulsante per riordinare le foto
 ----------------------------------------------------------- */
 .desk-tidy {
   display: none;
 }
 
 @media (min-width: 1200px) {
-  #desk-images {
-    height: 960px;
-  }
-
   .desk-image-wrapper {
     transition: left 0.9s cubic-bezier(.65,0,.35,1), top 0.9s cubic-bezier(.65,0,.35,1), width 0.9s cubic-bezier(.65,0,.35,1), z-index 0.2s ease;
   }
 
-  .desk-image-wrapper.eco      { left: 36%; top: 0;     width: 200px; }
-  .desk-image-wrapper.tesi     { left: 78%; top: 60px;  width: 165px; }
-  .desk-image-wrapper.editoria { left: 2%;  top: 110px; width: 170px; }
-  .desk-image-wrapper.astory   { left: 24%; top: 380px; width: 300px; }
-  .desk-image-wrapper.realista { left: 74%; top: 360px; width: 200px; }
-  .desk-image-wrapper.cat      { left: 4%;  top: 660px; width: 190px; }
-  .desk-image-wrapper.ettore   { left: 52%; top: 720px; width: 150px; }
 
   /* foto riordinate: niente fluttuare */
   #desk-images.is-tidy .desk-image-wrapper {
@@ -4643,13 +4631,3 @@ h1 {
 
 }
 
-@media (min-width: 1900px) {
-  #desk-images { height: 1150px; }
-  .desk-image-wrapper.eco      { width: 250px; }
-  .desk-image-wrapper.tesi     { width: 205px; }
-  .desk-image-wrapper.editoria { width: 215px; }
-  .desk-image-wrapper.astory   { width: 380px; top: 450px; }
-  .desk-image-wrapper.realista { width: 250px; top: 430px; }
-  .desk-image-wrapper.cat      { width: 240px; top: 800px; }
-  .desk-image-wrapper.ettore   { width: 190px; top: 860px; }
-}

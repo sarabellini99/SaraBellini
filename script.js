@@ -373,7 +373,7 @@ if (lettereImg) {
     desk.classList.toggle("is-tidy", tidy);
     section.classList.toggle("is-tidy", tidy);
     button.setAttribute("aria-pressed", String(tidy));
-    if (label) label.textContent = tidy ? "Mess it up" : "Tidy up";
+    if (label) label.textContent = tidy ? "*Mess it up" : "*Tidy up";
     if (tidy && desktop.matches) placeTidy();
     else placeMessy();
   };
