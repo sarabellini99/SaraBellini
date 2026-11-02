@@ -4461,11 +4461,11 @@ h1 {
 
 
 /* -----------------------------------------------------------
-   MARGINI DELLE PAGINE PROGETTO
-   Un po' più ampi della home, così immagini e testi
-   non diventano troppo grandi.
+   MARGINI DEI CONTENUTI (home e progetti)
+   Abbastanza ampi da non far diventare immagini e testi troppo grandi.
 ----------------------------------------------------------- */
 @media (min-width: 768px) {
+  .page-wrapper,
   body.project-page .page-wrapper {
     padding-left: 120px;
     padding-right: 120px;
@@ -4473,6 +4473,7 @@ h1 {
 }
 
 @media (min-width: 1200px) {
+  .page-wrapper,
   body.project-page .page-wrapper {
     padding-left: 200px;
     padding-right: 200px;
@@ -4480,6 +4481,7 @@ h1 {
 }
 
 @media (min-width: 1900px) {
+  .page-wrapper,
   body.project-page .page-wrapper {
     padding-left: 280px;
     padding-right: 280px;
