@@ -322,7 +322,7 @@ if (lettereImg) {
 
 
 // =========================
-// MY DESK: "Tidy up my desk" mette le foto in fila al centro,
+// MY DESK: "Tidy up" mette le foto in fila al centro,
 // un secondo clic le sparpaglia di nuovo (solo da desktop)
 // =========================
 (function () {
@@ -373,7 +373,7 @@ if (lettereImg) {
     desk.classList.toggle("is-tidy", tidy);
     section.classList.toggle("is-tidy", tidy);
     button.setAttribute("aria-pressed", String(tidy));
-    if (label) label.textContent = tidy ? "Mess it up again" : "Tidy up my desk";
+    if (label) label.textContent = tidy ? "Mess it up" : "Tidy up";
     if (tidy && desktop.matches) placeTidy();
     else placeMessy();
   };

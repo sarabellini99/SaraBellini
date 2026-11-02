@@ -4634,22 +4634,13 @@ h1 {
     font-size: 20px;
     line-height: 1.2;
     color: #E30613;
-    align-self: flex-start;
+    align-self: flex-end;
   }
 
   .desk-tidy:hover {
     text-decoration: underline;
   }
 
-  /* la nota "*Yes, I tidied it up..." compare solo a scrivania in ordine */
-  #mydesk .section-subtitle {
-    opacity: 0;
-    transition: opacity 0.6s ease 0.6s;
-  }
-
-  #mydesk.is-tidy .section-subtitle {
-    opacity: 1;
-  }
 }
 
 @media (min-width: 1900px) {
