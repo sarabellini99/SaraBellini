@@ -4487,3 +4487,31 @@ h1 {
     padding-right: 280px;
   }
 }
+
+
+/* -----------------------------------------------------------
+   TITOLI DI SEZIONE DELLA HOME ("From my Desk", "Yep, that's me")
+   Piccoli come "Say Hello" nel footer.
+----------------------------------------------------------- */
+#section-title,
+#about-title {
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+/* -----------------------------------------------------------
+   NOMI DEI PROGETTI nelle pagine progetto: 4 punti in più
+----------------------------------------------------------- */
+.introduzione > h1 { font-size: 24px; }
+
+@media (min-width: 576px) {
+  .introduzione > h1 { font-size: 32px; }
+}
+
+@media (min-width: 992px) {
+  .introduzione > h1 { font-size: 44px; }
+}
+
+@media (min-width: 1900px) {
+  .introduzione > h1 { font-size: 46px; }
+}
