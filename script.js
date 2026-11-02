@@ -368,15 +368,40 @@ if (lettereImg) {
     });
   };
 
-  // rimpicciolisce la composizione perché titolo, foto e pulsante
-  // stiano insieme in una schermata
-  const NATURAL_HEIGHT = 888;   // altezza delle foto sparpagliate a grandezza piena
-  const RESERVED = 340;         // titolo, spazi, pulsante e un po' di respiro
+  // la sezione deve stare in una schermata: l'altezza della composizione
+  // è fissata dallo schermo, le foto restano a grandezza piena e si
+  // avvicinano in verticale (sovrapponendosi di più)
+  const MAX_HEIGHT = 908;       // altezza della composizione su schermi molto alti
+  const RESERVED = 290;         // titolo, spazi, link "tidy up" e un po' di respiro
+  const BASE_WIDTH = 1040;      // larghezza per cui sono pensate le foto
+  const BASE_TOPS = { eco: 0, realista: 330, tesi: 40, cat: 570, ettore: 650, astory: 290, editoria: 360 };
+  const BASE_WIDTHS = { eco: 260, realista: 270, tesi: 210, cat: 250, ettore: 180, astory: 410, editoria: 230 };
+  const BASE_WIDTHS_XL = Object.assign({}, BASE_WIDTHS, { astory: 440, editoria: 200 });
+  const xl = window.matchMedia("(min-width: 1900px)");
+
   const fitToScreen = () => {
-    const k = Math.min(1, Math.max(0.55, (window.innerHeight - RESERVED) / NATURAL_HEIGHT));
-    desk.style.setProperty("--desk-k", k.toFixed(3));
+    if (!desktop.matches) return;
+    const height = Math.min(MAX_HEIGHT, Math.max(420, window.innerHeight - RESERVED));
+    desk.style.setProperty("--desk-h", height + "px");
+    const w = Math.min(1, desk.clientWidth / BASE_WIDTH);
+    desk.style.setProperty("--desk-w", w.toFixed(3));
+    // quanto comprimere le posizioni perché ogni foto finisca dentro l'altezza
+    let t = 1;
+    wrappers.forEach((wrapper) => {
+      const key = Object.keys(BASE_TOPS).find((k) => wrapper.classList.contains(k));
+      const top = key ? BASE_TOPS[key] : 0;
+      const img = wrapper.querySelector("img");
+      const ratio = img && img.naturalWidth ? img.naturalHeight / img.naturalWidth : 1.3;
+      const h = (key ? (xl.matches ? BASE_WIDTHS_XL : BASE_WIDTHS)[key] : 200) * w * ratio;
+      if (top > 0) t = Math.min(t, (height - h) / top);
+    });
+    desk.style.setProperty("--desk-t", Math.max(0.2, t).toFixed(3));
   };
   fitToScreen();
+  wrappers.forEach((wrapper) => {
+    const img = wrapper.querySelector("img");
+    if (img && !img.complete) img.addEventListener("load", fitToScreen, { once: true });
+  });
 
   const render = () => {
     desk.classList.toggle("is-tidy", tidy);

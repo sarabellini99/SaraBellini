@@ -4638,21 +4638,23 @@ h1 {
    MY DESK DA DESKTOP: tutto il blocco (titolo, foto, "*Tidy up")
    deve stare in una schermata. La composizione resta la stessa,
    ma viene rimpicciolita in proporzione all'altezza dello schermo:
-   lo script calcola --desk-k (tra 0.55 e 1).
+   Le foto restano a grandezza piena (--desk-w scende solo se lo
+   schermo è stretto), si avvicinano in verticale (--desk-t) e
+   si sovrappongono di più. Lo script calcola i valori.
 ----------------------------------------------------------- */
 @media (min-width: 1200px) {
   #desk-images {
     margin-top: 50px;
-    height: calc(908px * var(--desk-k, 1));
+    height: var(--desk-h, 908px);
   }
 
-  .desk-image-wrapper.eco { top: calc(0px * var(--desk-k, 1)); width: calc(260px * var(--desk-k, 1)); }
-  .desk-image-wrapper.realista { top: calc(330px * var(--desk-k, 1)); width: calc(270px * var(--desk-k, 1)); }
-  .desk-image-wrapper.tesi { top: calc(40px * var(--desk-k, 1)); width: calc(210px * var(--desk-k, 1)); }
-  .desk-image-wrapper.cat { top: calc(570px * var(--desk-k, 1)); width: calc(250px * var(--desk-k, 1)); }
-  .desk-image-wrapper.ettore { top: calc(650px * var(--desk-k, 1)); width: calc(180px * var(--desk-k, 1)); }
-  .desk-image-wrapper.astory { top: calc(290px * var(--desk-k, 1)); width: calc(410px * var(--desk-k, 1)); }
-  .desk-image-wrapper.editoria { top: calc(360px * var(--desk-k, 1)); width: calc(230px * var(--desk-k, 1)); }
+  .desk-image-wrapper.eco { top: calc(0px * var(--desk-t, 1)); width: calc(260px * var(--desk-w, 1)); }
+  .desk-image-wrapper.realista { top: calc(330px * var(--desk-t, 1)); width: calc(270px * var(--desk-w, 1)); }
+  .desk-image-wrapper.tesi { top: calc(40px * var(--desk-t, 1)); width: calc(210px * var(--desk-w, 1)); }
+  .desk-image-wrapper.cat { top: calc(570px * var(--desk-t, 1)); width: calc(250px * var(--desk-w, 1)); }
+  .desk-image-wrapper.ettore { top: calc(650px * var(--desk-t, 1)); width: calc(180px * var(--desk-w, 1)); }
+  .desk-image-wrapper.astory { top: calc(290px * var(--desk-t, 1)); width: calc(410px * var(--desk-w, 1)); }
+  .desk-image-wrapper.editoria { top: calc(360px * var(--desk-t, 1)); width: calc(230px * var(--desk-w, 1)); }
 
   .desk-tidy {
     margin-top: 20px;
@@ -4660,13 +4662,13 @@ h1 {
 }
 
 @media (min-width: 1900px) {
-  .desk-image-wrapper.eco { top: calc(0px * var(--desk-k, 1)); width: calc(260px * var(--desk-k, 1)); }
-  .desk-image-wrapper.realista { top: calc(330px * var(--desk-k, 1)); width: calc(270px * var(--desk-k, 1)); }
-  .desk-image-wrapper.tesi { top: calc(40px * var(--desk-k, 1)); width: calc(210px * var(--desk-k, 1)); }
-  .desk-image-wrapper.cat { top: calc(570px * var(--desk-k, 1)); width: calc(250px * var(--desk-k, 1)); }
-  .desk-image-wrapper.ettore { top: calc(650px * var(--desk-k, 1)); width: calc(180px * var(--desk-k, 1)); }
-  .desk-image-wrapper.astory { top: calc(290px * var(--desk-k, 1)); width: calc(440px * var(--desk-k, 1)); }
-  .desk-image-wrapper.editoria { top: calc(360px * var(--desk-k, 1)); width: calc(200px * var(--desk-k, 1)); }
+  .desk-image-wrapper.eco { top: calc(0px * var(--desk-t, 1)); width: calc(260px * var(--desk-w, 1)); }
+  .desk-image-wrapper.realista { top: calc(330px * var(--desk-t, 1)); width: calc(270px * var(--desk-w, 1)); }
+  .desk-image-wrapper.tesi { top: calc(40px * var(--desk-t, 1)); width: calc(210px * var(--desk-w, 1)); }
+  .desk-image-wrapper.cat { top: calc(570px * var(--desk-t, 1)); width: calc(250px * var(--desk-w, 1)); }
+  .desk-image-wrapper.ettore { top: calc(650px * var(--desk-t, 1)); width: calc(180px * var(--desk-w, 1)); }
+  .desk-image-wrapper.astory { top: calc(290px * var(--desk-t, 1)); width: calc(440px * var(--desk-w, 1)); }
+  .desk-image-wrapper.editoria { top: calc(360px * var(--desk-t, 1)); width: calc(200px * var(--desk-w, 1)); }
 }
 
 
@@ -4970,4 +4972,17 @@ body.project-page #sono-moda h3 {
   #me .sezioni-urania {
     grid-template-columns: minmax(0, 1fr) 780px;
   }
+}
+
+
+/* foto più sovrapposte: le più grandi stanno sotto, così si vedono tutte */
+@media (min-width: 1200px) {
+  .desk-image-wrapper.astory   { z-index: 1; }
+  .desk-image-wrapper.eco,
+  .desk-image-wrapper.realista,
+  .desk-image-wrapper.editoria { z-index: 2; }
+  .desk-image-wrapper.cat,
+  .desk-image-wrapper.ettore,
+  .desk-image-wrapper.tesi     { z-index: 3; }
+  .desk-image-wrapper:hover    { z-index: 999; }
 }
