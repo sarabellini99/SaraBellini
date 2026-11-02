@@ -4336,3 +4336,66 @@ body.nav-hidden .sub-navbar.fixed {
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
+
+
+/* -----------------------------------------------------------
+   MARGINI LATERALI
+   Più stretti, e uguali a quelli di navbar e footer, così testi
+   e immagini partono dalla stessa linea di "Sara Bellini" in alto
+   e finiscono sulla stessa linea di "Say Hello".
+----------------------------------------------------------- */
+.page-wrapper,
+body.project-page .page-wrapper {
+  max-width: none;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#mydesk,
+#me {
+  max-width: none;
+}
+
+@media (min-width: 768px) {
+  .page-wrapper,
+  body.project-page .page-wrapper {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .navbar,
+  body.project-page .navbar {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* la foto di Urania non deve uscire dal margine sinistro */
+  .desk-image-wrapper.editoria { left: 0; }
+
+  .page-wrapper,
+  body.project-page .page-wrapper {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+  .navbar,
+  body.project-page .navbar {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .desk-image-wrapper.editoria { left: 5%; }
+
+  .page-wrapper,
+  body.project-page .page-wrapper {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .navbar,
+  body.project-page .navbar {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
