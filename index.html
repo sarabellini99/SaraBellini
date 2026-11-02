@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sara Bellini</title>
-  <link rel="stylesheet" href="style.css?v=24">
+  <link rel="stylesheet" href="style.css?v=25">
 </head>
 
 <link rel="icon" type="image/png" href="favicon.png">
@@ -56,7 +56,13 @@
 
   <!-- MY DESK -->
   <section id="mydesk">
-    <h1 id="section-title">From my Desk<span class="orange">*</span></h1>
+    <div class="mydesk-head">
+      <h1 id="section-title">From my Desk<span class="orange">*</span></h1>
+      <button type="button" id="desk-tidy" class="desk-tidy" role="switch" aria-checked="false">
+        <span class="desk-tidy-label"><span class="orange">*</span>Tidy up</span>
+        <span class="desk-switch" aria-hidden="true"><span class="desk-knob"></span></span>
+      </button>
+    </div>
 
 <div id="desk-images">
   <div class="desk-image-wrapper eco" data-name="ECO">
@@ -101,11 +107,6 @@
     </a>
   </div>
 </div>
-
-
-      <button type="button" id="desk-tidy" class="desk-tidy" aria-pressed="false">
-        <span class="orange">*</span><span class="desk-tidy-label">Tidy up</span>
-      </button>
   
   </section>
 
@@ -212,7 +213,7 @@
 
 
 
-  <script src="script.js?v=10"></script>
+  <script src="script.js?v=11"></script>
   
 
 

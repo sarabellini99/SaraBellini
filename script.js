@@ -322,8 +322,8 @@ if (lettereImg) {
 
 
 // =========================
-// MY DESK: "Tidy up" mette le foto in fila al centro,
-// un secondo clic le sparpaglia di nuovo (solo da desktop)
+// MY DESK: l'interruttore "Tidy up" mette le foto in fila al centro,
+// spegnendolo tornano sparpagliate (solo da desktop)
 // =========================
 (function () {
   const button = document.getElementById("desk-tidy");
@@ -331,7 +331,6 @@ if (lettereImg) {
   const section = document.getElementById("mydesk");
   if (!button || !desk || !section) return;
 
-  const label = button.querySelector(".desk-tidy-label");
   const wrappers = [...desk.querySelectorAll(".desk-image-wrapper")];
   const desktop = window.matchMedia("(min-width: 1200px)");
   const GAP = 12;
@@ -372,7 +371,7 @@ if (lettereImg) {
   // rimpicciolisce la composizione perché titolo, foto e pulsante
   // stiano insieme in una schermata
   const NATURAL_HEIGHT = 888;   // altezza delle foto sparpagliate a grandezza piena
-  const RESERVED = 300;         // titolo, spazi, pulsante e un po' di respiro
+  const RESERVED = 240;         // titolo, spazi, pulsante e un po' di respiro
   const fitToScreen = () => {
     const k = Math.min(1, Math.max(0.55, (window.innerHeight - RESERVED) / NATURAL_HEIGHT));
     desk.style.setProperty("--desk-k", k.toFixed(3));
@@ -382,8 +381,7 @@ if (lettereImg) {
   const render = () => {
     desk.classList.toggle("is-tidy", tidy);
     section.classList.toggle("is-tidy", tidy);
-    button.setAttribute("aria-pressed", String(tidy));
-    if (label) label.textContent = tidy ? "Mess it up" : "Tidy up";
+    button.setAttribute("aria-checked", String(tidy));
     if (tidy && desktop.matches) placeTidy();
     else placeMessy();
   };

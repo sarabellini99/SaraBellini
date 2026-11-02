@@ -4670,24 +4670,82 @@ h1 {
 }
 
 
-/* "*Tidy up" / "*Mess it up": stesso stile di "Make yourself at home"
-   (rosso, Regular), con la spaziatura tra le lettere più stretta */
+/* -----------------------------------------------------------
+   INTERRUTTORE "*TIDY UP" (solo da desktop)
+   Sulla riga di "From my Desk", a destra. Scritta come le
+   etichette del footer (EMAIL, EXPERIENCE) e un interruttore rosso.
+----------------------------------------------------------- */
+.mydesk-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 @media (min-width: 1200px) {
   .desk-tidy {
-    gap: 0;
-    font-family: 'ETICHETTE';
-    font-size: 20px;
-    letter-spacing: -0.02em;
-    text-transform: none;
-    color: #E30613;
-  }
-
-  .desk-tidy:hover .desk-tidy-label {
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    align-self: center;
+    text-decoration: none;
   }
 
   .desk-tidy:hover {
     text-decoration: none;
   }
+
+  .desk-tidy-label {
+    font-family: 'TESTI';
+    font-size: 14px;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: #9C9C9A;
+    transition: color 0.3s ease;
+  }
+
+  .desk-tidy:hover .desk-tidy-label,
+  .desk-tidy[aria-checked="true"] .desk-tidy-label {
+    color: #000000;
+  }
+
+  .desk-switch {
+    position: relative;
+    display: block;
+    width: 44px;
+    height: 24px;
+    border-radius: 12px;
+    background-color: #E30613;
+    flex: 0 0 auto;
+  }
+
+  .desk-knob {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    transition: transform 0.35s cubic-bezier(.65,0,.35,1);
+  }
+
+  .desk-tidy[aria-checked="true"] .desk-knob {
+    transform: translateX(20px);
+  }
+
+  .desk-tidy:focus-visible .desk-switch {
+    outline: 2px solid #000000;
+    outline-offset: 2px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .desk-tidy-label { font-size: 16px; }
 }
