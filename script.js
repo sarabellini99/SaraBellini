@@ -392,8 +392,8 @@ if (lettereImg) {
     const r = 4.4 * (1 + 0.6 * s);       // avanzamento: si allunga mentre si srotola
     const d = 11.5 * (1 - s);            // ampiezza degli anelli: sparisce
     const slant = 0.32 * (1 - s);        // anelli inclinati come una "e" in corsivo
-    const t0 = 0.75 * Math.PI, t1 = 7.25 * Math.PI;
-    const steps = 180;
+    const t0 = 0.75 * Math.PI, t1 = 3.25 * Math.PI;   // un solo anello
+    const steps = 90;
     const baseline = 29, startX = 4;
     let path = "";
     for (let i = 0; i <= steps; i++) {
