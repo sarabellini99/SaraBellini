@@ -4429,3 +4429,22 @@ body.project-page .page-wrapper {
     padding-right: 200px;
   }
 }
+
+
+/* -----------------------------------------------------------
+   FRASE SULLA SCRIVANIA (apertura della home, da desktop)
+   Colonna più stretta e un po' più in alto. L'altezza della
+   prima schermata non cambia, quindi "From my Desk" resta dov'è.
+----------------------------------------------------------- */
+@media (min-width: 992px) {
+  .intro { padding-bottom: 110px; }
+  .intro h2 { max-width: 540px; }
+}
+
+@media (min-width: 1200px) {
+  .intro { padding-bottom: 140px; }
+}
+
+@media (min-width: 1900px) {
+  .intro h2 { max-width: 620px; }
+}
