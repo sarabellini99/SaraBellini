@@ -4879,3 +4879,15 @@ body.project-page p.trend,
 body.project-page .pubblicazione a {
   font-family: 'ETICHETTE';
 }
+
+
+/* "Scroll down" in grigio, rosso al passaggio del mouse (come "tidy up") */
+.hero-enter {
+  color: #9C9C9A;
+  transition: color 0.25s ease;
+}
+
+.hero-enter:hover {
+  color: #E30613;
+  text-decoration: none;
+}
