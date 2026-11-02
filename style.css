@@ -4671,9 +4671,8 @@ h1 {
 
 
 /* -----------------------------------------------------------
-   INTERRUTTORE "*TIDY UP" (solo da desktop)
-   Sulla riga di "From my Desk", a destra. Scritta come le
-   etichette del footer (EMAIL, EXPERIENCE) e un interruttore rosso.
+   BOTTONE "*TIDY UP!" sotto le foto (solo da desktop)
+   Rettangolo grigio chiaro con testo nero, come nella reference.
 ----------------------------------------------------------- */
 .mydesk-head {
   display: flex;
@@ -4686,78 +4685,41 @@ h1 {
   .desk-tidy {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    margin: 0;
-    padding: 0;
-    background: none;
-    border: 0;
-    cursor: pointer;
+    gap: 0;
     align-self: center;
+    margin: 24px 0 0;
+    padding: 10px 18px;
+    background-color: #F0F0F0;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    font-family: 'ETICHETTE';
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    text-transform: none;
     text-decoration: none;
+    color: #000000;
+    transition: background-color 0.25s ease;
   }
 
   .desk-tidy:hover {
+    background-color: #E4E4E4;
     text-decoration: none;
   }
 
-  .desk-tidy-label {
-    font-family: 'TESTI';
-    font-size: 14px;
-    line-height: 1;
-    text-transform: uppercase;
-    letter-spacing: -0.02em;
-    color: #9C9C9A;
-    transition: color 0.3s ease;
-  }
-
-  .desk-tidy:hover .desk-tidy-label,
-  .desk-tidy[aria-checked="true"] .desk-tidy-label {
-    color: #000000;
-  }
-
-  .desk-switch {
-    position: relative;
-    display: block;
-    width: 22px;
-    height: 11px;
-    border-radius: 6px;
-    background-color: #9C9C9A;
-    flex: 0 0 auto;
-    transition: background-color 0.3s ease;
-  }
-
-  .desk-knob {
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background-color: #FFFFFF;
-    transition: transform 0.35s cubic-bezier(.65,0,.35,1);
-  }
-
-  .desk-tidy:hover .desk-switch {
-    background-color: #000000;
-  }
-
-  .desk-tidy[aria-checked="true"] .desk-switch {
-    background-color: #E30613;
-  }
-
-  .desk-tidy[aria-checked="true"] .desk-knob {
-    transform: translateX(11px);
-  }
-
-  .desk-tidy:focus-visible .desk-switch {
+  .desk-tidy:focus-visible {
     outline: 2px solid #000000;
     outline-offset: 2px;
+  }
+
+  .desk-tidy-label {
+    font: inherit;
+    color: inherit;
+    letter-spacing: inherit;
   }
 }
 
 @media (min-width: 1900px) {
-  .desk-tidy-label { font-size: 16px; }
-  .desk-switch { width: 25px; height: 12px; }
-  .desk-knob { width: 8px; height: 8px; }
-  .desk-tidy[aria-checked="true"] .desk-knob { transform: translateX(13px); }
+  .desk-tidy { font-size: 18px; padding: 12px 20px; }
 }
