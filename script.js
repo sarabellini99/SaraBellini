@@ -322,8 +322,8 @@ if (lettereImg) {
 
 
 // =========================
-// MY DESK: il link "tidy up" mette le foto in fila al centro,
-// "mess it up" le sparpaglia di nuovo (solo da desktop)
+// MY DESK: il link "riordina" mette le foto in fila al centro,
+// "scompiglia" le sparpaglia di nuovo (solo da desktop)
 // =========================
 (function () {
   const button = document.getElementById("desk-tidy");
@@ -409,7 +409,7 @@ if (lettereImg) {
     section.classList.toggle("is-tidy", tidy);
     button.setAttribute("aria-pressed", String(tidy));
     const label = button.querySelector(".desk-tidy-label");
-    if (label) label.textContent = tidy ? "mess it up" : "tidy up";
+    if (label) label.textContent = tidy ? "scompiglia" : "riordina";
     if (tidy && desktop.matches) placeTidy();
     else placeMessy();
   };

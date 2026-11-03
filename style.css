@@ -5207,3 +5207,32 @@ body.project-page .page-wrapper,
 @media (min-width: 576px) and (max-width: 1199px) {
   #me #binomiofantastico { font-size: 16px; }
 }
+
+
+/* -----------------------------------------------------------
+   MARGINI DEI CONTENUTI (home e progetti) più ampi, come prima;
+   navbar e footer restano vicini ai bordi e fanno da cornice
+----------------------------------------------------------- */
+@media (min-width: 768px) {
+  .page-wrapper,
+  body.project-page .page-wrapper {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .page-wrapper,
+  body.project-page .page-wrapper {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .page-wrapper,
+  body.project-page .page-wrapper {
+    padding-left: 280px;
+    padding-right: 280px;
+  }
+}
