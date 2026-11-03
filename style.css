@@ -5069,3 +5069,47 @@ body.project-page .page-wrapper,
 @media (min-width: 1900px) {
   .mydesk-years { font-size: 17px; }
 }
+
+
+/* -----------------------------------------------------------
+   "From my Desk", "Yep, that's me", "Say Hello" e la bio
+   scritti come "It doesn't always look like this…":
+   Switzer Medium, stessa dimensione e spaziatura
+----------------------------------------------------------- */
+#mydesk #section-title,
+#me #about-title,
+#final #contact-title,
+#me .spiegazione p.description {
+  font-family: 'TESTI';
+  font-size: 14px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 576px) {
+  #mydesk #section-title,
+  #me #about-title,
+  #final #contact-title,
+  #me .spiegazione p.description { font-size: 18px; }
+}
+
+@media (min-width: 992px) {
+  #mydesk #section-title,
+  #me #about-title,
+  #final #contact-title,
+  #me .spiegazione p.description { font-size: 23px; }
+}
+
+@media (min-width: 1200px) {
+  #mydesk #section-title,
+  #me #about-title,
+  #final #contact-title,
+  #me .spiegazione p.description { font-size: 25px; }
+}
+
+@media (min-width: 1900px) {
+  #mydesk #section-title,
+  #me #about-title,
+  #final #contact-title,
+  #me .spiegazione p.description { font-size: 28px; }
+}
