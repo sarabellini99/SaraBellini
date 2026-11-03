@@ -5124,3 +5124,86 @@ body.project-page .page-wrapper,
 #me .spiegazione p.description {
   font-family: 'ETICHETTE';
 }
+
+
+/* -----------------------------------------------------------
+   "YEP, THAT'S ME" (nuova impaginazione)
+   Da desktop tre colonne: titolo | Binomio Fantastico | testo e foto.
+   Su telefono e tablet tutto in colonna: titolo, testo, foto, binomio.
+----------------------------------------------------------- */
+#me .about-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#me .about-grid .spiegazione {
+  width: 100%;
+  max-width: none;
+}
+
+#me .about-grid p.description {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+#me .about-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 40px;
+  filter: grayscale(100%);
+}
+
+#me #binomiofantastico {
+  margin-top: 0;
+  font-family: 'ETICHETTE';
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #E30613;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  cursor: pointer;
+}
+
+#me #binomiofantastico:hover {
+  color: #000000;
+}
+
+@media (min-width: 1200px) {
+  #me .about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 20fr) minmax(0, 33fr) minmax(0, 47fr);
+    grid-template-areas: "title binomio text";
+    column-gap: 0;
+    align-items: start;
+  }
+
+  #me .about-grid .capitolo      { grid-area: title; }
+  #me .about-grid .about-binomio { grid-area: binomio; max-width: 360px; padding-right: 24px; }
+  #me .about-grid .spiegazione   { grid-area: text; }
+
+  #me #binomiofantastico {
+    font-size: 20px;
+    margin-top: 2px;
+  }
+
+  #me .about-photo {
+    margin-top: 90px;
+  }
+}
+
+@media (min-width: 1900px) {
+  #me .about-grid .about-binomio { max-width: 420px; }
+  #me #binomiofantastico { font-size: 22px; }
+  #me .about-photo { margin-top: 110px; }
+}
+
+@media (min-width: 576px) and (max-width: 1199px) {
+  #me #binomiofantastico { font-size: 16px; }
+}
