@@ -4947,3 +4947,39 @@ body.project-page #sono-moda h3 {
   .desk-image-wrapper.tesi     { z-index: 3; }
   .desk-image-wrapper:hover    { z-index: 999; }
 }
+
+
+/* -----------------------------------------------------------
+   MARGINI UGUALI A NAVBAR E FOOTER
+   I contenuti partono dalla stessa linea di "Sara Bellini" e
+   finiscono su quella di "Say Hello", su tutte le pagine.
+----------------------------------------------------------- */
+.page-wrapper,
+body.project-page .page-wrapper {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+@media (min-width: 768px) {
+  .page-wrapper,
+  body.project-page .page-wrapper {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .page-wrapper,
+  body.project-page .page-wrapper {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .page-wrapper,
+  body.project-page .page-wrapper {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
