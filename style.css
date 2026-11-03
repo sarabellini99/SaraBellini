@@ -5579,8 +5579,8 @@ body.project-page .page-wrapper,
 @media (min-width: 768px) and (max-width: 1199px) {
   #desk-images {
     width: auto;
-    margin-right: -120px;
-    padding-right: 120px;
+    margin-right: -72px;
+    padding-right: 72px;
   }
 }
 
@@ -5709,5 +5709,16 @@ body.project-page .pubblicazione a {
   body.project-page h3.plastiz-description,
   body.project-page .pubblicazione a {
     font-size: 19px;
+  }
+}
+
+
+/* su tablet (768-1199px) i contenuti seguono gli stessi margini di navbar
+   e footer; il rientro più ampio parte dai 1200px */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .page-wrapper,
+  body.project-page .page-wrapper {
+    padding-left: 72px;
+    padding-right: 72px;
   }
 }
