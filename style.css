@@ -5495,3 +5495,24 @@ body.project-page .page-wrapper,
     color: #9C9C9A;
   }
 }
+
+
+/* ritocchi telefono (2) */
+@media (max-width: 575px) {
+  .intro h1 { font-size: 42px; }
+
+  /* solo la freccia, senza testo */
+  .hero-enter-text { display: none; }
+  .hero-enter svg { width: 22px; height: 22px; }
+
+  .intro h2.hero-desk { font-family: 'TESTI'; }
+
+  #mydesk #section-title,
+  #me #about-title {
+    font-family: 'TESTI';
+    color: #9C9C9A;
+  }
+
+  /* bio grande quanto il Binomio Fantastico */
+  #me .spiegazione p.description { font-size: 20px; }
+}
