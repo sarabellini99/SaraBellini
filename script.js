@@ -421,9 +421,23 @@ if (lettereImg) {
     button.setAttribute("aria-pressed", String(tidy));
     const label = button.querySelector(".desk-tidy-label");
     if (label) label.textContent = tidy ? "scompiglia" : "riordina";
-    if (tidy && desktop.matches) placeTidy();
-    else placeMessy();
+    // riordinate: la fila che scorre di lato la gestisce il CSS
+    placeMessy();
+    if (tidy) desk.scrollLeft = 0;
   };
+
+  // nella fila riordinata la rotellina del mouse fa scorrere le foto di lato,
+  // finché non si arriva all'inizio o alla fine
+  desk.addEventListener("wheel", (e) => {
+    if (!tidy || !desktop.matches) return;
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
+    const max = desk.scrollWidth - desk.clientWidth;
+    const atStart = desk.scrollLeft <= 0 && e.deltaY < 0;
+    const atEnd = desk.scrollLeft >= max - 1 && e.deltaY > 0;
+    if (atStart || atEnd) return;
+    e.preventDefault();
+    desk.scrollLeft += e.deltaY;
+  }, { passive: false });
 
   button.addEventListener("click", () => {
     tidy = !tidy;
