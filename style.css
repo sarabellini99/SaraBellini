@@ -5454,7 +5454,7 @@ body.project-page .page-wrapper,
    DIMENSIONI DEI TESTI SU TELEFONO (sotto i 576px),
    riprese dalla versione di prova
 ----------------------------------------------------------- */
-@media (max-width: 575px) {
+@media (max-width: 767px) {
   .navbar a.nav-brand { font-size: 17px; }
 
   .intro h1 { font-size: 35px; }
@@ -5482,7 +5482,7 @@ body.project-page .page-wrapper,
   .hero-bottom .hero-links { order: 2; }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 767px) {
   .intro h1 { font-size: 40px; }
 
   /* "From my Desk" e "Yep, that's me" come nella versione di prova:
@@ -5498,7 +5498,7 @@ body.project-page .page-wrapper,
 
 
 /* ritocchi telefono (2) */
-@media (max-width: 575px) {
+@media (max-width: 767px) {
   .intro h1 { font-size: 42px; }
 
   /* solo la freccia, senza testo */
@@ -5527,7 +5527,7 @@ body.project-page .page-wrapper,
 
 
 /* ritocchi telefono (3) */
-@media (max-width: 575px) {
+@media (max-width: 767px) {
   .intro h1 { line-height: 0.92; }
 
   #me .spiegazione p.description { font-family: 'TESTI'; }
