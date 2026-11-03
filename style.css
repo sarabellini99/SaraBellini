@@ -5650,3 +5650,19 @@ body.project-page .page-wrapper,
   body.project-page #sono-moda h1,
   body.project-page .lebasi h1 { font-size: 40px; }
 }
+
+
+/* etichette dei progetti (ambiti, anno) più leggibili su telefono */
+@media (max-width: 767px) {
+  body.project-page h3.project-subtitle {
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  /* se non stanno su una riga vanno a capo intere, senza spezzarsi */
+  body.project-page .tag {
+    flex-wrap: wrap;
+    column-gap: 14px;
+    row-gap: 4px;
+  }
+}
