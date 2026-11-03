@@ -5798,3 +5798,10 @@ img.desk-image {
 .desk-image-wrapper:hover .desk-image {
   filter: none !important;
 }
+
+/* =========================
+   MY DESK: angoli leggermente arrotondati
+   ========================= */
+#desk-images .desk-image {
+  border-radius: 8px;
+}
