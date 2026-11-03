@@ -448,5 +448,5 @@ if (lettereImg) {
   toggle.addEventListener("click", () => setOpen(!menu.classList.contains("open")));
   menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setOpen(false)));
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
-  window.matchMedia("(min-width: 768px)").addEventListener("change", (e) => { if (e.matches) setOpen(false); });
+  window.matchMedia("(min-width: 992px)").addEventListener("change", (e) => { if (e.matches) setOpen(false); });
 })();

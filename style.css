@@ -5236,7 +5236,7 @@ body.project-page .page-wrapper,
 
 
 /* -----------------------------------------------------------
-   NAVBAR SU TELEFONO (sotto i 768px), come nella versione di prova:
+   NAVBAR SU TELEFONO E TABLET VERTICALE (sotto i 992px), come nella versione di prova:
    "Sara Bellini" a sinistra e un pallino a destra che apre
    un menu a schermo intero
 ----------------------------------------------------------- */
@@ -5245,7 +5245,7 @@ body.project-page .page-wrapper,
   display: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .navbar .nav-links,
   .navbar .nav-contact {
     display: none !important;
@@ -5380,7 +5380,7 @@ body.project-page .page-wrapper,
 
 
 /* -----------------------------------------------------------
-   MY DESK SU TELEFONO (sotto i 768px), come nella versione di prova:
+   MY DESK SU TELEFONO E TABLET (sotto i 1200px), come nella versione di prova:
    galleria che scorre di lato, una foto dopo l'altra, con il nome
    del progetto sotto. A destra arriva fino al bordo dello schermo
    e lascia intravedere la foto successiva.
@@ -5389,7 +5389,7 @@ body.project-page .page-wrapper,
   display: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1199px) {
   #desk-images {
     display: flex;
     flex-direction: row;
@@ -5548,7 +5548,7 @@ body.project-page .page-wrapper,
 /* navbar su telefono: "SB" in Medium al posto del nome, pallino più spesso */
 .brand-short { display: none; }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   .navbar a.nav-brand .brand-full  { display: none; }
   .navbar a.nav-brand .brand-short {
     display: inline;
@@ -5563,4 +5563,31 @@ body.project-page .page-wrapper,
 /* l'asterisco di "From my Desk" serve solo dove c'è "riordina" (da 1200px) */
 @media (max-width: 1199px) {
   #section-title .orange { display: none; }
+}
+
+
+/* tablet orizzontale (992-1199px): navbar normale ma con testi leggibili */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .navbar a,
+  body.project-page .navbar a {
+    font-size: 18px;
+  }
+}
+
+
+/* su tablet la galleria arriva fino al bordo destro dello schermo */
+@media (min-width: 768px) and (max-width: 1199px) {
+  #desk-images {
+    width: auto;
+    margin-right: -120px;
+    padding-right: 120px;
+  }
+}
+
+@media (max-width: 767px) {
+  #desk-images { width: auto; }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar a.nav-brand { font-size: 17px; }
 }
