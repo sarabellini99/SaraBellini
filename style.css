@@ -5666,3 +5666,48 @@ body.project-page .page-wrapper,
     row-gap: 4px;
   }
 }
+
+
+/* -----------------------------------------------------------
+   PAGINE PROGETTO: gerarchia dei testi
+----------------------------------------------------------- */
+/* categorie, anni e titoletti dei capitoli: grigi, Medium,
+   lettere un po' più strette */
+body.project-page h3.project-subtitle,
+body.project-page .capitolo h2,
+body.project-page #sono-moda h3 {
+  letter-spacing: -0.02em;
+}
+
+body.project-page .capitolo h2 {
+  font-family: 'TESTI';
+  color: #9C9C9A;
+  font-size: 13px;
+}
+@media (min-width: 992px)  { body.project-page .capitolo h2 { font-size: 14px; } }
+@media (min-width: 1200px) { body.project-page .capitolo h2 { font-size: 16px; } }
+@media (min-width: 1900px) { body.project-page .capitolo h2 { font-size: 17px; } }
+
+/* il primo testo (apertura) resta com'è; gli altri blocchi di testo
+   sono un po' più piccoli, con la stessa interlinea e spaziatura */
+body.project-page .spiegazione p:not(.project-description),
+body.project-page p.urania-description,
+body.project-page p.trend,
+body.project-page p.plastiz-description,
+body.project-page h3.plastiz-description,
+body.project-page .pubblicazione a {
+  font-family: 'ETICHETTE';
+  font-size: 17px;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+@media (min-width: 1900px) {
+  body.project-page .spiegazione p:not(.project-description),
+  body.project-page p.urania-description,
+  body.project-page p.trend,
+  body.project-page p.plastiz-description,
+  body.project-page h3.plastiz-description,
+  body.project-page .pubblicazione a {
+    font-size: 19px;
+  }
+}
