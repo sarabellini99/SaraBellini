@@ -5038,3 +5038,9 @@ body.project-page .page-wrapper,
     left: calc(100% - 270px * var(--desk-w, 1));
   }
 }
+
+
+/* frase sulla scrivania in Switzer Medium */
+.intro h2.hero-desk {
+  font-family: 'TESTI';
+}
