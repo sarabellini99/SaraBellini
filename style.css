@@ -5591,3 +5591,62 @@ body.project-page .page-wrapper,
 @media (min-width: 768px) and (max-width: 991px) {
   .navbar a.nav-brand { font-size: 17px; }
 }
+
+
+/* -----------------------------------------------------------
+   DIMENSIONI DEI TESTI SU TABLET (768-1199px)
+   A metà strada tra telefono e computer
+----------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 991px) {
+  .intro h1 { font-size: 50px; line-height: 0.95; }
+  .intro h2.hero-desk { font-size: 22px; }
+  .hero-enter { font-size: 20px; }
+  .mydesk-years { font-size: 15px; }
+  #me .spiegazione p.description { font-size: 20px; }
+  #me #binomiofantastico { font-size: 20px; }
+
+  body.project-page .introduzione > h1 { font-size: 44px; }
+  body.project-page .spiegazione p,
+  body.project-page .spiegazione-tesi p,
+  body.project-page p.project-description,
+  body.project-page p.urania-description,
+  body.project-page p.plastiz-description,
+  body.project-page h3.plastiz-description,
+  body.project-page p.trend { font-size: 20px; }
+  body.project-page h3.project-subtitle { font-size: 13px; }
+  body.project-page .capitolo h2 { font-size: 18px; }
+  body.project-page .sub-navbar a { font-size: 14px; }
+  body.project-page .group-project h3 { font-size: 14px; }
+  body.project-page #scritta-eco h1,
+  body.project-page #sono-urania h1,
+  body.project-page #scritta-amorfosi h1,
+  body.project-page #sono-moda h1,
+  body.project-page .lebasi h1 { font-size: 36px; }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .intro h1 { font-size: 56px; line-height: 0.95; }
+  .intro h2.hero-desk { font-size: 23px; }
+  .hero-enter { font-size: 20px; }
+  .mydesk-years { font-size: 15px; }
+  #me .spiegazione p.description { font-size: 20px; }
+  #me #binomiofantastico { font-size: 20px; }
+
+  body.project-page .introduzione > h1 { font-size: 50px; }
+  body.project-page .spiegazione p,
+  body.project-page .spiegazione-tesi p,
+  body.project-page p.project-description,
+  body.project-page p.urania-description,
+  body.project-page p.plastiz-description,
+  body.project-page h3.plastiz-description,
+  body.project-page p.trend { font-size: 20px; }
+  body.project-page h3.project-subtitle { font-size: 14px; }
+  body.project-page .capitolo h2 { font-size: 18px; }
+  body.project-page .sub-navbar a { font-size: 15px; }
+  body.project-page .group-project h3 { font-size: 15px; }
+  body.project-page #scritta-eco h1,
+  body.project-page #sono-urania h1,
+  body.project-page #scritta-amorfosi h1,
+  body.project-page #sono-moda h1,
+  body.project-page .lebasi h1 { font-size: 40px; }
+}
