@@ -5524,3 +5524,22 @@ body.project-page .page-wrapper,
   hyphens: manual;
   -webkit-hyphens: manual;
 }
+
+
+/* ritocchi telefono (3) */
+@media (max-width: 575px) {
+  .intro h1 { line-height: 0.92; }
+
+  #me .spiegazione p.description { font-family: 'TESTI'; }
+
+  /* testi di descrizione dei progetti grandi quanto la bio */
+  body.project-page .spiegazione p,
+  body.project-page .spiegazione-tesi p,
+  body.project-page p.project-description,
+  body.project-page p.urania-description,
+  body.project-page p.plastiz-description,
+  body.project-page h3.plastiz-description,
+  body.project-page p.trend {
+    font-size: 20px;
+  }
+}
