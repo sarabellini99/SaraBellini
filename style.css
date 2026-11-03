@@ -5722,3 +5722,45 @@ body.project-page .pubblicazione a {
     padding-right: 72px;
   }
 }
+
+
+/* -----------------------------------------------------------
+   DA 992px: frase della home più piccola rispetto al "Ciao!",
+   e "Yep, that's me" e le aperture dei progetti su due colonne
+----------------------------------------------------------- */
+@media (min-width: 992px) {
+  .intro h2.hero-desk { font-size: 20px; }
+
+  #me .about-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  #me .about-grid .spiegazione {
+    flex: 0 0 58%;
+    max-width: 600px;
+  }
+
+  body.project-page .introduzione {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  body.project-page .introduzione > .spiegazione {
+    flex: 0 0 58%;
+    max-width: 600px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .intro h2.hero-desk { font-size: 22px; }
+}
+
+@media (min-width: 1900px) {
+  .intro h2.hero-desk { font-size: 25px; }
+}
