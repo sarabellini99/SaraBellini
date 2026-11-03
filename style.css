@@ -5113,3 +5113,14 @@ body.project-page .page-wrapper,
   #final #contact-title,
   #me .spiegazione p.description { font-size: 28px; }
 }
+
+
+/* titoletti, bio e frase sulla scrivania in Switzer Regular
+   (dimensioni invariate) */
+.intro h2.hero-desk,
+#mydesk #section-title,
+#me #about-title,
+#final #contact-title,
+#me .spiegazione p.description {
+  font-family: 'ETICHETTE';
+}
