@@ -5471,3 +5471,27 @@ body.project-page .page-wrapper,
   body.project-page #sono-moda h1,
   body.project-page .lebasi h1 { font-size: 35px; }
 }
+
+
+/* -----------------------------------------------------------
+   RITOCCHI TELEFONO
+----------------------------------------------------------- */
+/* sotto il desktop la frase viene prima e "Scopri i miei progetti" sotto */
+@media (max-width: 991px) {
+  .hero-bottom .hero-desk  { order: 1; }
+  .hero-bottom .hero-links { order: 2; }
+}
+
+@media (max-width: 575px) {
+  .intro h1 { font-size: 40px; }
+
+  /* "From my Desk" e "Yep, that's me" come nella versione di prova:
+     piccoli e grigi */
+  #mydesk #section-title,
+  #me #about-title {
+    font-family: 'ETICHETTE';
+    font-size: 14px;
+    letter-spacing: -0.4px;
+    color: #9C9C9A;
+  }
+}
