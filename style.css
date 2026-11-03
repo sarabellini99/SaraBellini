@@ -5046,9 +5046,9 @@ body.project-page .page-wrapper,
 }
 
 
-/* anni accanto a "From my Desk": piccoli e grigi come "tidy up" */
+/* anni sulla riga di "From my Desk", sul margine destro: piccoli e grigi come "tidy up" */
 .mydesk-head {
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: baseline;
   gap: 14px;
 }
