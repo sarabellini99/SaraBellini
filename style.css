@@ -5755,6 +5755,10 @@ body.project-page .pubblicazione a {
     flex: 0 0 58%;
     max-width: 600px;
   }
+
+  body.project-page .introduzione p.project-description {
+    margin-top: 0;
+  }
 }
 
 @media (min-width: 1200px) {
