@@ -5543,3 +5543,18 @@ body.project-page .page-wrapper,
     font-size: 20px;
   }
 }
+
+
+/* navbar su telefono: "SB" in Medium al posto del nome, pallino più spesso */
+.brand-short { display: none; }
+
+@media (max-width: 767px) {
+  .navbar a.nav-brand .brand-full  { display: none; }
+  .navbar a.nav-brand .brand-short {
+    display: inline;
+    font-family: 'TESTI';
+    letter-spacing: -0.02em;
+  }
+
+  .menu-dot { border-width: 2px; }
+}
