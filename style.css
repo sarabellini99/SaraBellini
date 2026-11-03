@@ -5558,3 +5558,9 @@ body.project-page .page-wrapper,
 
   .menu-dot { border-width: 2px; }
 }
+
+
+/* l'asterisco di "From my Desk" serve solo dove c'è "riordina" (da 1200px) */
+@media (max-width: 1199px) {
+  #section-title .orange { display: none; }
+}
