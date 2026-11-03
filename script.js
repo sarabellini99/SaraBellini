@@ -285,6 +285,7 @@ if (lettereImg) {
 (function () {
   let lastY = window.scrollY;
   window.addEventListener("scroll", () => {
+    if (document.body.classList.contains("menu-open")) return;
     const y = window.scrollY;
     const delta = y - lastY;
     if (y < 80) {
@@ -424,4 +425,28 @@ if (lettereImg) {
     fitToScreen();
     render();
   });
+})();
+
+
+// =========================
+// MENU A SCHERMO INTERO SU TELEFONO (pallino in alto a destra)
+// =========================
+(function () {
+  const toggle = document.querySelector(".menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  if (!toggle || !menu) return;
+
+  const setOpen = (open) => {
+    menu.classList.toggle("open", open);
+    toggle.classList.toggle("active", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Chiudi il menu" : "Apri il menu");
+    document.body.classList.toggle("menu-open", open);
+    if (open) document.body.classList.remove("nav-hidden");
+  };
+
+  toggle.addEventListener("click", () => setOpen(!menu.classList.contains("open")));
+  menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setOpen(false)));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
+  window.matchMedia("(min-width: 768px)").addEventListener("change", (e) => { if (e.matches) setOpen(false); });
 })();

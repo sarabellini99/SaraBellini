@@ -5233,3 +5233,147 @@ body.project-page .page-wrapper,
 @media (min-width: 1900px) {
   #me .about-grid .spiegazione { max-width: 600px; }
 }
+
+
+/* -----------------------------------------------------------
+   NAVBAR SU TELEFONO (sotto i 768px), come nella versione di prova:
+   "Sara Bellini" a sinistra e un pallino a destra che apre
+   un menu a schermo intero
+----------------------------------------------------------- */
+.menu-toggle,
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .navbar .nav-links,
+  .navbar .nav-contact {
+    display: none !important;
+  }
+
+  .navbar a.nav-brand {
+    position: relative;
+    z-index: 6001;
+    font-family: 'ETICHETTE';
+    font-size: 15px;
+    letter-spacing: -0.02em;
+  }
+
+  .navbar,
+  body.project-page .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .menu-toggle {
+    position: relative;
+    z-index: 6001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: -10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .menu-dot {
+    display: block;
+    width: 14px;
+    height: 14px;
+    border: 1.5px solid #000000;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: transform 0.25s ease, background-color 0.25s ease;
+  }
+
+  .menu-toggle.active .menu-dot {
+    background-color: #000000;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 70px 32px 30px;
+    background-color: rgb(245, 245, 245);
+    z-index: 5999;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-16px);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s linear 0.4s;
+  }
+
+  .mobile-menu.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s;
+  }
+
+  .mobile-menu-links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-menu-links a {
+    width: 100%;
+    padding: 10px 0;
+    text-align: right;
+    text-decoration: none;
+    border-bottom: 0.7px solid rgba(0, 0, 0, 0.12);
+    font-family: 'ETICHETTE';
+    font-size: 28px;
+    letter-spacing: -0.02em;
+    color: #000000;
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s;
+  }
+
+  .mobile-menu.open .mobile-menu-links a { opacity: 1; transform: translateY(0); }
+  .mobile-menu.open .mobile-menu-links a:nth-child(1) { transition-delay: 0.1s; }
+  .mobile-menu.open .mobile-menu-links a:nth-child(2) { transition-delay: 0.18s; }
+  .mobile-menu.open .mobile-menu-links a:nth-child(3) { transition-delay: 0.26s; }
+
+  .mobile-menu-links a:active {
+    color: #E30613;
+  }
+
+  .mobile-menu-extra {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .mobile-menu.open .mobile-menu-extra {
+    opacity: 1;
+    transition-delay: 0.15s;
+  }
+
+  .mobile-menu-extra a {
+    font-family: 'ETICHETTE';
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    color: #000000;
+    text-decoration: none;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  /* con il menu aperto la navbar resta sempre visibile */
+  body.menu-open .navbar {
+    transform: none !important;
+    background-color: transparent;
+  }
+}

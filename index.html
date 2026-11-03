@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sara Bellini</title>
-  <link rel="stylesheet" href="style.css?v=48">
+  <link rel="stylesheet" href="style.css?v=49">
 </head>
 
 <link rel="icon" type="image/png" href="favicon.png">
@@ -23,12 +23,28 @@
   <!-- NAVBAR -->
 <nav class="navbar">
   <a href="#page-wrapper" class="nav-brand">Sara Bellini</a>
+  <button type="button" class="menu-toggle" aria-label="Apri il menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span class="menu-dot"></span>
+  </button>
   <ul class="nav-links">
     <li><a href="#mydesk">My desk</a></li>
     <li><a href="#me">About</a></li>
   </ul>
   <a href="#contact" class="nav-contact">Say Hello</a>
 </nav>
+
+<!-- MENU A SCHERMO INTERO (solo telefono) -->
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-links">
+    <a href="#mydesk">My desk</a>
+    <a href="#me">About</a>
+    <a href="#contact">Say Hello</a>
+  </div>
+  <div class="mobile-menu-extra">
+    <a href="https://www.linkedin.com/in/sara-bellini-63b159242/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="pdf/Bellini_Sara_CV.pdf" download>Download my CV</a>
+  </div>
+</div>
 
 
 
@@ -212,7 +228,7 @@
 
 
 
-  <script src="script.js?v=19"></script>
+  <script src="script.js?v=20"></script>
   
 
 
