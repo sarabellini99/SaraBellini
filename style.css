@@ -4983,3 +4983,50 @@ body.project-page .page-wrapper {
     padding-right: 100px;
   }
 }
+
+
+/* -----------------------------------------------------------
+   UN PO' PIÙ DI MARGINE A TUTTO IL SITO
+   Navbar, contenuti e footer restano allineati sulla stessa linea.
+----------------------------------------------------------- */
+.navbar,
+body.project-page .navbar,
+.page-wrapper,
+body.project-page .page-wrapper,
+#final .final-inner {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+@media (min-width: 768px) {
+  .navbar,
+  body.project-page .navbar,
+  .page-wrapper,
+  body.project-page .page-wrapper,
+  #final .final-inner {
+    padding-left: 72px;
+    padding-right: 72px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar,
+  body.project-page .navbar,
+  .page-wrapper,
+  body.project-page .page-wrapper,
+  #final .final-inner {
+    padding-left: 90px;
+    padding-right: 90px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .navbar,
+  body.project-page .navbar,
+  .page-wrapper,
+  body.project-page .page-wrapper,
+  #final .final-inner {
+    padding-left: 130px;
+    padding-right: 130px;
+  }
+}
