@@ -5448,3 +5448,26 @@ body.project-page .page-wrapper,
     text-decoration: underline;
   }
 }
+
+
+/* -----------------------------------------------------------
+   DIMENSIONI DEI TESTI SU TELEFONO (sotto i 576px),
+   riprese dalla versione di prova
+----------------------------------------------------------- */
+@media (max-width: 575px) {
+  .navbar a.nav-brand { font-size: 17px; }
+
+  .intro h1 { font-size: 35px; }
+  .intro h2.hero-desk { font-size: 20px; }
+  .hero-enter { font-size: 20px; }
+
+  #me #binomiofantastico { font-size: 20px; }
+
+  body.project-page .introduzione > h1 { font-size: 35px; }
+  body.project-page .capitolo h2 { font-size: 20px; }
+  body.project-page #scritta-eco h1,
+  body.project-page #sono-urania h1,
+  body.project-page #scritta-amorfosi h1,
+  body.project-page #sono-moda h1,
+  body.project-page .lebasi h1 { font-size: 35px; }
+}
