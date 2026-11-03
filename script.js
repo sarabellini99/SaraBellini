@@ -337,9 +337,17 @@ if (lettereImg) {
   const GAP = 12;
   let tidy = false;
 
+  // proporzioni della copertina, che sia una foto o un video
+  const mediaSize = (wrapper) => {
+    const m = wrapper.querySelector(".desk-image");
+    if (!m) return null;
+    const w = m.naturalWidth || m.videoWidth || +m.getAttribute("width");
+    const h = m.naturalHeight || m.videoHeight || +m.getAttribute("height");
+    return w && h ? { w, h } : null;
+  };
   const ratioOf = (wrapper) => {
-    const img = wrapper.querySelector("img");
-    return img && img.naturalWidth ? img.naturalWidth / img.naturalHeight : 1;
+    const s = mediaSize(wrapper);
+    return s ? s.w / s.h : 1;
   };
 
   const placeTidy = () => {
@@ -392,8 +400,8 @@ if (lettereImg) {
     wrappers.forEach((wrapper) => {
       const key = Object.keys(BASE_TOPS).find((k) => wrapper.classList.contains(k));
       const top = key ? BASE_TOPS[key] : 0;
-      const img = wrapper.querySelector("img");
-      const ratio = img && img.naturalWidth ? img.naturalHeight / img.naturalWidth : 1.3;
+      const size = mediaSize(wrapper);
+      const ratio = size ? size.h / size.w : 1.3;
       const h = (key ? (xl.matches ? BASE_WIDTHS_XL : BASE_WIDTHS)[key] : 200) * w * ratio;
       if (top > 0) t = Math.min(t, (height - h) / top);
     });
@@ -403,6 +411,8 @@ if (lettereImg) {
   wrappers.forEach((wrapper) => {
     const img = wrapper.querySelector("img");
     if (img && !img.complete) img.addEventListener("load", fitToScreen, { once: true });
+    const video = wrapper.querySelector("video");
+    if (video && !video.videoWidth) video.addEventListener("loadedmetadata", fitToScreen, { once: true });
   });
 
   const render = () => {
@@ -449,4 +459,19 @@ if (lettereImg) {
   menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setOpen(false)));
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
   window.matchMedia("(min-width: 992px)").addEventListener("change", (e) => { if (e.matches) setOpen(false); });
+})();
+
+// =========================
+// COPERTINE VIDEO: ferme se l'utente preferisce meno movimento
+// =========================
+(function () {
+  const videos = document.querySelectorAll("#desk-images video");
+  if (!videos.length) return;
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const apply = () => videos.forEach((v) => {
+    if (reduce.matches) { v.pause(); v.removeAttribute("autoplay"); }
+    else { v.play().catch(() => {}); }
+  });
+  apply();
+  reduce.addEventListener?.("change", apply);
 })();
