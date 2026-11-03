@@ -4648,10 +4648,10 @@ h1 {
     height: var(--desk-h, 908px);
   }
 
-  .desk-image-wrapper.eco { top: calc(0px * var(--desk-t, 1)); width: calc(260px * var(--desk-w, 1)); }
+  .desk-image-wrapper.eco { top: calc(0px * var(--desk-t, 1)); width: calc(220px * var(--desk-w, 1)); }
   .desk-image-wrapper.realista { top: calc(330px * var(--desk-t, 1)); width: calc(270px * var(--desk-w, 1)); }
   .desk-image-wrapper.tesi { top: calc(40px * var(--desk-t, 1)); width: calc(210px * var(--desk-w, 1)); }
-  .desk-image-wrapper.cat { top: calc(570px * var(--desk-t, 1)); width: calc(250px * var(--desk-w, 1)); }
+  .desk-image-wrapper.cat { top: calc(570px * var(--desk-t, 1)); width: calc(210px * var(--desk-w, 1)); }
   .desk-image-wrapper.ettore { top: calc(650px * var(--desk-t, 1)); width: calc(180px * var(--desk-w, 1)); }
   .desk-image-wrapper.astory { top: calc(290px * var(--desk-t, 1)); width: calc(410px * var(--desk-w, 1)); }
   .desk-image-wrapper.editoria { top: calc(360px * var(--desk-t, 1)); width: calc(230px * var(--desk-w, 1)); }
@@ -4662,10 +4662,10 @@ h1 {
 }
 
 @media (min-width: 1900px) {
-  .desk-image-wrapper.eco { top: calc(0px * var(--desk-t, 1)); width: calc(260px * var(--desk-w, 1)); }
+  .desk-image-wrapper.eco { top: calc(0px * var(--desk-t, 1)); width: calc(220px * var(--desk-w, 1)); }
   .desk-image-wrapper.realista { top: calc(330px * var(--desk-t, 1)); width: calc(270px * var(--desk-w, 1)); }
   .desk-image-wrapper.tesi { top: calc(40px * var(--desk-t, 1)); width: calc(210px * var(--desk-w, 1)); }
-  .desk-image-wrapper.cat { top: calc(570px * var(--desk-t, 1)); width: calc(250px * var(--desk-w, 1)); }
+  .desk-image-wrapper.cat { top: calc(570px * var(--desk-t, 1)); width: calc(210px * var(--desk-w, 1)); }
   .desk-image-wrapper.ettore { top: calc(650px * var(--desk-t, 1)); width: calc(180px * var(--desk-w, 1)); }
   .desk-image-wrapper.astory { top: calc(290px * var(--desk-t, 1)); width: calc(440px * var(--desk-w, 1)); }
   .desk-image-wrapper.editoria { top: calc(360px * var(--desk-t, 1)); width: calc(200px * var(--desk-w, 1)); }
@@ -5028,5 +5028,13 @@ body.project-page .page-wrapper,
   #final .final-inner {
     padding-left: 130px;
     padding-right: 130px;
+  }
+}
+
+
+/* My desk: la foto di Realista tocca il margine destro */
+@media (min-width: 1200px) {
+  .desk-image-wrapper.realista {
+    left: calc(100% - 270px * var(--desk-w, 1));
   }
 }

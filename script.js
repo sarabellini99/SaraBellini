@@ -376,7 +376,7 @@ if (lettereImg) {
   const BASE_WIDTH = 1040;      // larghezza per cui sono pensate le foto
   const PHOTO_SCALE = 1;        // foto alle misure originali
   const BASE_TOPS = { eco: 0, realista: 330, tesi: 40, cat: 570, ettore: 650, astory: 290, editoria: 360 };
-  const BASE_WIDTHS = { eco: 260, realista: 270, tesi: 210, cat: 250, ettore: 180, astory: 410, editoria: 230 };
+  const BASE_WIDTHS = { eco: 220, realista: 270, tesi: 210, cat: 210, ettore: 180, astory: 410, editoria: 230 };
   const BASE_WIDTHS_XL = Object.assign({}, BASE_WIDTHS, { astory: 440, editoria: 200 });
   const xl = window.matchMedia("(min-width: 1900px)");
 
