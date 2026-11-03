@@ -5812,7 +5812,8 @@ img.desk-image {
 .desk-caption-name { color: #000000; transition: color 0.2s ease; }
 .desk-caption-cat { color: #9C9C9A; }
 .desk-image-wrapper a:hover .desk-caption-name,
-.desk-image-wrapper a:active .desk-caption-name { color: #E30613; }
+.desk-image-wrapper a:active .desk-caption-name { color: #000000; }
+.desk-image-wrapper a:active .desk-caption { color: #000000 !important; }
 .desk-image-wrapper a:active .desk-caption { text-decoration: none !important; }
 
 /* stesso ordine dell'elenco, sia nella fila riordinata sia sul telefono */
