@@ -5516,3 +5516,11 @@ body.project-page .page-wrapper,
   /* bio grande quanto il Binomio Fantastico */
   #me .spiegazione p.description { font-size: 20px; }
 }
+
+
+/* bio allineata a sinistra, senza giustificazione né sillabazione */
+#me .about-grid p.description {
+  text-align: left;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
