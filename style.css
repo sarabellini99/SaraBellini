@@ -5789,3 +5789,12 @@ img.desk-image {
     height: 430px;
   }
 }
+
+/* =========================
+   MY DESK: copertine sempre a colori
+   ========================= */
+#desk-images .desk-image,
+#desk-images .desk-image.colored,
+.desk-image-wrapper:hover .desk-image {
+  filter: none !important;
+}
