@@ -5044,3 +5044,28 @@ body.project-page .page-wrapper,
 .intro h2.hero-desk {
   font-family: 'TESTI';
 }
+
+
+/* anni accanto a "From my Desk": piccoli e grigi come "tidy up" */
+.mydesk-head {
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.mydesk-years {
+  font-family: 'TESTI';
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #9C9C9A;
+  white-space: nowrap;
+}
+
+@media (min-width: 1200px) {
+  .mydesk-years { font-size: 15px; }
+}
+
+@media (min-width: 1900px) {
+  .mydesk-years { font-size: 17px; }
+}
