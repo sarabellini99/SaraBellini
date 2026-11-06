@@ -392,7 +392,7 @@ if (lettereImg) {
   });
 
   // ---- fila riordinata: foto grandi una accanto all'altra ----
-  const ORDER = ["realista", "editoria", "eco", "astory", "tesi", "ettore", "cat"];
+  const ORDER = ["cat", "realista", "editoria", "eco", "astory", "tesi", "ettore"];
   const ROW_GAP = 16;
   const CAPTION = 44;
   const DURATION = 950;

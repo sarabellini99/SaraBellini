@@ -6509,3 +6509,11 @@ body.drawer-lock { overflow: hidden; }
 @media (min-width: 1900px) {
   .intro h2.hero-desk, .intro h2.hero-desk .dim-text { font-size: 24px !important; }
 }
+
+/* pagina Plurale: respiro tra un capitolo e l'altro */
+body.pagina-plurale section.output { padding-top: 140px; }
+@media (max-width: 767px) { body.pagina-plurale section.output { padding-top: 80px; } }
+
+/* Plurale (la tesi) prende il posto del gatto ed è il primo della fila */
+#desk-images .desk-image-wrapper.cat { order: 0 !important; }
+@media (min-width: 1200px) { .desk-image-wrapper.cat.plurale { animation: none; } }
