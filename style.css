@@ -6069,42 +6069,42 @@ html, body { overflow-x: clip; }
    ========================= */
 @media (min-width: 992px) {
   /* navbar */
-  .navbar a, .navbar .nav-brand, .navbar .brand-full, .nav-links a, .navbar .nav-contact { font-size: 14px !important; }
+  .navbar a, .navbar .nav-brand, .navbar .brand-full, .nav-links a, .navbar .nav-contact { font-size: 16px !important; }
 
   /* inizio */
-  .intro .hero-skills { font-size: 14px !important; margin-top: 20px !important; }
-  .intro h2.hero-desk, .intro h2.hero-desk .dim-text { font-size: 16px !important; }
+  .intro .hero-skills { font-size: 16px !important; margin-top: 20px !important; }
+  .intro h2.hero-desk, .intro h2.hero-desk .dim-text { font-size: 18px !important; }
 
   /* titoli di sezione */
-  #section-title, #about-title, #contact-title { font-size: 16px !important; }
-  .mydesk-years { font-size: 13px !important; }
+  #section-title, #about-title, #contact-title { font-size: 18px !important; }
+  .mydesk-years { font-size: 14px !important; }
 
   /* my desk */
-  #desk-images .desk-caption { font-size: 14px !important; margin-top: 10px !important; }
-  #mydesk .desk-tidy.desk-tidy-text { font-size: 13px !important; }
+  #desk-images .desk-caption { font-size: 16px !important; margin-top: 10px !important; }
+  #mydesk .desk-tidy.desk-tidy-text { font-size: 14px !important; }
 
   /* about */
-  #me p.description, #me p.description .dim-text, #me #binomiofantastico { font-size: 16px !important; }
+  #me p.description, #me p.description .dim-text, #me #binomiofantastico { font-size: 18px !important; }
 
   /* footer */
-  #final .back-to-top { font-size: 13px !important; }
-  #final .contact-label { font-size: 12px !important; }
-  #final .contact-email h4 { font-size: 28px !important; }
-  #final .contact-item a, #final .contact-nav a { font-size: 16px !important; }
-  #final #copyright { font-size: 12px !important; }
+  #final .back-to-top { font-size: 14px !important; }
+  #final .contact-label { font-size: 13px !important; }
+  #final .contact-email h4 { font-size: 30px !important; }
+  #final .contact-item a, #final .contact-nav a { font-size: 17px !important; }
+  #final #copyright { font-size: 13px !important; }
 
   /* pagine progetto */
-  body.project-page p.project-description { font-size: 16px !important; }
+  body.project-page p.project-description { font-size: 18px !important; }
   body.project-page .spiegazione p:not(.project-description),
   body.project-page p.urania-description,
   body.project-page p.trend,
   body.project-page p.plastiz-description,
   body.project-page h3.plastiz-description,
-  body.project-page .pubblicazione a { font-size: 14px !important; }
+  body.project-page .pubblicazione a { font-size: 16px !important; }
   body.project-page h3.project-subtitle,
   body.project-page .capitolo h2,
   body.project-page h3,
-  body.project-page .back-link { font-size: 12px !important; }
+  body.project-page .back-link { font-size: 13px !important; }
 }
 
 @media (min-width: 1200px) {
@@ -6112,27 +6112,27 @@ html, body { overflow-x: clip; }
 }
 
 @media (min-width: 1900px) {
-  .navbar a, .navbar .nav-brand, .navbar .brand-full, .nav-links a, .navbar .nav-contact { font-size: 15px !important; }
+  .navbar a, .navbar .nav-brand, .navbar .brand-full, .nav-links a, .navbar .nav-contact { font-size: 17px !important; }
   .intro h1 { font-size: 68px !important; }
-  .intro .hero-skills { font-size: 15px !important; }
-  .intro h2.hero-desk, .intro h2.hero-desk .dim-text { font-size: 18px !important; }
-  #section-title, #about-title, #contact-title { font-size: 18px !important; }
-  .mydesk-years, #mydesk .desk-tidy.desk-tidy-text, #final .back-to-top { font-size: 14px !important; }
-  #desk-images .desk-caption { font-size: 15px !important; }
-  #me p.description, #me p.description .dim-text, #me #binomiofantastico { font-size: 18px !important; }
-  #final .contact-email h4 { font-size: 32px !important; }
-  #final .contact-item a, #final .contact-nav a { font-size: 18px !important; }
-  body.project-page p.project-description { font-size: 18px !important; }
+  .intro .hero-skills { font-size: 17px !important; }
+  .intro h2.hero-desk, .intro h2.hero-desk .dim-text { font-size: 20px !important; }
+  #section-title, #about-title, #contact-title { font-size: 20px !important; }
+  .mydesk-years, #mydesk .desk-tidy.desk-tidy-text, #final .back-to-top { font-size: 15px !important; }
+  #desk-images .desk-caption { font-size: 17px !important; }
+  #me p.description, #me p.description .dim-text, #me #binomiofantastico { font-size: 20px !important; }
+  #final .contact-email h4 { font-size: 34px !important; }
+  #final .contact-item a, #final .contact-nav a { font-size: 19px !important; }
+  body.project-page p.project-description { font-size: 20px !important; }
   body.project-page .spiegazione p:not(.project-description),
   body.project-page p.urania-description,
   body.project-page p.trend,
   body.project-page p.plastiz-description,
   body.project-page h3.plastiz-description,
-  body.project-page .pubblicazione a { font-size: 15px !important; }
+  body.project-page .pubblicazione a { font-size: 17px !important; }
   body.project-page h3.project-subtitle,
   body.project-page .capitolo h2,
   body.project-page h3,
-  body.project-page .back-link { font-size: 13px !important; }
+  body.project-page .back-link { font-size: 14px !important; }
 }
 
 /* telefono e tablet: riduzione più leggera, per restare leggibili */
@@ -6154,10 +6154,10 @@ html, body { overflow-x: clip; }
 @media (min-width: 992px) {
   #me p.description, #me #binomiofantastico,
   body.project-page p.project-description,
-  body.project-page .spiegazione p:not(.project-description) { max-width: 470px; }
+  body.project-page .spiegazione p:not(.project-description) { max-width: 520px; }
 }
 @media (min-width: 1900px) {
   #me p.description, #me #binomiofantastico,
   body.project-page p.project-description,
-  body.project-page .spiegazione p:not(.project-description) { max-width: 530px; }
+  body.project-page .spiegazione p:not(.project-description) { max-width: 580px; }
 }
