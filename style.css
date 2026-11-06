@@ -5995,3 +5995,53 @@ html, body { overflow-x: clip; }
 }
 .menu-dot,
 .menu-toggle .menu-dot { border-width: 1.5px; }
+
+/* =========================
+   INIZIO: al posto della freccia, solo il quadratino.
+   Ogni tanto fa mezzo giro; al passaggio del mouse diventa rosso.
+   ========================= */
+.hero-enter .hero-sq {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #9C9C9A;
+  transition: background-color 0.2s ease;
+  animation: hero-sq-turn 3.5s cubic-bezier(.65,0,.35,1) infinite;
+}
+.hero-enter {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  min-height: 24px;
+  margin-left: -7px;
+}
+.hero-enter:hover .hero-sq,
+.hero-enter:focus-visible .hero-sq {
+  background-color: #E30613;
+}
+@keyframes hero-sq-turn {
+  0%, 70%  { transform: rotate(0deg); }
+  90%, 100% { transform: rotate(180deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter .hero-sq { animation: none; }
+}
+
+/* =========================
+   FOOTER: "torna su" al posto della freccia
+   ========================= */
+#final .back-to-top {
+  font-family: 'TESTI';
+  font-size: 15px;
+  line-height: 1.2;
+  color: #9C9C9A;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.2s ease;
+}
+#final .back-to-top:hover { color: #E30613; transform: none; }
+@media (min-width: 1900px) {
+  #final .back-to-top { font-size: 17px; }
+}
