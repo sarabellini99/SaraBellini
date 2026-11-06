@@ -5974,3 +5974,10 @@ br.br-desk { display: none; }
   background-color: #000000;
   border-color: #000000;
 }
+
+/* =========================
+   NESSUNO SCORRIMENTO ORIZZONTALE DELLA PAGINA
+   ========================= */
+html, body { overflow-x: clip; }
+.desk-row-end { display: none; }
+#desk-images.is-tidy .desk-row-end { display: block; }

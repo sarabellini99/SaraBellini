@@ -444,7 +444,7 @@ if (lettereImg) {
   const goTidy = (withAnimation) => {
     clearTimeout(clearTimer);
     const from = snapshot();
-    const bleed = Math.max(0, window.innerWidth - desk.getBoundingClientRect().right);
+    const bleed = Math.max(0, document.documentElement.clientWidth - desk.getBoundingClientRect().right);
     desk.style.setProperty("--desk-bleed", bleed + "px");
     desk.classList.add("is-tidy");
     const { geo, end } = rowGeometry();
@@ -461,6 +461,7 @@ if (lettereImg) {
     desk.classList.add("no-anim");
     desk.classList.remove("is-tidy");
     desk.scrollLeft = 0;
+    spacer.style.left = "";
     wrappers.forEach(clearGeo);
     const to = snapshot();
     desk.classList.remove("no-anim");
