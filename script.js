@@ -350,32 +350,7 @@ if (lettereImg) {
     return s ? s.w / s.h : 1;
   };
 
-  const placeTidy = () => {
-    const width = desk.clientWidth;
-    const height = desk.clientHeight;
-    const ratios = wrappers.map(ratioOf);
-    const sum = ratios.reduce((a, b) => a + b, 0);
-    // stessa altezza per tutte, la più grande che ci sta in una riga
-    const rowHeight = Math.min(260, (width - GAP * (wrappers.length - 1)) / sum);
-    const rowWidth = rowHeight * sum + GAP * (wrappers.length - 1);
-    let x = (width - rowWidth) / 2;
-    const y = (height - rowHeight) / 2;
-    wrappers.forEach((wrapper, i) => {
-      const w = rowHeight * ratios[i];
-      wrapper.style.left = x + "px";
-      wrapper.style.top = y + "px";
-      wrapper.style.width = w + "px";
-      x += w + GAP;
-    });
-  };
 
-  const placeMessy = () => {
-    wrappers.forEach((wrapper) => {
-      wrapper.style.left = "";
-      wrapper.style.top = "";
-      wrapper.style.width = "";
-    });
-  };
 
   // la sezione deve stare in una schermata: l'altezza della composizione
   // è fissata dallo schermo, le foto restano a grandezza piena e si
@@ -415,15 +390,97 @@ if (lettereImg) {
     if (video && !video.videoWidth) video.addEventListener("loadedmetadata", fitToScreen, { once: true });
   });
 
-  const render = () => {
-    desk.classList.toggle("is-tidy", tidy);
+  // ---- fila riordinata: foto grandi una accanto all'altra ----
+  const ORDER = ["realista", "editoria", "eco", "astory", "tesi", "ettore", "cat"];
+  const ROW_GAP = 16;
+  const CAPTION = 44;
+  const DURATION = 950;
+  const big = window.matchMedia("(min-width: 1900px)");
+  const spacer = document.createElement("span");
+  spacer.className = "desk-row-end";
+  spacer.setAttribute("aria-hidden", "true");
+  desk.appendChild(spacer);
+  let clearTimer = null;
+
+  const mediaOf = (w) => w.querySelector(".desk-image");
+  const snapshot = () => wrappers.map((w) => ({
+    left: w.offsetLeft - desk.scrollLeft,
+    top: w.offsetTop,
+    width: w.offsetWidth,
+    h: mediaOf(w) ? mediaOf(w).offsetHeight : 0,
+  }));
+  const setGeo = (w, g) => {
+    w.style.left = g.left + "px";
+    w.style.top = g.top + "px";
+    w.style.width = g.width + "px";
+    const m = mediaOf(w);
+    if (m) m.style.height = g.h + "px";
+  };
+  const clearGeo = (w) => {
+    w.style.left = w.style.top = w.style.width = "";
+    const m = mediaOf(w);
+    if (m) m.style.height = "";
+  };
+  const rowGeometry = () => {
+    const deskH = desk.clientHeight;
+    const imgH = Math.max(220, Math.min(big.matches ? 560 : 480, deskH - CAPTION - 40));
+    const width = Math.round(imgH * 0.75);
+    const top = Math.max(0, Math.round((deskH - imgH - CAPTION) / 2));
+    const ordered = ORDER.map((k) => wrappers.find((w) => w.classList.contains(k))).filter(Boolean);
+    wrappers.forEach((w) => { if (!ordered.includes(w)) ordered.push(w); });
+    const geo = new Map();
+    ordered.forEach((w, i) => geo.set(w, { left: i * (width + ROW_GAP), top, width, h: imgH }));
+    return { geo, end: ordered.length * (width + ROW_GAP) - ROW_GAP };
+  };
+  // parte da "from", poi scivola fino a "to"
+  const animate = (from, to) => {
+    desk.classList.add("no-anim");
+    wrappers.forEach((w, i) => setGeo(w, from[i]));
+    void desk.offsetWidth;
+    desk.classList.remove("no-anim");
+    wrappers.forEach((w, i) => setGeo(w, to[i]));
+  };
+
+  const goTidy = (withAnimation) => {
+    clearTimeout(clearTimer);
+    const from = snapshot();
+    const bleed = Math.max(0, window.innerWidth - desk.getBoundingClientRect().right);
+    desk.style.setProperty("--desk-bleed", bleed + "px");
+    desk.classList.add("is-tidy");
+    const { geo, end } = rowGeometry();
+    spacer.style.left = end + bleed - 1 + "px";
+    const to = wrappers.map((w) => geo.get(w));
+    if (withAnimation) animate(from, to);
+    else wrappers.forEach((w, i) => setGeo(w, to[i]));
+    desk.scrollLeft = 0;
+  };
+
+  const goMessy = (withAnimation) => {
+    clearTimeout(clearTimer);
+    const from = snapshot();
+    desk.classList.add("no-anim");
+    desk.classList.remove("is-tidy");
+    desk.scrollLeft = 0;
+    wrappers.forEach(clearGeo);
+    const to = snapshot();
+    desk.classList.remove("no-anim");
+    if (!withAnimation) return;
+    animate(from, to);
+    clearTimer = setTimeout(() => {
+      desk.classList.add("no-anim");
+      wrappers.forEach(clearGeo);
+      void desk.offsetWidth;
+      desk.classList.remove("no-anim");
+    }, DURATION);
+  };
+
+  const render = (withAnimation) => {
     section.classList.toggle("is-tidy", tidy);
     button.setAttribute("aria-pressed", String(tidy));
     const label = button.querySelector(".desk-tidy-label");
     if (label) label.textContent = tidy ? "scompiglia" : "riordina";
-    // riordinate: la fila che scorre di lato la gestisce il CSS
-    placeMessy();
-    if (tidy) desk.scrollLeft = 0;
+    if (tidy && desktop.matches) goTidy(withAnimation);
+    else if (desk.classList.contains("is-tidy") || withAnimation === false) goMessy(withAnimation);
   };
 
   // nella fila riordinata la rotellina del mouse fa scorrere le foto di lato,
@@ -441,13 +498,17 @@ if (lettereImg) {
 
   button.addEventListener("click", () => {
     tidy = !tidy;
-    render();
+    render(true);
   });
 
   window.addEventListener("resize", () => {
     if (!desktop.matches && tidy) tidy = false;
+    if (tidy) {
+      desk.classList.remove("is-tidy");
+      wrappers.forEach(clearGeo);
+    }
     fitToScreen();
-    render();
+    render(false);
   });
 })();
 

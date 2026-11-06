@@ -5828,75 +5828,69 @@ img.desk-image {
 }
 
 /* =========================
-   MY DESK DA DESKTOP, RIORDINATE: foto grandi in fila,
-   si scorre di lato come sul telefono, con il nome sotto
+   MY DESK DA DESKTOP, RIORDINATE: le foto scivolano in una fila grande
+   al centro del riquadro, che si scorre di lato, con il nome sotto.
+   Il riquadro tiene la stessa altezza, così "riordina" e
+   "scompiglia" restano nello stesso punto. Le posizioni le calcola lo script.
    ========================= */
 @media (min-width: 1200px) {
+  #desk-images .desk-image {
+    transition: transform 0.4s, filter 0.4s, opacity 0.2s ease,
+      height 0.9s cubic-bezier(.65,0,.35,1);
+  }
+  #desk-images.no-anim .desk-image-wrapper,
+  #desk-images.no-anim .desk-image {
+    transition: none !important;
+  }
+
   #desk-images.is-tidy {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 16px;
-    height: auto;
     width: auto;
     max-width: none;
-    margin-right: -200px;
-    padding-right: 200px;
-    scroll-padding-left: 0;
+    margin-right: calc(-1 * var(--desk-bleed, 200px));
     overflow-x: auto;
-    scroll-snap-type: x proximity;
+    overflow-y: hidden;
     scrollbar-width: none;
     overscroll-behavior-x: contain;
   }
   #desk-images.is-tidy::-webkit-scrollbar { display: none; }
 
-  #desk-images.is-tidy .desk-image-wrapper {
-    position: relative;
-    flex: 0 0 auto;
-    top: auto !important;
-    left: auto !important;
-    width: 360px !important;
-    z-index: auto;
-    animation: desk-row-in 0.6s ease both;
-    transition: none;
-    scroll-snap-align: start;
-  }
-  #desk-images.is-tidy .desk-image-wrapper:hover { transform: none; z-index: auto; }
+  #desk-images.is-tidy .desk-image-wrapper { animation: none; z-index: 1; }
+  #desk-images.is-tidy .desk-image-wrapper:hover { z-index: 1; }
   #desk-images.is-tidy .desk-image-wrapper a { display: block; text-decoration: none; }
-
   #desk-images.is-tidy .desk-image {
-    width: 100%;
-    height: 480px;
     object-fit: cover;
     transform: none !important;
-    transition: opacity 0.2s ease;
   }
   #desk-images.is-tidy .desk-image-wrapper:hover .desk-image { opacity: 0.85; }
 
-  #desk-images.is-tidy .desk-caption {
+  #desk-images .desk-caption {
     display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
     margin-top: 12px;
+    white-space: nowrap;
     font-family: 'TESTI';
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: -0.03em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+  #desk-images.is-tidy .desk-caption {
+    opacity: 1;
+    transition: opacity 0.4s ease 0.6s;
   }
 
-  #desk-images.is-tidy .desk-image-wrapper.realista { order: 1; }
-  #desk-images.is-tidy .desk-image-wrapper.editoria { order: 2; }
-  #desk-images.is-tidy .desk-image-wrapper.eco      { order: 3; }
-  #desk-images.is-tidy .desk-image-wrapper.astory   { order: 4; }
-  #desk-images.is-tidy .desk-image-wrapper.tesi     { order: 5; }
-  #desk-images.is-tidy .desk-image-wrapper.ettore   { order: 6; }
-  #desk-images.is-tidy .desk-image-wrapper.cat      { order: 7; }
+  .desk-row-end {
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+  }
 }
 @media (min-width: 1900px) {
-  #desk-images.is-tidy { margin-right: -280px; padding-right: 280px; }
-  #desk-images.is-tidy .desk-image-wrapper { width: 420px !important; }
-  #desk-images.is-tidy .desk-image { height: 560px; }
-  #desk-images.is-tidy .desk-caption { font-size: 22px; }
-}
-@keyframes desk-row-in {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: none; }
+  #desk-images .desk-caption { font-size: 22px; }
 }
