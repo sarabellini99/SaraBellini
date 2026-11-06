@@ -6441,3 +6441,26 @@ body.drawer-lock { overflow: hidden; }
 
 .drawer-preview img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .drawer-track .drawer-img video { max-height: 100%; max-width: 100%; display: block; }
+
+/* =========================
+   PONTE: la frase della scrivania più grande introduce i progetti,
+   il titolo "Sulla scrivania" resta solo per i lettori di schermo
+   ========================= */
+#mydesk .mydesk-head {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+@media (min-width: 992px) {
+  .intro h2.hero-desk, .intro h2.hero-desk .dim-text { font-size: 24px !important; line-height: 1.15; }
+  .intro h2.hero-desk .hero-desk-sq { width: 9px; height: 9px; left: -22px; top: 0.36em; }
+}
+@media (min-width: 1900px) {
+  .intro h2.hero-desk, .intro h2.hero-desk .dim-text { font-size: 28px !important; }
+}
+@media (max-width: 991px) {
+  .intro h2.hero-desk, .intro h2.hero-desk .dim-text { font-size: 20px !important; }
+}
+@media (min-width: 1200px) { #mydesk { margin-top: 10px; } }
