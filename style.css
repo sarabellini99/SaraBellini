@@ -6161,3 +6161,29 @@ html, body { overflow-x: clip; }
   body.project-page p.project-description,
   body.project-page .spiegazione p:not(.project-description) { max-width: 580px; }
 }
+
+/* =========================
+   INIZIO: le competenze in basso a sinistra, al posto del quadratino
+   ========================= */
+.hero-links .hero-skills { margin: 0 !important; }
+
+/* =========================
+   MY DESK: due icone al posto di "riordina / scompiglia"
+   ========================= */
+#mydesk .desk-view {
+  gap: 14px;
+}
+.desk-view-btn {
+  display: inline-flex;
+  padding: 2px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: #9C9C9A;
+  transition: color 0.2s ease;
+}
+.desk-view-btn svg { display: block; width: 20px; height: 20px; fill: currentColor; }
+.desk-view-btn:hover { color: #E30613; }
+.desk-view-btn.is-active,
+.desk-view-btn.is-active:hover { color: #000000; cursor: default; }
+.desk-view-btn:focus-visible { outline: 1px solid #000000; outline-offset: 3px; }

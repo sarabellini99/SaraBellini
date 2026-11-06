@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sara Bellini</title>
-  <link rel="stylesheet" href="style.css?v=82">
+  <link rel="stylesheet" href="style.css?v=83">
 </head>
 
 <link rel="icon" type="image/png" href="favicon.png">
@@ -59,13 +59,10 @@
    <h1 aria-label="Ciao! Sono Sara Bellini, una systemic designer, e questa è la mia scrivania.">
     <span aria-hidden="true">Ciao!<br> Sono Sara Bellini,<br> una <span id="role-word" class="role-word"></span> <span class="designer-word">designer</span><br> e questa è la mia scrivania.</span>
   </h1>
-    <p class="hero-skills"><span>Visual Identity&nbsp;·</span> <span>Digital Design&nbsp;·</span> <span>UX/UI Design&nbsp;·</span> <span>Editorial Design</span></p>
    </div>
     <div class="hero-bottom">
       <div class="hero-links">
-        <a href="#mydesk" class="hero-enter" aria-label="Scopri i miei progetti">
-          <span class="hero-sq" aria-hidden="true"></span>
-        </a>
+        <p class="hero-skills"><span>Visual Identity&nbsp;·</span> <span>Digital Design&nbsp;·</span> <span>UX/UI Design&nbsp;·</span> <span>Editorial Design</span></p>
       </div>
       <h2 class="hero-desk">Non ha sempre questa forma: a volte è un tavolo,<br class="br-desk"> altre il pavimento, talvolta il letto, oppure soltanto un foglio.<br class="br-desk"> <span class="dim-text">Però è qui che lascio tutte le mie cose.</span></h2>
     </div>
@@ -75,7 +72,7 @@
   <!-- MY DESK -->
   <section id="mydesk">
     <div class="mydesk-head">
-      <h1 id="section-title">From my Desk<span class="orange sq sq-title" aria-hidden="true"></span></h1>
+      <h1 id="section-title">From my Desk</h1>
       <span class="mydesk-years">2023 – 2026</span>
     </div>
 
@@ -130,9 +127,14 @@
   </div>
 </div>
 
-      <button type="button" id="desk-tidy" class="desk-tidy desk-tidy-text" aria-pressed="false">
-        <span class="sq sq-tidy" aria-hidden="true"></span><span class="desk-tidy-label">riordina</span>
-      </button>
+      <div class="desk-tidy desk-tidy-text desk-view" role="group" aria-label="Disposizione delle foto">
+        <button type="button" id="desk-messy" class="desk-view-btn is-active" aria-pressed="true" aria-label="Foto sparse" title="Sparse">
+          <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><rect x="1" y="2" width="7" height="7"/><rect x="11" y="0" width="6" height="6"/><rect x="3" y="12" width="6" height="6"/><rect x="12" y="9" width="7" height="7"/></svg>
+        </button>
+        <button type="button" id="desk-tidy" class="desk-view-btn" aria-pressed="false" aria-label="Foto in fila" title="In fila">
+          <svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><rect x="1" y="3" width="8" height="14"/><rect x="11" y="3" width="8" height="14"/></svg>
+        </button>
+      </div>
 
   
   </section>
@@ -228,7 +230,7 @@
 
 
 
-  <script src="script.js?v=25"></script>
+  <script src="script.js?v=26"></script>
   
 
 

@@ -328,6 +328,7 @@ if (lettereImg) {
 // =========================
 (function () {
   const button = document.getElementById("desk-tidy");
+  const messyButton = document.getElementById("desk-messy");
   const desk = document.getElementById("desk-images");
   const section = document.getElementById("mydesk");
   if (!button || !desk || !section) return;
@@ -478,8 +479,11 @@ if (lettereImg) {
   const render = (withAnimation) => {
     section.classList.toggle("is-tidy", tidy);
     button.setAttribute("aria-pressed", String(tidy));
-    const label = button.querySelector(".desk-tidy-label");
-    if (label) label.textContent = tidy ? "scompiglia" : "riordina";
+    button.classList.toggle("is-active", tidy);
+    if (messyButton) {
+      messyButton.setAttribute("aria-pressed", String(!tidy));
+      messyButton.classList.toggle("is-active", !tidy);
+    }
     if (tidy && desktop.matches) goTidy(withAnimation);
     else if (desk.classList.contains("is-tidy") || withAnimation === false) goMessy(withAnimation);
   };
@@ -497,8 +501,15 @@ if (lettereImg) {
     desk.scrollLeft += e.deltaY;
   }, { passive: false });
 
+  // due icone: foto sparse / foto in fila
   button.addEventListener("click", () => {
-    tidy = !tidy;
+    if (tidy) return;
+    tidy = true;
+    render(true);
+  });
+  if (messyButton) messyButton.addEventListener("click", () => {
+    if (!tidy) return;
+    tidy = false;
     render(true);
   });
 
