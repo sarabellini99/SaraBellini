@@ -6446,8 +6446,7 @@ body.drawer-lock { overflow: hidden; }
    PONTE: la frase della scrivania più grande introduce i progetti,
    il titolo "Sulla scrivania" resta solo per i lettori di schermo
    ========================= */
-/* gli anni ora stanno nell'apertura; il titolo si vede ovunque */
-#mydesk .mydesk-years { display: none; }
+/* gli anni tornano accanto al titolo della scrivania */
 
 @media (min-width: 992px) {
   .intro h2.hero-desk, .intro h2.hero-desk .dim-text { font-size: 24px !important; line-height: 1.15; }
@@ -6501,3 +6500,12 @@ body.drawer-lock { overflow: hidden; }
 #mydesk .desk-switch[aria-pressed="true"]:hover,
 #mydesk .desk-switch.is-active:hover { color: #E30613; }
 @media (max-width: 1199px) { #mydesk .desk-switch { display: none !important; } }
+
+/* frase della scrivania un po' meno grande */
+@media (min-width: 992px) {
+  .intro h2.hero-desk, .intro h2.hero-desk .dim-text { font-size: 21px !important; }
+  .intro h2.hero-desk .hero-desk-sq { width: 8px; height: 8px; left: -20px; }
+}
+@media (min-width: 1900px) {
+  .intro h2.hero-desk, .intro h2.hero-desk .dim-text { font-size: 24px !important; }
+}
