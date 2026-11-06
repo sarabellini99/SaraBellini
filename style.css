@@ -5942,10 +5942,14 @@ br.br-desk { display: none; }
   margin-top: 0.12em;
 }
 /* in fondo al footer */
-#copyright .sq-footer {
+#final #right {
+  align-self: stretch;
+  justify-content: space-between;
+}
+#final #right .sq-footer {
   width: 7px;
   height: 7px;
-  margin-left: 14px;
+  background-color: #9C9C9A;
   vertical-align: middle;
 }
 
@@ -5965,4 +5969,8 @@ br.br-desk { display: none; }
 .menu-dot,
 .menu-toggle.active .menu-dot {
   border-radius: 0;
+}
+.menu-toggle.active .menu-dot {
+  background-color: #000000;
+  border-color: #000000;
 }
