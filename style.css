@@ -6446,12 +6446,16 @@ body.drawer-lock { overflow: hidden; }
    PONTE: la frase della scrivania più grande introduce i progetti,
    il titolo "Sulla scrivania" resta solo per i lettori di schermo
    ========================= */
-#mydesk .mydesk-head {
-  position: absolute !important;
-  width: 1px; height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
+/* gli anni ora stanno nell'apertura; il titolo si vede solo da desktop */
+#mydesk .mydesk-years { display: none; }
+@media (max-width: 1199px) {
+  #mydesk .mydesk-head {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
 }
 @media (min-width: 992px) {
   .intro h2.hero-desk, .intro h2.hero-desk .dim-text { font-size: 24px !important; line-height: 1.15; }
@@ -6464,3 +6468,43 @@ body.drawer-lock { overflow: hidden; }
   .intro h2.hero-desk, .intro h2.hero-desk .dim-text { font-size: 20px !important; }
 }
 @media (min-width: 1200px) { #mydesk { margin-top: 10px; } }
+
+/* apertura: gli anni dei progetti in basso a sinistra */
+.intro .hero-years {
+  font-family: 'TESTI';
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #9C9C9A;
+}
+@media (min-width: 1900px) { .intro .hero-years { font-size: 15px; } }
+
+/* un solo bottone: icona e scritta cambiano con lo stato */
+#mydesk .desk-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: #9C9C9A;
+  font-family: 'TESTI';
+  font-size: 14px !important;
+  transition: color 0.2s ease;
+}
+#mydesk .desk-switch svg { width: 18px; height: 18px; fill: currentColor; flex: none; }
+#mydesk .desk-switch .ico-messy { display: none; }
+#mydesk .desk-switch[aria-pressed="true"] .ico-tidy { display: none; }
+#mydesk .desk-switch[aria-pressed="true"] .ico-messy { display: block; }
+#mydesk .desk-switch .desk-switch-label {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+#mydesk .desk-switch:hover { color: #E30613; }
+#mydesk .desk-switch:focus-visible { outline: 1px solid #000; outline-offset: 4px; }
+#mydesk .desk-switch[aria-pressed="true"],
+#mydesk .desk-switch.is-active { color: #9C9C9A; }
+#mydesk .desk-switch[aria-pressed="true"]:hover,
+#mydesk .desk-switch.is-active:hover { color: #E30613; }

@@ -480,6 +480,8 @@ if (lettereImg) {
     section.classList.toggle("is-tidy", tidy);
     button.setAttribute("aria-pressed", String(tidy));
     button.classList.toggle("is-active", tidy);
+    const switchLabel = button.querySelector(".desk-switch-label");
+    if (switchLabel) switchLabel.textContent = tidy ? "Di solito è più messa così" : "Riordina";
     if (messyButton) {
       messyButton.setAttribute("aria-pressed", String(!tidy));
       messyButton.classList.toggle("is-active", !tidy);
@@ -503,8 +505,7 @@ if (lettereImg) {
 
   // due icone: foto sparse / foto in fila
   button.addEventListener("click", () => {
-    if (tidy) return;
-    tidy = true;
+    tidy = !tidy;
     render(true);
   });
   if (messyButton) messyButton.addEventListener("click", () => {
