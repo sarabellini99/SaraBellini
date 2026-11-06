@@ -562,3 +562,79 @@ if (lettereImg) {
   apply();
   reduce.addEventListener?.("change", apply);
 })();
+
+// =========================
+// CASSETTO: progetti laterali in sovraimpressione
+// =========================
+(function () {
+  const panel = document.getElementById("drawer-panel");
+  if (!panel) return;
+  const items = [...document.querySelectorAll(".drawer-item")];
+  const numEl = panel.querySelector(".drawer-panel-num");
+  const titleEl = panel.querySelector("#drawer-panel-title");
+  const metaEl = panel.querySelector(".drawer-panel-meta");
+  const textEl = panel.querySelector(".drawer-panel-text");
+  const slider = panel.querySelector(".drawer-slider");
+  const track = panel.querySelector(".drawer-track");
+  const prev = panel.querySelector(".drawer-prev");
+  const next = panel.querySelector(".drawer-next");
+  const count = panel.querySelector(".drawer-count");
+  const closeBtn = panel.querySelector(".drawer-close");
+  let lastFocus = null;
+  let slides = [];
+
+  const current = () => {
+    const x = slider.scrollLeft;
+    let idx = 0;
+    slides.forEach((s, i) => { if (s.offsetLeft - track.offsetLeft <= x + 4) idx = i; });
+    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 4) idx = slides.length - 1;
+    return idx;
+  };
+  const update = () => {
+    const i = current();
+    count.textContent = slides.length ? (i + 1) + " / " + slides.length : "";
+    prev.disabled = i <= 0;
+    next.disabled = i >= slides.length - 1;
+  };
+  const goTo = (i) => {
+    const s = slides[Math.max(0, Math.min(slides.length - 1, i))];
+    if (s) slider.scrollTo({ left: s.offsetLeft - track.offsetLeft, behavior: "smooth" });
+  };
+
+  const open = (item) => {
+    lastFocus = document.activeElement;
+    numEl.textContent = item.querySelector(".drawer-num").textContent;
+    titleEl.textContent = item.querySelector(".drawer-name").textContent;
+    metaEl.textContent = item.querySelector(".drawer-meta").textContent;
+    const data = item.querySelector(".drawer-data");
+    textEl.textContent = data.querySelector(".drawer-text").textContent;
+    track.innerHTML = data.querySelector(".drawer-images").innerHTML;
+    track.querySelectorAll(".drawer-ph[data-ratio]").forEach((d) => { d.style.aspectRatio = d.dataset.ratio; });
+    slides = [...track.children];
+    panel.hidden = false;
+    document.body.classList.add("drawer-lock");
+    slider.scrollLeft = 0;
+    requestAnimationFrame(() => panel.classList.add("is-open"));
+    update();
+    closeBtn.focus();
+  };
+  const close = () => {
+    panel.classList.remove("is-open");
+    document.body.classList.remove("drawer-lock");
+    setTimeout(() => { panel.hidden = true; track.innerHTML = ""; }, 300);
+    if (lastFocus) lastFocus.focus();
+  };
+
+  items.forEach((item) => item.querySelector(".drawer-open").addEventListener("click", () => open(item)));
+  closeBtn.addEventListener("click", close);
+  panel.addEventListener("click", (e) => { if (e.target === panel) close(); });
+  prev.addEventListener("click", () => goTo(current() - 1));
+  next.addEventListener("click", () => goTo(current() + 1));
+  slider.addEventListener("scroll", () => requestAnimationFrame(update), { passive: true });
+  document.addEventListener("keydown", (e) => {
+    if (panel.hidden) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowRight") goTo(current() + 1);
+    if (e.key === "ArrowLeft") goTo(current() - 1);
+  });
+})();
