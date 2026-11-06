@@ -6231,3 +6231,17 @@ body.project-page a.back-link:hover { color: #E30613 !important; }
   .intro h2.hero-desk { padding-left: 18px; }
   .intro h2.hero-desk .hero-desk-sq { left: 0; width: 7px; height: 7px; }
 }
+
+/* apertura: l'email in basso a sinistra, come gli altri link grigi */
+.intro .hero-mail {
+  font-family: 'TESTI';
+  font-size: 14px;
+  line-height: 1.2;
+  color: #9C9C9A;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.2s ease;
+}
+.intro .hero-mail:hover { color: #E30613; }
+@media (min-width: 1900px) { .intro .hero-mail { font-size: 15px; } }
