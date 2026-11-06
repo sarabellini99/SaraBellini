@@ -5988,8 +5988,10 @@ html, body { overflow-x: clip; }
 .menu-dot {
   width: 12px;
   height: 12px;
-  transition: transform 0.45s cubic-bezier(.65,0,.35,1), background-color 0.3s ease;
+  transition: transform 0.5s cubic-bezier(.65,0,.35,1), background-color 0.3s ease;
 }
 .menu-toggle.active .menu-dot {
-  transform: rotate(135deg);
+  transform: rotate(180deg);
 }
+.menu-dot,
+.menu-toggle .menu-dot { border-width: 1.5px; }
