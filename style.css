@@ -6438,3 +6438,6 @@ body.drawer-lock { overflow: hidden; }
   .drawer-panel-info { padding: 0 32px; }
 }
 .drawer-track .drawer-img { position: relative; }
+
+.drawer-preview img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.drawer-track .drawer-img video { max-height: 100%; max-width: 100%; display: block; }

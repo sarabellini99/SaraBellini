@@ -594,6 +594,12 @@ if (lettereImg) {
       const first = firstImage(item);
       preview.innerHTML = "";
       if (first && first.querySelector("img")) preview.appendChild(first.querySelector("img").cloneNode());
+      else if (first && first.dataset.poster) {
+        const im = document.createElement("img");
+        im.src = first.dataset.poster;
+        im.alt = "";
+        preview.appendChild(im);
+      }
       if (first && first.dataset.ratio) preview.style.aspectRatio = first.dataset.ratio;
       preview.classList.add("is-on");
     });
@@ -601,13 +607,24 @@ if (lettereImg) {
   });
   section.addEventListener("mousemove", (e) => {
     const r = section.getBoundingClientRect();
-    preview.style.left = e.clientX - r.left + 120 + "px";
+    preview.style.left = e.clientX - r.left + 260 + "px";
     preview.style.top = e.clientY - r.top + "px";
   });
 
   const current = () => Math.round(slider.scrollLeft / Math.max(1, slider.clientWidth));
+  // fa partire solo il video della foto visibile
+  const playCurrent = () => {
+    const i = current();
+    slides.forEach((s, k) => {
+      const v = s.querySelector("video");
+      if (!v) return;
+      if (k === i) v.play().catch(() => {});
+      else v.pause();
+    });
+  };
   const update = () => {
     const i = current();
+    playCurrent();
     count.textContent = slides.length ? (i + 1) + " / " + slides.length : "";
     prev.disabled = i <= 0;
     next.disabled = i >= slides.length - 1;
@@ -639,6 +656,7 @@ if (lettereImg) {
   const close = () => {
     panel.classList.remove("is-open");
     document.body.classList.remove("drawer-lock");
+    track.querySelectorAll("video").forEach((v) => v.pause());
     setTimeout(() => { panel.hidden = true; track.innerHTML = ""; }, 300);
     if (lastFocus) lastFocus.focus();
   };
