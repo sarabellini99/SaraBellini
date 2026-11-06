@@ -6187,3 +6187,23 @@ html, body { overflow-x: clip; }
 .desk-view-btn.is-active,
 .desk-view-btn.is-active:hover { color: #000000; cursor: default; }
 .desk-view-btn:focus-visible { outline: 1px solid #000000; outline-offset: 3px; }
+
+/* =========================
+   PAGINE PROGETTO: "torna alla scrivania" come "torna su"
+   ========================= */
+body.project-page a.back-link {
+  font-family: 'TESTI' !important;
+  font-size: 14px !important;
+  line-height: 1.2;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  color: #9C9C9A !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.2s ease;
+}
+body.project-page a.back-link:hover { color: #E30613 !important; }
+@media (min-width: 1900px) {
+  body.project-page a.back-link { font-size: 15px !important; }
+}
