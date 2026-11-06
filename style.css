@@ -6045,3 +6045,58 @@ html, body { overflow-x: clip; }
 @media (min-width: 1900px) {
   #final .back-to-top { font-size: 17px; }
 }
+
+/* =========================
+   INIZIO: riga con le competenze sotto il titolo
+   ========================= */
+.intro .hero-skills {
+  margin: 18px 0 0;
+  font-family: 'TESTI';
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: #9C9C9A;
+}
+@media (min-width: 768px)  { .intro .hero-skills { font-size: 18px; margin-top: 22px; } }
+@media (min-width: 1200px) { .intro .hero-skills { font-size: 20px; margin-top: 26px; } }
+@media (min-width: 1900px) { .intro .hero-skills { font-size: 22px; } }
+
+/* =========================
+   ABOUT: esperienze e formazione in breve
+   ========================= */
+#me .about-cv {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-top: 48px;
+}
+@media (min-width: 768px) {
+  #me .about-cv { grid-template-columns: 1fr 1fr; column-gap: 32px; }
+}
+#me .about-cv-label {
+  margin: 0 0 14px;
+  font-family: 'TESTI';
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: #9C9C9A;
+}
+#me .about-cv-list { list-style: none; margin: 0; padding: 0; }
+#me .about-cv-list li { display: flex; flex-direction: column; gap: 2px; margin-bottom: 14px; }
+#me .cv-role {
+  font-family: 'TESTI';
+  font-size: 15px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+#me .cv-meta {
+  font-family: 'ETICHETTE';
+  font-size: 14px;
+  line-height: 1.25;
+  color: #9C9C9A;
+}
+@media (min-width: 1900px) {
+  #me .about-cv-label, #me .cv-meta { font-size: 15px; }
+  #me .cv-role { font-size: 17px; }
+}
+.intro .hero-skills span { white-space: nowrap; }
