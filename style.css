@@ -5803,7 +5803,7 @@ img.desk-image {
    MY DESK: angoli leggermente arrotondati
    ========================= */
 #desk-images .desk-image {
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 /* =========================
