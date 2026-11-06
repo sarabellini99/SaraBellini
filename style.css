@@ -5981,3 +5981,15 @@ br.br-desk { display: none; }
 html, body { overflow-x: clip; }
 .desk-row-end { display: none; }
 #desk-images.is-tidy .desk-row-end { display: block; }
+
+/* =========================
+   MENU SUL TELEFONO: quadratino più piccolo che ruota quando si apre
+   ========================= */
+.menu-dot {
+  width: 12px;
+  height: 12px;
+  transition: transform 0.45s cubic-bezier(.65,0,.35,1), background-color 0.3s ease;
+}
+.menu-toggle.active .menu-dot {
+  transform: rotate(135deg);
+}
