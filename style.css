@@ -5894,3 +5894,12 @@ img.desk-image {
 @media (min-width: 1900px) {
   #desk-images .desk-caption { font-size: 22px; }
 }
+
+/* =========================
+   FRASE DELLA SCRIVANIA: a capo fissi solo da desktop
+   ========================= */
+br.br-desk { display: none; }
+@media (min-width: 992px) {
+  br.br-desk { display: inline; }
+  .intro h2.hero-desk { max-width: none; }
+}
