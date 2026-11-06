@@ -5903,3 +5903,66 @@ br.br-desk { display: none; }
   br.br-desk { display: inline; }
   .intro h2.hero-desk { max-width: none; }
 }
+
+/* =========================
+   QUADRATINO ROSSO: il segno grafico del sito, come nel portfolio in PDF
+   ========================= */
+.sq {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #E30613;
+  vertical-align: top;
+  flex: none;
+}
+/* accanto a "From my Desk" */
+#section-title .sq-title {
+  width: 7px;
+  height: 7px;
+  margin-left: 6px;
+  margin-top: 0.2em;
+}
+/* prima di "riordina" e "scompiglia" */
+.desk-tidy .sq-tidy {
+  width: 6px;
+  height: 6px;
+  background-color: #9C9C9A;
+  vertical-align: middle;
+  margin-right: 6px;
+  transition: background-color 0.2s ease;
+}
+.desk-tidy:hover .sq-tidy { background-color: #E30613; }
+/* accanto al titolo delle pagine progetto */
+.introduzione h1 .sq-project {
+  width: 0.13em;
+  height: 0.13em;
+  min-width: 6px;
+  min-height: 6px;
+  margin-left: 0.25em;
+  margin-top: 0.12em;
+}
+/* in fondo al footer */
+#copyright .sq-footer {
+  width: 7px;
+  height: 7px;
+  margin-left: 14px;
+  vertical-align: middle;
+}
+
+/* cursore: quadratino invece del pallino */
+#custom-cursor {
+  width: 11px;
+  height: 11px;
+  border-radius: 0;
+}
+#custom-cursor.project-hover {
+  width: auto;
+  height: auto;
+  border-radius: 0;
+}
+
+/* menu sul telefono: quadratino invece del pallino */
+.menu-dot,
+.menu-toggle.active .menu-dot {
+  border-radius: 0;
+}
