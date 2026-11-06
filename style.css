@@ -6207,3 +6207,27 @@ body.project-page a.back-link:hover { color: #E30613 !important; }
 @media (min-width: 1900px) {
   body.project-page a.back-link { font-size: 15px !important; }
 }
+
+/* =========================
+   APERTURA: competenze una sotto l'altra, quadratino rosso
+   accanto alla frase della scrivania (come nel PDF)
+   ========================= */
+.intro .hero-skills span {
+  display: block;
+  white-space: nowrap;
+}
+.intro .hero-skills { line-height: 1.35 !important; }
+
+.intro h2.hero-desk { position: relative; }
+.intro h2.hero-desk .hero-desk-sq {
+  position: absolute;
+  left: -20px;
+  top: 0.38em;
+  width: 8px;
+  height: 8px;
+  background-color: #E30613;
+}
+@media (max-width: 991px) {
+  .intro h2.hero-desk { padding-left: 18px; }
+  .intro h2.hero-desk .hero-desk-sq { left: 0; width: 7px; height: 7px; }
+}
