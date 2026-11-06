@@ -564,15 +564,18 @@ if (lettereImg) {
 })();
 
 // =========================
-// CASSETTO: progetti laterali in sovraimpressione
+// CASSETTO: elenco con anteprima al passaggio del mouse
+// e progetto in sovraimpressione
 // =========================
 (function () {
   const panel = document.getElementById("drawer-panel");
-  if (!panel) return;
-  const items = [...document.querySelectorAll(".drawer-item")];
-  const numEl = panel.querySelector(".drawer-panel-num");
+  const section = document.getElementById("cassetto");
+  if (!panel || !section) return;
+  const items = [...section.querySelectorAll(".drawer-item")];
+  const preview = section.querySelector(".drawer-preview");
   const titleEl = panel.querySelector("#drawer-panel-title");
-  const metaEl = panel.querySelector(".drawer-panel-meta");
+  const fieldEl = panel.querySelector(".dp-field");
+  const yearEl = panel.querySelector(".dp-year");
   const textEl = panel.querySelector(".drawer-panel-text");
   const slider = panel.querySelector(".drawer-slider");
   const track = panel.querySelector(".drawer-track");
@@ -583,13 +586,26 @@ if (lettereImg) {
   let lastFocus = null;
   let slides = [];
 
-  const current = () => {
-    const x = slider.scrollLeft;
-    let idx = 0;
-    slides.forEach((s, i) => { if (s.offsetLeft - track.offsetLeft <= x + 4) idx = i; });
-    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 4) idx = slides.length - 1;
-    return idx;
-  };
+  // anteprima che segue il mouse
+  const firstImage = (item) => item.querySelector(".drawer-images > *");
+  items.forEach((item) => {
+    const btn = item.querySelector(".drawer-open");
+    btn.addEventListener("mouseenter", () => {
+      const first = firstImage(item);
+      preview.innerHTML = "";
+      if (first && first.querySelector("img")) preview.appendChild(first.querySelector("img").cloneNode());
+      if (first && first.dataset.ratio) preview.style.aspectRatio = first.dataset.ratio;
+      preview.classList.add("is-on");
+    });
+    btn.addEventListener("mouseleave", () => preview.classList.remove("is-on"));
+  });
+  section.addEventListener("mousemove", (e) => {
+    const r = section.getBoundingClientRect();
+    preview.style.left = e.clientX - r.left + 120 + "px";
+    preview.style.top = e.clientY - r.top + "px";
+  });
+
+  const current = () => Math.round(slider.scrollLeft / Math.max(1, slider.clientWidth));
   const update = () => {
     const i = current();
     count.textContent = slides.length ? (i + 1) + " / " + slides.length : "";
@@ -597,23 +613,25 @@ if (lettereImg) {
     next.disabled = i >= slides.length - 1;
   };
   const goTo = (i) => {
-    const s = slides[Math.max(0, Math.min(slides.length - 1, i))];
-    if (s) slider.scrollTo({ left: s.offsetLeft - track.offsetLeft, behavior: "smooth" });
+    const t = Math.max(0, Math.min(slides.length - 1, i));
+    slider.scrollTo({ left: t * slider.clientWidth, behavior: "smooth" });
   };
 
   const open = (item) => {
     lastFocus = document.activeElement;
-    numEl.textContent = item.querySelector(".drawer-num").textContent;
     titleEl.textContent = item.querySelector(".drawer-name").textContent;
-    metaEl.textContent = item.querySelector(".drawer-meta").textContent;
+    fieldEl.textContent = item.querySelector(".drawer-field").textContent;
+    yearEl.textContent = item.querySelector(".drawer-year").textContent;
     const data = item.querySelector(".drawer-data");
     textEl.textContent = data.querySelector(".drawer-text").textContent;
     track.innerHTML = data.querySelector(".drawer-images").innerHTML;
-    track.querySelectorAll(".drawer-ph[data-ratio]").forEach((d) => { d.style.aspectRatio = d.dataset.ratio; });
+    track.querySelectorAll("[data-ratio]").forEach((d) => d.style.setProperty("--r", d.dataset.ratio.replace("/", " / ")));
     slides = [...track.children];
+    preview.classList.remove("is-on");
     panel.hidden = false;
     document.body.classList.add("drawer-lock");
     slider.scrollLeft = 0;
+    panel.scrollTop = 0;
     requestAnimationFrame(() => panel.classList.add("is-open"));
     update();
     closeBtn.focus();
@@ -630,6 +648,7 @@ if (lettereImg) {
   panel.addEventListener("click", (e) => { if (e.target === panel) close(); });
   prev.addEventListener("click", () => goTo(current() - 1));
   next.addEventListener("click", () => goTo(current() + 1));
+  track.addEventListener("click", () => goTo(current() + 1 >= slides.length ? 0 : current() + 1));
   slider.addEventListener("scroll", () => requestAnimationFrame(update), { passive: true });
   document.addEventListener("keydown", (e) => {
     if (panel.hidden) return;
