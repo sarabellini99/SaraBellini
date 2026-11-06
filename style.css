@@ -6062,3 +6062,102 @@ html, body { overflow-x: clip; }
 @media (min-width: 1900px) { .intro .hero-skills { font-size: 22px; } }
 
 .intro .hero-skills span { white-space: nowrap; }
+
+/* =========================
+   SCALA DEI TESTI PIÙ PICCOLA (prova): titolo grande,
+   testi più piccoli e discreti, per un tono più elegante.
+   ========================= */
+@media (min-width: 992px) {
+  /* navbar */
+  .navbar a, .navbar .nav-brand, .navbar .brand-full, .nav-links a, .navbar .nav-contact { font-size: 14px !important; }
+
+  /* inizio */
+  .intro .hero-skills { font-size: 14px !important; margin-top: 20px !important; }
+  .intro h2.hero-desk, .intro h2.hero-desk .dim-text { font-size: 16px !important; }
+
+  /* titoli di sezione */
+  #section-title, #about-title, #contact-title { font-size: 16px !important; }
+  .mydesk-years { font-size: 13px !important; }
+
+  /* my desk */
+  #desk-images .desk-caption { font-size: 14px !important; margin-top: 10px !important; }
+  #mydesk .desk-tidy.desk-tidy-text { font-size: 13px !important; }
+
+  /* about */
+  #me p.description, #me p.description .dim-text, #me #binomiofantastico { font-size: 16px !important; }
+
+  /* footer */
+  #final .back-to-top { font-size: 13px !important; }
+  #final .contact-label { font-size: 12px !important; }
+  #final .contact-email h4 { font-size: 28px !important; }
+  #final .contact-item a, #final .contact-nav a { font-size: 16px !important; }
+  #final #copyright { font-size: 12px !important; }
+
+  /* pagine progetto */
+  body.project-page p.project-description { font-size: 16px !important; }
+  body.project-page .spiegazione p:not(.project-description),
+  body.project-page p.urania-description,
+  body.project-page p.trend,
+  body.project-page p.plastiz-description,
+  body.project-page h3.plastiz-description,
+  body.project-page .pubblicazione a { font-size: 14px !important; }
+  body.project-page h3.project-subtitle,
+  body.project-page .capitolo h2,
+  body.project-page h3,
+  body.project-page .back-link { font-size: 12px !important; }
+}
+
+@media (min-width: 1200px) {
+  .intro h1 { font-size: 58px !important; }
+}
+
+@media (min-width: 1900px) {
+  .navbar a, .navbar .nav-brand, .navbar .brand-full, .nav-links a, .navbar .nav-contact { font-size: 15px !important; }
+  .intro h1 { font-size: 68px !important; }
+  .intro .hero-skills { font-size: 15px !important; }
+  .intro h2.hero-desk, .intro h2.hero-desk .dim-text { font-size: 18px !important; }
+  #section-title, #about-title, #contact-title { font-size: 18px !important; }
+  .mydesk-years, #mydesk .desk-tidy.desk-tidy-text, #final .back-to-top { font-size: 14px !important; }
+  #desk-images .desk-caption { font-size: 15px !important; }
+  #me p.description, #me p.description .dim-text, #me #binomiofantastico { font-size: 18px !important; }
+  #final .contact-email h4 { font-size: 32px !important; }
+  #final .contact-item a, #final .contact-nav a { font-size: 18px !important; }
+  body.project-page p.project-description { font-size: 18px !important; }
+  body.project-page .spiegazione p:not(.project-description),
+  body.project-page p.urania-description,
+  body.project-page p.trend,
+  body.project-page p.plastiz-description,
+  body.project-page h3.plastiz-description,
+  body.project-page .pubblicazione a { font-size: 15px !important; }
+  body.project-page h3.project-subtitle,
+  body.project-page .capitolo h2,
+  body.project-page h3,
+  body.project-page .back-link { font-size: 13px !important; }
+}
+
+/* telefono e tablet: riduzione più leggera, per restare leggibili */
+@media (max-width: 991px) {
+  .intro .hero-skills { font-size: 14px !important; }
+  .intro h2.hero-desk, .intro h2.hero-desk .dim-text { font-size: 17px !important; }
+  #me p.description, #me p.description .dim-text, #me #binomiofantastico { font-size: 17px !important; }
+  #desk-images .desk-caption { font-size: 15px !important; }
+  body.project-page p.project-description { font-size: 17px !important; }
+  body.project-page .spiegazione p:not(.project-description),
+  body.project-page p.urania-description,
+  body.project-page p.trend,
+  body.project-page p.plastiz-description,
+  body.project-page h3.plastiz-description,
+  body.project-page .pubblicazione a { font-size: 15px !important; }
+  #final .contact-email h4 { font-size: 22px !important; }
+}
+/* con i testi più piccoli, righe più corte per una lettura comoda */
+@media (min-width: 992px) {
+  #me p.description, #me #binomiofantastico,
+  body.project-page p.project-description,
+  body.project-page .spiegazione p:not(.project-description) { max-width: 470px; }
+}
+@media (min-width: 1900px) {
+  #me p.description, #me #binomiofantastico,
+  body.project-page p.project-description,
+  body.project-page .spiegazione p:not(.project-description) { max-width: 530px; }
+}
