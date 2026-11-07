@@ -6517,3 +6517,5 @@ body.pagina-plurale section.output { padding-top: 140px; }
 /* Plurale (la tesi) prende il posto del gatto ed è il primo della fila */
 #desk-images .desk-image-wrapper.cat { order: 0 !important; }
 @media (min-width: 1200px) { .desk-image-wrapper.cat.plurale { animation: none; } }
+body.pagina-plurale .spiegazione p.urania-description + p.urania-description { margin-top: 14px; }
+body.pagina-plurale .plurale-extra { margin-top: 12px; }
