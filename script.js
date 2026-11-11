@@ -58,20 +58,79 @@ document.addEventListener("DOMContentLoaded", () => {
   // 1️⃣ GESTIONE SPLASH PAGE
   // =========================
   const splash = document.getElementById("splash");
+  const showHero = () => document.querySelectorAll(".hero-reveal").forEach((el) => el.classList.add("in-view"));
 
-  if (!sessionStorage.getItem("splashSeen")) {
-    if (splash) {
-      splash.style.display = "flex"; // Assicurati che sia visibile
-      splash.addEventListener("click", () => {
-        splash.classList.add("hide");
-        sessionStorage.setItem("splashSeen", "true");
-        startRoleWord(); // la parola animata parte quando si entra nel sito
-      });
-    } else {
-      startRoleWord();
+  if (!sessionStorage.getItem("splashSeen") && splash) {
+    splash.style.display = "block";
+    const splashBg = splash.querySelector(".splash-bg");
+    const splashName = splash.querySelector(".splash-name");
+    // il nome della navbar visibile in questo momento (intero o "SB")
+    const navbarName = [...document.querySelectorAll(".nav-brand .brand-full, .nav-brand .brand-short")]
+      .find((el) => el.offsetParent !== null && getComputedStyle(el).display !== "none");
+    if (navbarName && splashName) {
+      const cs = getComputedStyle(navbarName);
+      splashName.style.fontFamily = cs.fontFamily;
+      splashName.style.fontSize = cs.fontSize;
+      splashName.style.letterSpacing = cs.letterSpacing;
     }
+    const SPEED = 850; // px al secondo, uguale per il rosso e per il nome
+    let dismissed = false;
+
+    const closeSplash = () => {
+      if (dismissed) return;
+      dismissed = true;
+      sessionStorage.setItem("splashSeen", "true");
+      if (splashBg) splashBg.style.animation = "none";
+      if (splashName) splashName.style.animation = "none";
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          const bgDistance = window.innerHeight;
+          const bgDuration = (bgDistance / SPEED) * 1000;
+          if (splashBg) {
+            splashBg.style.transition = `transform ${bgDuration}ms linear`;
+            splashBg.style.transform = `translateY(-${bgDistance}px)`;
+          }
+          // il titolo compare quando il rosso lo scopre
+          const heroEl = document.querySelector(".intro h1.hero-reveal");
+          let heroDelay = 0;
+          if (heroEl) {
+            const r = heroEl.getBoundingClientRect();
+            heroDelay = Math.max(0, bgDuration * (1 - (r.top + r.height / 2) / window.innerHeight));
+          }
+          setTimeout(() => { showHero(); startRoleWord(); }, heroDelay);
+
+          // il nome sale fino al suo posto nella navbar
+          if (splashName && navbarName) {
+            const from = splashName.getBoundingClientRect();
+            const to = navbarName.getBoundingClientRect();
+            const dx = to.left - from.left;
+            const dy = to.top - from.top;
+            const nameDuration = (Math.hypot(dx, dy) / SPEED) * 1000;
+            splashName.style.transition = `transform ${nameDuration}ms linear`;
+            splashName.style.transform = `translate(${dx}px, ${dy}px)`;
+            setTimeout(() => {
+              splashName.style.transition = "opacity 0.2s ease";
+              splashName.style.opacity = "0";
+            }, nameDuration);
+          }
+          setTimeout(() => {
+            splash.classList.add("hide");
+            splash.style.display = "none";
+          }, Math.max(bgDuration, 300) + 250);
+        });
+      });
+    };
+
+    splash.addEventListener("click", closeSplash);
+    splash.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); closeSplash(); }
+    });
+    // si apre da sola dopo un po', per chi non clicca
+    setTimeout(closeSplash, 4000);
   } else {
-    if (splash) splash.style.display = "none"; // Nascondi subito se già vista
+    if (splash) splash.style.display = "none";
+    showHero();
     startRoleWord();
   }
 

@@ -6509,3 +6509,57 @@ body.drawer-lock { overflow: hidden; }
 @media (min-width: 1900px) {
   .intro h2.hero-desk, .intro h2.hero-desk .dim-text { font-size: 24px !important; }
 }
+
+/* =========================
+   SPLASH: schermo rosso che ondeggia; al clic sale e scopre il sito,
+   mentre il nome vola al suo posto nella navbar (come nel sito di prova)
+   ========================= */
+#splash {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100001;
+  cursor: pointer;
+  overflow: hidden;
+  background: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: none !important;
+}
+#splash.hide { display: none !important; }
+#splash .splash-bg {
+  position: absolute;
+  inset: 0;
+  background-color: #E30613;
+  animation: splash-idle-hint 1.1s ease-in-out infinite;
+}
+#splash .splash-name {
+  position: absolute;
+  left: 32px;
+  bottom: 30px;
+  font-family: 'TESTI', sans-serif;
+  font-size: 17px;
+  line-height: 1.2;
+  color: #000000;
+  white-space: nowrap;
+  animation: splash-idle-hint 1.1s ease-in-out infinite;
+}
+@media (min-width: 768px)  { #splash .splash-name { left: 72px; bottom: 40px; } }
+@media (min-width: 1200px) { #splash .splash-name { left: 90px; } }
+@media (min-width: 1900px) { #splash .splash-name { left: 130px; } }
+@keyframes splash-idle-hint {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+#splash:focus-visible { outline: none; }
+
+.hero-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.hero-reveal.in-view { opacity: 1; transform: none; }
+.hero-bottom.hero-reveal { transition-delay: 0.15s; }
+@media (prefers-reduced-motion: reduce) {
+  #splash .splash-bg, #splash .splash-name { animation: none; }
+}
