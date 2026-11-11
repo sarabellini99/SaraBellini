@@ -6654,3 +6654,15 @@ body.pagina-plurale .info-eco #scritta-eco { flex-direction: column; }
 body.pagina-plurale .spiegazione-tesi p.trend { position: relative; }
 body.pagina-plurale .spiegazione-tesi .plurale-nota { position: static; }
 body.pagina-plurale .spiegazione-tesi .plurale-nota-testo { top: calc(100% + 14px); bottom: auto; left: 0; width: min(420px, 100%); transform: translateY(-4px); }
+/* chiusura Manzini come la definizione */
+body.pagina-plurale .plurale-manzini .plurale-autore { margin-top: 14px; color: #9C9C9A; font-size: 14px; }
+body.pagina-plurale p.plurale-con-nota { position: relative; }
+body.pagina-plurale p.plurale-con-nota .plurale-nota { position: static; }
+body.pagina-plurale p.plurale-con-nota .plurale-nota-testo { top: calc(100% + 14px); bottom: auto; left: 0; width: min(420px, 100%); transform: translateY(-4px); }
+body.pagina-plurale p.plurale-con-nota .plurale-nota:hover .plurale-nota-testo,
+body.pagina-plurale p.plurale-con-nota .plurale-nota:focus .plurale-nota-testo { transform: translateY(0); }
+body.pagina-plurale .plurale-manzini .plurale-autore { font-family: 'TESTI'; letter-spacing: -0.02em; }
+body.pagina-plurale .plurale-manzini { padding-top: 140px; }
+@media (max-width: 767px) { body.pagina-plurale .plurale-manzini { padding-top: 80px; } }
+@media (min-width: 768px) { body.pagina-plurale .plurale-manzini #scritta-eco { width: 45%; } }
+@media (min-width: 768px) { body.pagina-plurale section.output.plurale-sez-galleria { padding-top: 100px; } }
