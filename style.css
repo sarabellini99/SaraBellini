@@ -6689,3 +6689,14 @@ body.pagina-plurale video.foto-urania { display: block; }
 }
 body.pagina-plurale figure.plurale-fascicolo figcaption { line-height: 1.25; }
 body.pagina-plurale .fotografie-urania + .fotografie-urania { margin-top: 10px; }
+/* fascicoli: tre foto affiancate con didascalia sotto */
+body.pagina-plurale .plurale-fascicoli { display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 0; }
+body.pagina-plurale figure.plurale-fascicolo { display: block; }
+body.pagina-plurale figure.plurale-fascicolo img { width: 100%; max-width: none; aspect-ratio: 3 / 2; object-fit: cover; }
+body.pagina-plurale figure.plurale-fascicolo figcaption { margin-top: 12px; max-width: none; line-height: 1.25; padding-right: 16px; }
+body.pagina-plurale figure.plurale-fascicolo .plurale-trio-nome { display: block; margin: 0 0 4px; }
+@media (min-width: 768px) {
+  body.pagina-plurale .plurale-fascicoli { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  body.pagina-plurale figure.plurale-fascicolo img { flex: none; width: 100%; }
+  body.pagina-plurale figure.plurale-fascicolo figcaption { max-width: none; }
+}
