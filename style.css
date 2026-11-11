@@ -6666,3 +6666,7 @@ body.pagina-plurale .plurale-manzini { padding-top: 140px; }
 @media (max-width: 767px) { body.pagina-plurale .plurale-manzini { padding-top: 80px; } }
 @media (min-width: 768px) { body.pagina-plurale .plurale-manzini #scritta-eco { width: 45%; } }
 @media (min-width: 768px) { body.pagina-plurale section.output.plurale-sez-galleria { padding-top: 100px; } }
+body.pagina-plurale section.output.plurale-dopo-manzini { padding-top: 0; }
+@media (min-width: 768px) { body.pagina-plurale .plurale-manzini .info-eco { margin-bottom: 0; padding-bottom: 0; } body.pagina-plurale section.output.plurale-dopo-manzini { margin-top: -40px; } }
+@media (min-width: 768px) { body.pagina-plurale section.output.plurale-dopo-manzini { margin-top: 50px; } }
+@media (max-width: 767px) { body.pagina-plurale section.output.plurale-dopo-manzini { padding-top: 40px; } }
