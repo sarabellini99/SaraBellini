@@ -6641,3 +6641,4 @@ body.pagina-plurale figure.plurale-fascicolo .plurale-trio-nome { font-family: '
   body.pagina-plurale figure.plurale-fascicolo .plurale-trio-nome { display: block; margin: 0 0 6px; font-size: 16px; }
 }
 @media (min-width: 768px) { body.pagina-plurale .plurale-fascicoli { margin-top: 90px; } }
+@media (min-width: 768px) { body.pagina-plurale .plurale-fascicoli { margin-top: 0; } }
