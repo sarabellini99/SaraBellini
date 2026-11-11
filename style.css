@@ -6578,3 +6578,7 @@ body.pagina-plurale .plurale-extra { margin-top: 12px; }
 body.pagina-plurale .plurale-titolo { display: block; margin-bottom: 14px; color: #9C9C9A; }
 body.pagina-plurale .plurale-logo { display: flex; justify-content: center; align-items: center; padding: 90px 0; background: #F4F4F2; margin-bottom: 12px; }
 body.pagina-plurale .plurale-logo img { width: min(420px, 60%); height: auto; mix-blend-mode: multiply; }
+body.pagina-plurale .sezioni-urania.plurale-segue { margin-top: 70px; }
+body.pagina-plurale .sezioni-urania.plurale-segue .capitolo h2:empty { display: none; }
+body.pagina-plurale .info-eco #brandidentity.plurale-logo-img { mix-blend-mode: multiply; }
+@media (max-width: 767px) { body.pagina-plurale .sezioni-urania.plurale-segue { margin-top: 44px; } }
