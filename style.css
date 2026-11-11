@@ -6632,3 +6632,12 @@ body.pagina-plurale figure.plurale-fascicolo img { width: 100%; aspect-ratio: 16
 body.pagina-plurale figure.plurale-fascicolo figcaption { margin-top: 10px; font-family: 'TESTI', sans-serif; letter-spacing: -0.02em; font-size: 14px; line-height: 1.4; color: #9C9C9A; }
 body.pagina-plurale figure.plurale-fascicolo .plurale-trio-nome { font-family: 'TITOLI', sans-serif; color: #000; margin-right: 10px; }
 @media (max-width: 767px) { body.pagina-plurale .plurale-fascicoli { gap: 22px; margin-top: 10px; } body.pagina-plurale figure.plurale-fascicolo .plurale-trio-nome { display: block; margin: 0 0 2px; } }
+/* fascicoli: didascalia a sinistra, immagine nella colonna dei testi */
+@media (min-width: 768px) {
+  body.pagina-plurale .plurale-fascicoli { gap: 16px; margin-top: 0; }
+  body.pagina-plurale figure.plurale-fascicolo { display: flex; flex-direction: row-reverse; justify-content: space-between; align-items: flex-start; gap: 40px; }
+  body.pagina-plurale figure.plurale-fascicolo img { flex: 0 0 58%; max-width: 600px; width: 58%; }
+  body.pagina-plurale figure.plurale-fascicolo figcaption { flex: 1; margin-top: 0; max-width: 300px; }
+  body.pagina-plurale figure.plurale-fascicolo .plurale-trio-nome { display: block; margin: 0 0 6px; font-size: 16px; }
+}
+@media (min-width: 768px) { body.pagina-plurale .plurale-fascicoli { margin-top: 90px; } }
