@@ -6677,3 +6677,4 @@ br.plurale-br { display: none; }
 }
 @media (max-width: 991px) { br.plurale-br { display: none; } }
 @media (min-width: 768px) and (max-width: 991px) { body.pagina-plurale .plurale-manzini #scritta-eco { max-width: none; width: 100%; } }
+body.pagina-plurale video.urania-big { width: 100%; height: auto; display: block; }
