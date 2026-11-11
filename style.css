@@ -6712,3 +6712,6 @@ body.pagina-plurale section.output.plurale-sez-galleria { padding-top: 140px; }
 body.pagina-plurale section.output.plurale-biennale { padding-top: 60px; }
 body.pagina-plurale .plurale-biennale + .group-project { margin-top: 90px; }
 @media (max-width: 767px) { body.pagina-plurale section.output.plurale-sez-galleria { padding-top: 80px; } body.pagina-plurale section.output.plurale-biennale { padding-top: 40px; } }
+body.pagina-plurale section.output.plurale-biennale { padding-top: 140px; }
+body.pagina-plurale section.output.plurale-sez-galleria { padding-top: 40px; }
+@media (max-width: 767px) { body.pagina-plurale section.output.plurale-biennale { padding-top: 80px; } body.pagina-plurale section.output.plurale-sez-galleria { padding-top: 30px; } }
