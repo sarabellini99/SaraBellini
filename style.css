@@ -6658,3 +6658,5 @@ body.pagina-plurale .plurale-def-testo { margin-top: 70px !important; }
 @media (max-width: 767px) { body.pagina-plurale .plurale-def-testo { margin-top: 44px !important; } }
 @media (min-width: 768px) { body.pagina-plurale .plurale-def-testo { margin-top: 262px !important; } }
 @media (max-width: 767px) { body.pagina-plurale .plurale-def-testo { margin-top: 90px !important; } }
+@media (min-width: 768px) { body.pagina-plurale .info-eco { align-items: flex-start; } body.pagina-plurale .info-eco #logo-eco { margin-top: 14px; } }
+body.pagina-plurale section.output.plurale-dopo-def { padding-top: 60px; }
