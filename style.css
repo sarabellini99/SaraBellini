@@ -6626,3 +6626,9 @@ body.pagina-plurale .plurale-fascicoli { display: flex; flex-direction: column; 
 body.pagina-plurale .plurale-fascicolo .urania-big { aspect-ratio: 16 / 9; object-fit: cover; }
 body.pagina-plurale .plurale-fascicolo .sezioni-urania { margin-top: 30px; }
 @media (max-width: 767px) { body.pagina-plurale .plurale-fascicoli { gap: 56px; margin-top: 56px; } body.pagina-plurale .plurale-fascicolo .sezioni-urania { margin-top: 18px; } }
+body.pagina-plurale .plurale-fascicoli { gap: 28px; margin-top: 10px; }
+body.pagina-plurale figure.plurale-fascicolo { margin: 0; }
+body.pagina-plurale figure.plurale-fascicolo img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+body.pagina-plurale figure.plurale-fascicolo figcaption { margin-top: 10px; font-family: 'TESTI', sans-serif; letter-spacing: -0.02em; font-size: 14px; line-height: 1.4; color: #9C9C9A; }
+body.pagina-plurale figure.plurale-fascicolo .plurale-trio-nome { font-family: 'TITOLI', sans-serif; color: #000; margin-right: 10px; }
+@media (max-width: 767px) { body.pagina-plurale .plurale-fascicoli { gap: 22px; margin-top: 10px; } body.pagina-plurale figure.plurale-fascicolo .plurale-trio-nome { display: block; margin: 0 0 2px; } }
