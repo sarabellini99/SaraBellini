@@ -706,7 +706,7 @@ if (lettereImg) {
     fieldEl.textContent = item.querySelector(".drawer-field").textContent;
     yearEl.textContent = item.querySelector(".drawer-year").textContent;
     const data = item.querySelector(".drawer-data");
-    textEl.textContent = data.querySelector(".drawer-text").textContent;
+    textEl.innerHTML = data.querySelector(".drawer-text").innerHTML;
     track.innerHTML = data.querySelector(".drawer-images").innerHTML;
     track.querySelectorAll("[data-ratio]").forEach((d) => d.style.setProperty("--r", d.dataset.ratio.replace("/", " / ")));
     slides = [...track.children];
