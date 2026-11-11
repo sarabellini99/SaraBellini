@@ -6678,3 +6678,14 @@ br.plurale-br { display: none; }
 @media (max-width: 991px) { br.plurale-br { display: none; } }
 @media (min-width: 768px) and (max-width: 991px) { body.pagina-plurale .plurale-manzini #scritta-eco { max-width: none; width: 100%; } }
 body.pagina-plurale video.urania-big { width: 100%; height: auto; display: block; }
+/* rivista: video apertura + verbi */
+body.pagina-plurale .plurale-coppia .foto-urania { aspect-ratio: 5 / 4; object-fit: cover; }
+body.pagina-plurale .plurale-coppia .plurale-contain { object-fit: contain; background: #fff; }
+body.pagina-plurale video.foto-urania { display: block; }
+/* fascicoli: immagini più grandi, didascalie più strette */
+@media (min-width: 768px) {
+  body.pagina-plurale figure.plurale-fascicolo img { flex: 0 0 74%; width: 74%; max-width: none; }
+  body.pagina-plurale figure.plurale-fascicolo figcaption { max-width: 200px; line-height: 1.25; }
+}
+body.pagina-plurale figure.plurale-fascicolo figcaption { line-height: 1.25; }
+body.pagina-plurale .fotografie-urania + .fotografie-urania { margin-top: 10px; }
