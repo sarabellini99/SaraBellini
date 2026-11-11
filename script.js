@@ -679,6 +679,11 @@ if (lettereImg) {
     slides.forEach((s, k) => {
       const v = s.querySelector("video");
       if (!v) return;
+      if (s.classList.contains("drawer-film")) {
+        // il video principale parte solo con PLAY
+        if (k !== i && !v.paused) { v.pause(); }
+        return;
+      }
       if (k === i) v.play().catch(() => {});
       else v.pause();
     });
@@ -727,7 +732,24 @@ if (lettereImg) {
   panel.addEventListener("click", (e) => { if (e.target === panel) close(); });
   prev.addEventListener("click", () => goTo(current() - 1));
   next.addEventListener("click", () => goTo(current() + 1));
-  track.addEventListener("click", () => goTo(current() + 1 >= slides.length ? 0 : current() + 1));
+  track.addEventListener("click", (e) => {
+    const film = e.target.closest(".drawer-film");
+    if (film) {
+      const v = film.querySelector("video");
+      const btn = film.querySelector(".drawer-play");
+      if (e.target === btn) {
+        v.setAttribute("controls", "");
+        v.play().catch(() => {});
+        btn.classList.add("hidden");
+        if (!v.dataset.bound) {
+          v.dataset.bound = "1";
+          v.addEventListener("ended", () => { btn.classList.remove("hidden"); v.removeAttribute("controls"); });
+        }
+      }
+      return;
+    }
+    goTo(current() + 1 >= slides.length ? 0 : current() + 1);
+  });
   slider.addEventListener("scroll", () => requestAnimationFrame(update), { passive: true });
   document.addEventListener("keydown", (e) => {
     if (panel.hidden) return;
