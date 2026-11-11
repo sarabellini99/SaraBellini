@@ -6707,3 +6707,8 @@ body.pagina-plurale section.output.plurale-biennale { padding-top: 140px; }
 @media (min-width: 768px) { body.pagina-plurale section.output.plurale-sez-galleria { padding-top: 40px; } }
 @media (max-width: 767px) { body.pagina-plurale section.output.plurale-biennale { padding-top: 80px; } body.pagina-plurale section.output.plurale-sez-galleria { padding-top: 30px; } body.pagina-plurale .plurale-pdf-manzini { margin-top: 70px; } }
 body.pagina-plurale .plurale-sez-galleria + .group-project { margin-top: 90px; }
+body.pagina-plurale a.plurale-link { color: inherit; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+body.pagina-plurale section.output.plurale-sez-galleria { padding-top: 140px; }
+body.pagina-plurale section.output.plurale-biennale { padding-top: 60px; }
+body.pagina-plurale .plurale-biennale + .group-project { margin-top: 90px; }
+@media (max-width: 767px) { body.pagina-plurale section.output.plurale-sez-galleria { padding-top: 80px; } body.pagina-plurale section.output.plurale-biennale { padding-top: 40px; } }
