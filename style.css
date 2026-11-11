@@ -6737,3 +6737,12 @@ body.pagina-plurale .plurale-biennale .sezioni-urania { margin-bottom: 60px; }
   .hero-bottom { justify-content: flex-start; }
   .intro h2.hero-desk { max-width: none; }
 }
+/* navbar da desktop grande quanto "Sulla scrivania" */
+@media (min-width: 992px) {
+  .navbar .nav-brand, .navbar .nav-brand .brand-full,
+  .navbar .nav-links a, .navbar .nav-contact, .navbar a { font-size: 18px !important; }
+}
+@media (min-width: 1900px) {
+  .navbar .nav-brand, .navbar .nav-brand .brand-full,
+  .navbar .nav-links a, .navbar .nav-contact, .navbar a { font-size: 20px !important; }
+}
