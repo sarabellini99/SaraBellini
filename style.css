@@ -6656,3 +6656,5 @@ body.pagina-plurale .spiegazione-tesi .plurale-nota { position: static; }
 body.pagina-plurale .spiegazione-tesi .plurale-nota-testo { top: calc(100% + 14px); bottom: auto; left: 0; width: min(420px, 100%); transform: translateY(-4px); }
 body.pagina-plurale .plurale-def-testo { margin-top: 70px !important; }
 @media (max-width: 767px) { body.pagina-plurale .plurale-def-testo { margin-top: 44px !important; } }
+@media (min-width: 768px) { body.pagina-plurale .plurale-def-testo { margin-top: 262px !important; } }
+@media (max-width: 767px) { body.pagina-plurale .plurale-def-testo { margin-top: 90px !important; } }
