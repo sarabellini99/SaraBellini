@@ -6642,3 +6642,15 @@ body.pagina-plurale figure.plurale-fascicolo .plurale-trio-nome { font-family: '
 }
 @media (min-width: 768px) { body.pagina-plurale .plurale-fascicoli { margin-top: 90px; } }
 @media (min-width: 768px) { body.pagina-plurale .plurale-fascicoli { margin-top: 0; } }
+body.pagina-plurale .plurale-def-testo { margin-top: 28px !important; max-width: 520px; }
+body.pagina-plurale .plurale-galleria img { aspect-ratio: 4 / 3; }
+@media (min-width: 768px) { body.pagina-plurale .plurale-galleria { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 767px) {
+  body.pagina-plurale .plurale-galleria { grid-template-columns: 1fr; }
+  body.pagina-plurale .spiegazione-tesi p.trend { position: relative; }
+}
+body.pagina-plurale .info-eco #scritta-eco { flex-direction: column; }
+/* nota enabling solution: compare sotto il paragrafo */
+body.pagina-plurale .spiegazione-tesi p.trend { position: relative; }
+body.pagina-plurale .spiegazione-tesi .plurale-nota { position: static; }
+body.pagina-plurale .spiegazione-tesi .plurale-nota-testo { top: calc(100% + 14px); bottom: auto; left: 0; width: min(420px, 100%); transform: translateY(-4px); }
