@@ -6732,3 +6732,8 @@ body.pagina-plurale .plurale-biennale .sezioni-urania { margin-bottom: 60px; }
   .navbar .nav-brand, .navbar .nav-brand .brand-full,
   .navbar .nav-links a, .navbar .nav-contact { font-family: 'TESTI'; letter-spacing: -0.02em; }
 }
+/* "Non ha sempre questa forma" parte dalla stessa colonna dei testi dell'About (posizione calcolata in script.js) */
+@media (min-width: 1200px) {
+  .hero-bottom { justify-content: flex-start; }
+  .intro h2.hero-desk { max-width: none; }
+}

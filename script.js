@@ -758,3 +758,26 @@ if (lettereImg) {
     if (e.key === "ArrowLeft") goTo(current() - 1);
   });
 })();
+
+// =========================
+// "Non ha sempre questa forma": allineata alla colonna dei testi dell'About
+// =========================
+(function () {
+  const h = document.querySelector(".intro h2.hero-desk");
+  const col = document.querySelector("#me .spiegazione");
+  if (!h || !col) return;
+  const mq = window.matchMedia("(min-width: 1200px)");
+  const align = () => {
+    h.style.marginLeft = "";
+    if (!mq.matches) return;
+    const txt = [...h.childNodes].find((n) => n.nodeType === 3 && n.textContent.trim());
+    if (!txt) return;
+    const r = document.createRange();
+    r.setStart(txt, 0); r.setEnd(txt, 1);
+    const diff = col.getBoundingClientRect().left - r.getBoundingClientRect().left;
+    h.style.marginLeft = Math.round(diff) + "px";
+  };
+  align();
+  window.addEventListener("resize", align);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(align);
+})();
