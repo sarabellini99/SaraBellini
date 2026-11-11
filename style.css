@@ -6620,3 +6620,5 @@ body.pagina-plurale .plurale-nota:focus .plurale-nota-testo { opacity: 1; visibi
   body.pagina-plurale .plurale-nota { position: static; }
   body.pagina-plurale .plurale-nota-testo { width: 100%; box-sizing: border-box; }
 }
+body.pagina-plurale .plurale-nota-testo { background: #fff; color: #9C9C9A; padding: 0; font-size: 13px; line-height: 1.35; bottom: calc(100% + 6px); }
+body.pagina-plurale .plurale-nota-testo em { font-style: italic; }
