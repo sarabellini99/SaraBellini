@@ -6582,3 +6582,32 @@ body.pagina-plurale .sezioni-urania.plurale-segue { margin-top: 70px; }
 body.pagina-plurale .sezioni-urania.plurale-segue .capitolo h2:empty { display: none; }
 body.pagina-plurale .info-eco #brandidentity.plurale-logo-img { mix-blend-mode: multiply; }
 @media (max-width: 767px) { body.pagina-plurale .sezioni-urania.plurale-segue { margin-top: 44px; } }
+
+/* ===== Plurale: impaginazione v5 ===== */
+body.pagina-plurale .portoghese .foto-urania { flex: 1 1 0; min-width: 0; max-width: none; aspect-ratio: 4 / 3; object-fit: cover; }
+body.pagina-plurale .plurale-affianco { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 90px; align-items: center; }
+body.pagina-plurale .plurale-affianco img { width: 100%; height: auto; display: block; }
+@media (min-width: 992px) {
+  body.pagina-plurale .plurale-affianco { grid-template-columns: 3fr 2fr; gap: 60px; }
+}
+body.pagina-plurale .plurale-trio { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 10px; }
+body.pagina-plurale .plurale-trio figure { margin: 0; }
+body.pagina-plurale .plurale-trio img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; }
+body.pagina-plurale .plurale-trio figcaption { margin-top: 14px; font-size: 14px; line-height: 1.4; color: #9C9C9A; }
+body.pagina-plurale .plurale-trio .plurale-trio-nome { display: block; color: #000; font-size: 18px; margin-bottom: 4px; }
+body.pagina-plurale .plurale-locandine { margin-top: 60px; margin-bottom: 10px; }
+@media (min-width: 768px) {
+  body.pagina-plurale .plurale-trio { grid-template-columns: repeat(3, 1fr); }
+  body.pagina-plurale .plurale-trio figcaption { padding-right: 20px; }
+}
+body.pagina-plurale .plurale-manzini { padding-top: 160px; }
+body.pagina-plurale .plurale-manzini .testo-moda { max-width: 900px; }
+@media (max-width: 767px) { body.pagina-plurale .plurale-manzini { padding-top: 90px; } }
+body.pagina-plurale .plurale-galleria { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+body.pagina-plurale .plurale-galleria img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
+@media (min-width: 768px) { body.pagina-plurale .plurale-galleria { grid-template-columns: repeat(3, 1fr); } }
+body.pagina-plurale .plurale-pdf { margin-top: 24px; }
+body.pagina-plurale .plurale-trio figcaption { font-family: 'TESTI', sans-serif; letter-spacing: -0.02em; }
+body.pagina-plurale .plurale-trio .plurale-trio-nome { font-family: 'TITOLI', sans-serif; }
+body.pagina-plurale .plurale-trio.plurale-locandine { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+@media (min-width: 768px) { body.pagina-plurale .plurale-trio.plurale-locandine { gap: 10px; } }
