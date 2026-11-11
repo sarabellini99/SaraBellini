@@ -6676,3 +6676,4 @@ br.plurale-br { display: none; }
   body.pagina-plurale .plurale-manzini #scritta-eco { width: auto; max-width: 75%; }
 }
 @media (max-width: 991px) { br.plurale-br { display: none; } }
+@media (min-width: 768px) and (max-width: 991px) { body.pagina-plurale .plurale-manzini #scritta-eco { max-width: none; width: 100%; } }
