@@ -6563,3 +6563,15 @@ body.drawer-lock { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   #splash .splash-bg, #splash .splash-name { animation: none; }
 }
+
+/* pagina Plurale */
+body.pagina-plurale section.output { padding-top: 140px; }
+@media (max-width: 767px) { body.pagina-plurale section.output { padding-top: 80px; } }
+body.pagina-plurale .spiegazione p.urania-description + p.urania-description { margin-top: 14px; }
+body.pagina-plurale .plurale-extra { margin-top: 12px; }
+
+/* Plurale sulla scrivania: in alto a sinistra quando è sparsa, primo nella fila */
+@media (min-width: 1200px) {
+  .desk-image-wrapper.plurale { top: 0; left: 21%; width: calc(190px * var(--desk-w, 1)); z-index: 3; animation: float-tesi 3s ease-in-out infinite; }
+}
+#desk-images .desk-image-wrapper.plurale { order: -1 !important; }
