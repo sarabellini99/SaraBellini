@@ -6717,3 +6717,7 @@ body.pagina-plurale section.output.plurale-sez-galleria { padding-top: 40px; }
 @media (max-width: 767px) { body.pagina-plurale section.output.plurale-biennale { padding-top: 80px; } body.pagina-plurale section.output.plurale-sez-galleria { padding-top: 30px; } }
 body.pagina-plurale .plurale-biennale .sezioni-urania { margin-bottom: 60px; }
 @media (max-width: 767px) { body.pagina-plurale .plurale-biennale .sezioni-urania { margin-bottom: 30px; } }
+/* Plurale prende il posto del gatto sulla scrivania sparsa */
+@media (min-width: 1200px) {
+  .desk-image-wrapper.plurale { top: calc(570px * var(--desk-t, 1)); left: 22%; width: calc(210px * var(--desk-w, 1)); z-index: 4; animation: float-cat 4s ease-in-out infinite; }
+}

@@ -9,7 +9,7 @@
   <meta property="og:image" content="https://sarabellini99.github.io/SaraBellini/images/cover/eco.jpg">
   <meta property="og:type" content="website">
   <title>Sara Bellini</title>
-  <link rel="stylesheet" href="style.css?v=130">
+  <link rel="stylesheet" href="style.css?v=132">
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
 
@@ -32,6 +32,7 @@
   </button>
   <ul class="nav-links">
     <li><a href="#mydesk">Scrivania</a></li>
+    <li><a href="#cassetto">Cassetto</a></li>
     <li><a href="#me">About</a></li>
   </ul>
   <a href="#contact" class="nav-contact">Say Hello</a>
@@ -41,6 +42,7 @@
 <div class="mobile-menu" id="mobile-menu">
   <div class="mobile-menu-links">
     <a href="#mydesk">Scrivania</a>
+    <a href="#cassetto">Cassetto</a>
     <a href="#me">About</a>
     <a href="#contact">Say Hello</a>
   </div>
@@ -108,12 +110,6 @@
     </a>
   </div>
 
-  <div class="desk-image-wrapper cat" data-name="THE HUNGRY CAT">
-    <a href="progetti/The-hungry-cat.html">
-      <video class="desk-image" src="images/cover/cat.mp4" poster="images/cover/cat.jpg" width="480" height="624" autoplay muted loop playsinline preload="auto" aria-label="The Hungry Cat"></video>
-      <span class="desk-caption"><span class="desk-caption-name">The Hungry Cat</span><span class="desk-caption-cat">/Animazione 3D</span></span>
-    </a>
-  </div>
 
   <div class="desk-image-wrapper ettore" data-name="PLASTIZ">
     <a href="progetti/Plastiz.html">
@@ -149,6 +145,44 @@
 
 
 
+
+  <!-- CASSETTO: progetti laterali, elenco che si apre in sovraimpressione -->
+  <section id="cassetto">
+    <div class="drawer-head">
+      <h1 id="drawer-title">Nel cassetto</h1>
+      <span class="drawer-note">Side projects</span>
+    </div>
+    <ol class="drawer-list">
+      <li class="drawer-item">
+        <button type="button" class="drawer-open" aria-haspopup="dialog" aria-controls="drawer-panel">
+          <span class="drawer-num">01</span>
+          <span class="drawer-name">The Hungry Cat</span>
+          <span class="drawer-field">Animazione 3D</span>
+          <span class="drawer-year">2024</span>
+        </button>
+        <div class="drawer-data" hidden>
+          <p class="drawer-text">Un video ironico sul paradosso del gatto imburrato: se una fetta di pane cade sempre dal lato imburrato e un gatto cade sempre in piedi, legandoli insieme nessuno dei due toccherà mai terra. Realizzato interamente in 3D con Blender.</p>
+          <div class="drawer-images"><div class="drawer-img" data-ratio="16/9" data-poster="images/cover/cat.jpg"><video src="images/Gatto/Gatto.mp4" muted loop playsinline preload="metadata"></video></div><div class="drawer-img" data-ratio="16/9"><video src="images/Gatto/TOASTED.mp4" muted loop playsinline preload="metadata"></video></div><div class="drawer-img" data-ratio="16/9"><video src="images/Gatto/VOLAA.mp4" muted loop playsinline preload="metadata"></video></div><div class="drawer-img" data-ratio="16/9"><video src="images/Gatto/volo nel cielo.mp4" muted loop playsinline preload="metadata"></video></div></div>
+        </div>
+      </li>
+    </ol>
+    <div class="drawer-preview drawer-ph" aria-hidden="true"></div>
+  </section>
+
+  <div class="drawer-panel" id="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawer-panel-title" hidden>
+    <button type="button" class="drawer-close">chiudi</button>
+    <div class="drawer-stage">
+      <button type="button" class="drawer-prev">precedente</button>
+      <div class="drawer-slider"><div class="drawer-track"></div></div>
+      <button type="button" class="drawer-next">successiva</button>
+    </div>
+    <span class="drawer-count"></span>
+    <div class="drawer-panel-info">
+      <h2 id="drawer-panel-title"></h2>
+      <p class="drawer-panel-meta"><span class="dp-label">Ambito</span> <span class="dp-field"></span><span class="dp-label">Anno</span> <span class="dp-year"></span></p>
+      <p class="drawer-panel-text"></p>
+    </div>
+  </div>
 
   <!-- ABOUT -->
   <section id="me">
@@ -213,6 +247,7 @@
             <h4 class="contact-label">Navigazione</h4>
             <div class="contact-item contact-nav">
               <a href="#mydesk">Scrivania</a>
+              <a href="#cassetto">Cassetto</a>
               <a href="#me">About</a>
               <a href="#contact">Say Hello</a>
             </div>
@@ -238,7 +273,7 @@
 
 
 
-  <script src="script.js?v=34"></script>
+  <script src="script.js?v=36"></script>
   
 
 

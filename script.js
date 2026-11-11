@@ -419,8 +419,8 @@ if (lettereImg) {
   const RESERVED = 290;         // titolo, spazi, link "tidy up" e un po' di respiro
   const BASE_WIDTH = 1040;      // larghezza per cui sono pensate le foto
   const PHOTO_SCALE = 1;        // foto alle misure originali
-  const BASE_TOPS = { plurale: 0, eco: 0, realista: 330, tesi: 40, cat: 570, ettore: 650, astory: 290, editoria: 360 };
-  const BASE_WIDTHS = { plurale: 190, eco: 220, realista: 270, tesi: 210, cat: 210, ettore: 180, astory: 410, editoria: 230 };
+  const BASE_TOPS = { plurale: 570, eco: 0, realista: 330, tesi: 40, cat: 570, ettore: 650, astory: 290, editoria: 360 };
+  const BASE_WIDTHS = { plurale: 210, eco: 220, realista: 270, tesi: 210, cat: 210, ettore: 180, astory: 410, editoria: 230 };
   const BASE_WIDTHS_XL = Object.assign({}, BASE_WIDTHS, { astory: 440, editoria: 200 });
   const xl = window.matchMedia("(min-width: 1900px)");
 
@@ -451,7 +451,7 @@ if (lettereImg) {
   });
 
   // ---- fila riordinata: foto grandi una accanto all'altra ----
-  const ORDER = ["plurale", "realista", "editoria", "eco", "astory", "tesi", "ettore", "cat"];
+  const ORDER = ["plurale", "realista", "editoria", "eco", "astory", "tesi", "ettore"];
   const ROW_GAP = 16;
   const CAPTION = 44;
   const DURATION = 950;
