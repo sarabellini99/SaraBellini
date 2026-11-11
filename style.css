@@ -6700,3 +6700,5 @@ body.pagina-plurale figure.plurale-fascicolo .plurale-trio-nome { display: block
   body.pagina-plurale figure.plurale-fascicolo img { flex: none; width: 100%; }
   body.pagina-plurale figure.plurale-fascicolo figcaption { max-width: none; }
 }
+body.pagina-plurale .plurale-fascicoli-video { margin-top: 90px; }
+@media (max-width: 767px) { body.pagina-plurale .plurale-fascicoli-video { margin-top: 50px; } }
