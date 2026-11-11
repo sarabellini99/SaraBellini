@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sara Bellini_Urania</title>
 <!-- CSS -->
-<link rel="stylesheet" href="../style.css?v=95">
+<link rel="stylesheet" href="../style.css?v=97">
 
 </head>
 
@@ -22,7 +22,6 @@
   </button>
   <ul class="nav-links">
     <li><a href="../index.html#mydesk">Scrivania</a></li>
-    <li><a href="../index.html#cassetto">Cassetto</a></li>
     <li><a href="../index.html#me">About</a></li>
   </ul>
   <a href="../index.html#contact" class="nav-contact">Say Hello</a>
@@ -32,7 +31,6 @@
 <div class="mobile-menu" id="mobile-menu">
   <div class="mobile-menu-links">
     <a href="../index.html#mydesk">Scrivania</a>
-    <a href="../index.html#cassetto">Cassetto</a>
     <a href="../index.html#me">About</a>
     <a href="../index.html#contact">Say Hello</a>
   </div>
@@ -86,7 +84,7 @@ Il volume, articolato in tre capitoli, accompagna l’utente in un percorso inte
 <div class="presentazione">
 
     <div id="sono-urania">
-  <h1>Mi presento, sono Urania  <span class="line-break"></span> una vecchia piano cilindrica dell’Antica Tipografia Portoghese.</h1>
+  <h1>Mi presento, sono Urania, <span class="line-break"></span> una vecchia piano cilindrica dell’Antica Tipografia Portoghese.</h1>
  </div>
 
 
@@ -165,7 +163,7 @@ Il volume, articolato in tre capitoli, accompagna l’utente in un percorso inte
            <div class="spiegazione">
 <p class="urania-description">L’utente si ritrova davanti alla difficoltà di dover scegliere cosa stampare: i caratteri, fuori dal cassetto, trovano
 il loro posto<br class="break-desktop"> e - insieme - il loro senso. È nella sezione interattiva che si sperimenta l’intero processo di stampa, attraverso la lentezza
-che la fase <br class="break-desktop">di composizione e chiusura della forma richiedono.
+che la fase <br class="break-desktop">di composizione e chiusura della forma richiede.
 </p>
 
 </div>
@@ -315,7 +313,6 @@ Nella seconda parte, a partire da una lettera imperfetta e “manchevole”, dov
             <h4 class="contact-label">Navigazione</h4>
             <div class="contact-item contact-nav">
               <a href="../index.html#mydesk">Scrivania</a>
-    <a href="../index.html#cassetto">Cassetto</a>
               <a href="../index.html#me">About</a>
               <a href="../index.html#contact">Say Hello</a>
             </div>
@@ -356,7 +353,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (entry.isIntersecting) {
         navLinks.forEach(link => link.classList.remove("active"));
         const id = entry.target.getAttribute("id");
-        document.querySelector(`.sub-navbar a[href="#${id}"]`).classList.add("active");
+        const l = document.querySelector(`.sub-navbar a[href="#${id}"]`); if (l) l.classList.add("active");
       }
     });
   }, { threshold: 0.5 });

@@ -3,11 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio di Sara Bellini, designer della comunicazione: identità visiva, editoria, UX/UI e motion graphics.">
+  <meta property="og:title" content="Sara Bellini, portfolio">
+  <meta property="og:description" content="Identità visiva, editoria, UX/UI e motion graphics.">
+  <meta property="og:image" content="https://sarabellini99.github.io/SaraBellini/images/cover/eco.jpg">
+  <meta property="og:type" content="website">
   <title>Sara Bellini</title>
-  <link rel="stylesheet" href="style.css?v=95">
+  <link rel="stylesheet" href="style.css?v=97">
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
-
-<link rel="icon" type="image/png" href="favicon.png">
 
 
 
@@ -28,7 +32,6 @@
   </button>
   <ul class="nav-links">
     <li><a href="#mydesk">Scrivania</a></li>
-    <li><a href="#cassetto">Cassetto</a></li>
     <li><a href="#me">About</a></li>
   </ul>
   <a href="#contact" class="nav-contact">Say Hello</a>
@@ -38,7 +41,6 @@
 <div class="mobile-menu" id="mobile-menu">
   <div class="mobile-menu-links">
     <a href="#mydesk">Scrivania</a>
-    <a href="#cassetto">Cassetto</a>
     <a href="#me">About</a>
     <a href="#contact">Say Hello</a>
   </div>
@@ -141,80 +143,6 @@
 
 
 
-  <!-- CASSETTO: progetti laterali, elenco che si apre in sovraimpressione -->
-  <section id="cassetto">
-    <div class="drawer-head">
-      <h1 id="drawer-title">Nel cassetto</h1>
-      <span class="drawer-note">Side projects</span>
-    </div>
-    <ol class="drawer-list">
-      <li class="drawer-item">
-        <button type="button" class="drawer-open" aria-haspopup="dialog" aria-controls="drawer-panel">
-          <span class="drawer-num">01</span>
-          <span class="drawer-name">The Hungry Cat</span>
-          <span class="drawer-field">Animazione 3D</span>
-          <span class="drawer-year">2024</span>
-        </button>
-        <div class="drawer-data" hidden>
-          <p class="drawer-text">Un video ironico sul paradosso del gatto imburrato: se una fetta di pane cade sempre dal lato imburrato e un gatto cade sempre in piedi, legandoli insieme nessuno dei due toccherà mai terra. Realizzato interamente in 3D con Blender.</p>
-          <div class="drawer-images"><div class="drawer-img" data-ratio="16/9" data-poster="images/cover/cat.jpg"><video src="images/Gatto/Gatto.mp4" muted loop playsinline preload="metadata"></video></div><div class="drawer-img" data-ratio="16/9"><video src="images/Gatto/TOASTED.mp4" muted loop playsinline preload="metadata"></video></div><div class="drawer-img" data-ratio="16/9"><video src="images/Gatto/VOLAA.mp4" muted loop playsinline preload="metadata"></video></div><div class="drawer-img" data-ratio="16/9"><video src="images/Gatto/volo nel cielo.mp4" muted loop playsinline preload="metadata"></video></div></div>
-        </div>
-      </li>
-      <li class="drawer-item">
-        <button type="button" class="drawer-open" aria-haspopup="dialog" aria-controls="drawer-panel">
-          <span class="drawer-num">02</span>
-          <span class="drawer-name">Titolo del carattere</span>
-          <span class="drawer-field">Type design</span>
-          <span class="drawer-year">anno</span>
-        </button>
-        <div class="drawer-data" hidden>
-          <p class="drawer-text">Breve descrizione del carattere tipografico: da dove nasce, per cosa è pensato e come è costruito. Due o tre righe al massimo.</p>
-          <div class="drawer-images"><div class="drawer-img drawer-ph" data-ratio="3/2"><span>immagine 1</span></div><div class="drawer-img drawer-ph" data-ratio="1/1"><span>immagine 2</span></div><div class="drawer-img drawer-ph" data-ratio="5/4"><span>immagine 3</span></div><div class="drawer-img drawer-ph" data-ratio="4/3"><span>immagine 4</span></div></div>
-        </div>
-      </li>
-      <li class="drawer-item">
-        <button type="button" class="drawer-open" aria-haspopup="dialog" aria-controls="drawer-panel">
-          <span class="drawer-num">03</span>
-          <span class="drawer-name">Titolo dell'app</span>
-          <span class="drawer-field">UX/UI Design</span>
-          <span class="drawer-year">anno</span>
-        </button>
-        <div class="drawer-data" hidden>
-          <p class="drawer-text">Breve descrizione dell'app: che problema risolve, per chi è pensata e che cosa hai progettato tu. Due o tre righe al massimo.</p>
-          <div class="drawer-images"><div class="drawer-img drawer-ph" data-ratio="1/1"><span>immagine 1</span></div><div class="drawer-img drawer-ph" data-ratio="5/4"><span>immagine 2</span></div><div class="drawer-img drawer-ph" data-ratio="4/3"><span>immagine 3</span></div><div class="drawer-img drawer-ph" data-ratio="4/5"><span>immagine 4</span></div></div>
-        </div>
-      </li>
-      <li class="drawer-item">
-        <button type="button" class="drawer-open" aria-haspopup="dialog" aria-controls="drawer-panel">
-          <span class="drawer-num">04</span>
-          <span class="drawer-name">Titolo del video</span>
-          <span class="drawer-field">Animazione 3D</span>
-          <span class="drawer-year">anno</span>
-        </button>
-        <div class="drawer-data" hidden>
-          <p class="drawer-text">Breve descrizione del video: l'idea, la storia e gli strumenti usati. Due o tre righe al massimo.</p>
-          <div class="drawer-images"><div class="drawer-img drawer-ph" data-ratio="5/4"><span>immagine 1</span></div><div class="drawer-img drawer-ph" data-ratio="4/3"><span>immagine 2</span></div><div class="drawer-img drawer-ph" data-ratio="4/5"><span>immagine 3</span></div></div>
-        </div>
-      </li>
-    </ol>
-    <div class="drawer-preview drawer-ph" aria-hidden="true"></div>
-  </section>
-
-  <div class="drawer-panel" id="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawer-panel-title" hidden>
-    <button type="button" class="drawer-close">chiudi</button>
-    <div class="drawer-stage">
-      <button type="button" class="drawer-prev">precedente</button>
-      <div class="drawer-slider"><div class="drawer-track"></div></div>
-      <button type="button" class="drawer-next">successiva</button>
-    </div>
-    <span class="drawer-count"></span>
-    <div class="drawer-panel-info">
-      <h2 id="drawer-panel-title"></h2>
-      <p class="drawer-panel-meta"><span class="dp-label">Ambito</span> <span class="dp-field"></span><span class="dp-label">Anno</span> <span class="dp-year"></span></p>
-      <p class="drawer-panel-text"></p>
-    </div>
-  </div>
-
   <!-- ABOUT -->
   <section id="me">
 
@@ -278,7 +206,6 @@
             <h4 class="contact-label">Navigazione</h4>
             <div class="contact-item contact-nav">
               <a href="#mydesk">Scrivania</a>
-    <a href="#cassetto">Cassetto</a>
               <a href="#me">About</a>
               <a href="#contact">Say Hello</a>
             </div>

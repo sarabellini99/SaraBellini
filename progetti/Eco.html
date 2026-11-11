@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sara Bellini_Eco</title>
 <!-- CSS -->
-<link rel="stylesheet" href="../style.css?v=95">
+<link rel="stylesheet" href="../style.css?v=97">
 
 </head>
 
@@ -21,7 +21,6 @@
   </button>
   <ul class="nav-links">
     <li><a href="../index.html#mydesk">Scrivania</a></li>
-    <li><a href="../index.html#cassetto">Cassetto</a></li>
     <li><a href="../index.html#me">About</a></li>
   </ul>
   <a href="../index.html#contact" class="nav-contact">Say Hello</a>
@@ -31,7 +30,6 @@
 <div class="mobile-menu" id="mobile-menu">
   <div class="mobile-menu-links">
     <a href="../index.html#mydesk">Scrivania</a>
-    <a href="../index.html#cassetto">Cassetto</a>
     <a href="../index.html#me">About</a>
     <a href="../index.html#contact">Say Hello</a>
   </div>
@@ -132,7 +130,7 @@
 
            <div class="spiegazione">
 <p class="urania-description"> Come rappresentare la forza di chi protesta prendendo <br class="break-desktop">le distanze dall'immaginario violento che si associa <br class="break-desktop"> alle manifestazioni? Parlando di energia.</p> <br class="break-desktop"> 
-       <p> La forza delle voci dei cortei è paragonata all'energia <br class="break-desktop"> della natura che, nelle sue varie espressioni diventa metafora  <br class="break-desktop">del potere della comunità.
+       <p> La forza delle voci dei cortei è paragonata all'energia <br class="break-desktop"> della natura che, nelle sue varie espressioni, diventa metafora  <br class="break-desktop">del potere della comunità.
       </p>
 
 </div>
@@ -328,7 +326,6 @@
             <h4 class="contact-label">Navigazione</h4>
             <div class="contact-item contact-nav">
               <a href="../index.html#mydesk">Scrivania</a>
-    <a href="../index.html#cassetto">Cassetto</a>
               <a href="../index.html#me">About</a>
               <a href="../index.html#contact">Say Hello</a>
             </div>
@@ -369,7 +366,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (entry.isIntersecting) {
         navLinks.forEach(link => link.classList.remove("active"));
         const id = entry.target.getAttribute("id");
-        document.querySelector(`.sub-navbar a[href="#${id}"]`).classList.add("active");
+        const l = document.querySelector(`.sub-navbar a[href="#${id}"]`); if (l) l.classList.add("active");
       }
     });
   }, { threshold: 0.5 });
