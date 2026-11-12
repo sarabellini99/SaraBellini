@@ -6778,3 +6778,30 @@ body.pagina-plurale .plurale-biennale .sezioni-urania { margin-bottom: 60px; }
   .drawer-panel.drawer-swiped .drawer-hint { opacity: 0; animation: none; }
 }
 @keyframes drawer-hint { 0%,100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+
+/* testi interni ai progetti grandi quanto la descrizione principale */
+body.project-page .spiegazione p:not(.project-description),
+body.project-page p.urania-description,
+body.project-page p.trend,
+body.project-page p.plastiz-description,
+body.project-page h3.plastiz-description,
+body.project-page .pubblicazione a,
+body.project-page .plurale-pdf { font-size: 17px !important; line-height: 1.1 !important; }
+@media (min-width: 992px) {
+  body.project-page .spiegazione p:not(.project-description),
+  body.project-page p.urania-description,
+  body.project-page p.trend,
+  body.project-page p.plastiz-description,
+  body.project-page h3.plastiz-description,
+  body.project-page .pubblicazione a,
+  body.project-page .plurale-pdf { font-size: 18px !important; }
+}
+@media (min-width: 1900px) {
+  body.project-page .spiegazione p:not(.project-description),
+  body.project-page p.urania-description,
+  body.project-page p.trend,
+  body.project-page p.plastiz-description,
+  body.project-page h3.plastiz-description,
+  body.project-page .pubblicazione a,
+  body.project-page .plurale-pdf { font-size: 20px !important; }
+}
