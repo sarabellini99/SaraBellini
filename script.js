@@ -540,7 +540,7 @@ if (lettereImg) {
     button.setAttribute("aria-pressed", String(tidy));
     button.classList.toggle("is-active", tidy);
     const switchLabel = button.querySelector(".desk-switch-label");
-    if (switchLabel) switchLabel.textContent = tidy ? "Di solito è più messa così" : "Riordina";
+    if (switchLabel) switchLabel.textContent = tidy ? "È stata messa in ordine per l’occasione, di solito è più così" : "Riordina";
     if (messyButton) {
       messyButton.setAttribute("aria-pressed", String(!tidy));
       messyButton.classList.toggle("is-active", !tidy);
