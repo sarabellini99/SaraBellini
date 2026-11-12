@@ -6813,3 +6813,9 @@ body.project-page .plurale-pdf { font-size: 17px !important; line-height: 1.1 !i
 @media (min-width: 1900px) {
   body.project-page .group-project h3 { max-width: 640px; }
 }
+
+/* apertura: Non ha sempre questa forma in medium e un po' più in alto su desktop */
+@media (min-width: 992px) {
+  .intro h2.hero-desk, .intro h2.hero-desk .dim-text { font-family: 'TESTI', sans-serif !important; }
+  .intro h2.hero-desk { top: -70px; }
+}
