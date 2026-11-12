@@ -6805,3 +6805,11 @@ body.project-page .plurale-pdf { font-size: 17px !important; line-height: 1.1 !i
   body.project-page .pubblicazione a,
   body.project-page .plurale-pdf { font-size: 20px !important; }
 }
+
+/* crediti in fondo ai progetti: colonna stretta a sinistra */
+@media (min-width: 992px) {
+  body.project-page .group-project h3 { max-width: 560px; }
+}
+@media (min-width: 1900px) {
+  body.project-page .group-project h3 { max-width: 640px; }
+}
