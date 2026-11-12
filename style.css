@@ -6753,3 +6753,7 @@ body.pagina-plurale .plurale-biennale .sezioni-urania { margin-bottom: 60px; }
 @media (min-width: 1200px) {
   body.pagina-plurale .info-eco #scritta-eco:has(h1.plurale-def) { width: auto; flex: 0 0 auto; max-width: none; }
 }
+/* titoletti grigi delle sezioni grandi quanto i testi */
+.project-page .workflow .capitolo h2 { font-size: 17px !important; line-height: 1.1 !important; }
+@media (min-width: 992px)  { .project-page .workflow .capitolo h2 { font-size: 18px !important; } }
+@media (min-width: 1900px) { .project-page .workflow .capitolo h2 { font-size: 20px !important; } }
