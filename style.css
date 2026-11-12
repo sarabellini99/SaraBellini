@@ -6746,3 +6746,10 @@ body.pagina-plurale .plurale-biennale .sezioni-urania { margin-bottom: 60px; }
   .navbar .nav-brand, .navbar .nav-brand .brand-full,
   .navbar .nav-links a, .navbar .nav-contact, .navbar a { font-size: 20px !important; }
 }
+/* definizione di Plurale: a capo fissi su desktop */
+@media (min-width: 992px) {
+  body.pagina-plurale #scritta-eco h1.plurale-def { white-space: nowrap; }
+}
+@media (min-width: 1200px) {
+  body.pagina-plurale .info-eco #scritta-eco:has(h1.plurale-def) { width: auto; flex: 0 0 auto; max-width: none; }
+}
