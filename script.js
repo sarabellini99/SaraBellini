@@ -672,7 +672,9 @@ if (lettereImg) {
     preview.style.top = e.clientY - r.top + "px";
   });
 
-  const current = () => Math.round(slider.scrollLeft / Math.max(1, slider.clientWidth));
+  // passo tra una foto e l'altra (sul telefono le foto sono più strette e si intravede la successiva)
+  const step = () => (slides[1] ? slides[1].offsetLeft - slides[0].offsetLeft : slider.clientWidth) || slider.clientWidth;
+  const current = () => Math.round(slider.scrollLeft / Math.max(1, step()));
   // fa partire solo il video della foto visibile
   const playCurrent = () => {
     const i = current();
@@ -692,12 +694,13 @@ if (lettereImg) {
     const i = current();
     playCurrent();
     count.textContent = slides.length ? (i + 1) + " / " + slides.length : "";
+    if (i > 0) panel.classList.add("drawer-swiped");
     prev.disabled = i <= 0;
     next.disabled = i >= slides.length - 1;
   };
   const goTo = (i) => {
     const t = Math.max(0, Math.min(slides.length - 1, i));
-    slider.scrollTo({ left: t * slider.clientWidth, behavior: "smooth" });
+    slider.scrollTo({ left: t * step(), behavior: "smooth" });
   };
 
   const open = (item) => {
@@ -714,6 +717,8 @@ if (lettereImg) {
     panel.hidden = false;
     document.body.classList.add("drawer-lock");
     slider.scrollLeft = 0;
+    panel.classList.remove("drawer-swiped");
+    panel.classList.toggle("drawer-multi", slides.length > 1);
     panel.scrollTop = 0;
     requestAnimationFrame(() => panel.classList.add("is-open"));
     update();
