@@ -798,11 +798,19 @@ if (lettereImg) {
   const align = () => {
     intro.style.marginLeft = "";
     intro.style.maxWidth = "";
+    document.querySelectorAll("#cassetto .drawer-open").forEach((btn) => { btn.style.gridTemplateColumns = ""; });
     if (!mq.matches) return;
     const c = col.getBoundingClientRect();
     const i = intro.getBoundingClientRect();
     intro.style.marginLeft = Math.round(c.left - i.left) + "px";
     intro.style.maxWidth = Math.round(c.width) + "px";
+    // Ambito nell'elenco parte dalla stessa colonna del testo
+    document.querySelectorAll("#cassetto .drawer-open").forEach((btn) => {
+      const b = btn.getBoundingClientRect();
+      const gap = parseFloat(getComputedStyle(btn).columnGap) || 0;
+      const nameW = Math.round(c.left - b.left - 64 - 2 * gap);
+      btn.style.gridTemplateColumns = "64px " + nameW + "px minmax(0, 1fr) auto";
+    });
   };
   align();
   window.addEventListener("resize", align);

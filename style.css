@@ -6849,3 +6849,13 @@ body.project-page .plurale-pdf { font-size: 17px !important; line-height: 1.1 !i
   .drawer-panel > .drawer-stage { margin-top: auto; }
   .drawer-panel > .drawer-panel-info { margin-bottom: auto; }
 }
+
+/* cassetto: testo introduttivo identico ai testi dell'About, più aria prima dell'elenco */
+.drawer-intro { line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 64px; }
+@media (min-width: 992px) {
+  .drawer-intro { font-family: 'ETICHETTE'; font-weight: 500; margin-bottom: 96px; }
+}
+
+/* About: Binomio Fantastico nero, rosso al passaggio del mouse */
+#me #binomiofantastico { color: #000 !important; text-decoration-color: currentColor; }
+#me #binomiofantastico:hover { color: #E30613 !important; }
