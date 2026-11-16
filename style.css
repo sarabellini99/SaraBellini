@@ -6873,3 +6873,9 @@ body.project-page .plurale-pdf { font-size: 17px !important; line-height: 1.1 !i
 @media (min-width: 768px) {
   .drawer-intro { font-family: 'ETICHETTE'; font-weight: 500; }
 }
+
+/* tablet: testi dell'About e del cassetto di lato, come Non ha sempre questa forma */
+@media (min-width: 768px) and (max-width: 991px) {
+  #me .about-grid .spiegazione { max-width: 420px; margin-left: auto; margin-top: 4px; }
+  .drawer-intro { margin-bottom: 96px; }
+}

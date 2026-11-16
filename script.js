@@ -788,13 +788,13 @@ if (lettereImg) {
 })();
 
 // =========================
-// Cassetto: il testo introduttivo parte dalla colonna dei testi dell'About (da 992 px)
+// Cassetto: il testo introduttivo parte dalla colonna dei testi dell'About (da 768 px)
 // =========================
 (function () {
   const intro = document.querySelector("#cassetto .drawer-intro");
   const col = document.querySelector("#me .spiegazione");
   if (!intro || !col) return;
-  const mq = window.matchMedia("(min-width: 992px)");
+  const mq = window.matchMedia("(min-width: 768px)");
   const align = () => {
     intro.style.marginLeft = "";
     intro.style.maxWidth = "";
@@ -805,7 +805,7 @@ if (lettereImg) {
     intro.style.marginLeft = Math.round(c.left - i.left) + "px";
     intro.style.maxWidth = Math.round(c.width) + "px";
     // Ambito nell'elenco parte dalla stessa colonna del testo
-    document.querySelectorAll("#cassetto .drawer-open").forEach((btn) => {
+    if (window.innerWidth >= 992) document.querySelectorAll("#cassetto .drawer-open").forEach((btn) => {
       const b = btn.getBoundingClientRect();
       const gap = parseFloat(getComputedStyle(btn).columnGap) || 0;
       const nameW = Math.round(c.left - b.left - 64 - 2 * gap);
