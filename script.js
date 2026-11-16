@@ -786,3 +786,25 @@ if (lettereImg) {
   window.addEventListener("resize", align);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(align);
 })();
+
+// =========================
+// Cassetto: il testo introduttivo parte dalla colonna dei testi dell'About (da 992 px)
+// =========================
+(function () {
+  const intro = document.querySelector("#cassetto .drawer-intro");
+  const col = document.querySelector("#me .spiegazione");
+  if (!intro || !col) return;
+  const mq = window.matchMedia("(min-width: 992px)");
+  const align = () => {
+    intro.style.marginLeft = "";
+    intro.style.maxWidth = "";
+    if (!mq.matches) return;
+    const c = col.getBoundingClientRect();
+    const i = intro.getBoundingClientRect();
+    intro.style.marginLeft = Math.round(c.left - i.left) + "px";
+    intro.style.maxWidth = Math.round(c.width) + "px";
+  };
+  align();
+  window.addEventListener("resize", align);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(align);
+})();
