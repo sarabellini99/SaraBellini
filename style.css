@@ -6876,6 +6876,11 @@ body.project-page .plurale-pdf { font-size: 17px !important; line-height: 1.1 !i
 
 /* tablet: testi dell'About e del cassetto di lato, come Non ha sempre questa forma */
 @media (min-width: 768px) and (max-width: 991px) {
-  #me .about-grid .spiegazione { max-width: 420px; margin-left: auto; margin-top: 4px; }
+  #me .about-grid .spiegazione { max-width: 420px; margin-left: auto; margin-top: 7px; }
   .drawer-intro { margin-bottom: 96px; }
+}
+br.br-tablet { display: none; }
+@media (min-width: 768px) and (max-width: 991px) {
+  br.br-tablet { display: inline; }
+  #section-title, #about-title, #drawer-title { font-size: 18px !important; letter-spacing: -0.04em; }
 }
