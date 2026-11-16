@@ -6867,3 +6867,9 @@ body.project-page .plurale-pdf { font-size: 17px !important; line-height: 1.1 !i
 @media (min-width: 992px) {
   #me .about-grid .spiegazione { margin-top: 49px; }
 }
+
+/* pesi costanti: Non ha sempre questa forma sempre in medium, testo del cassetto come i testi dell'About */
+.intro h2.hero-desk, .intro h2.hero-desk .dim-text { font-family: 'TESTI', sans-serif !important; }
+@media (min-width: 768px) {
+  .drawer-intro { font-family: 'ETICHETTE'; font-weight: 500; }
+}
