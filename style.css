@@ -6819,3 +6819,33 @@ body.project-page .plurale-pdf { font-size: 17px !important; line-height: 1.1 !i
   .intro h2.hero-desk, .intro h2.hero-desk .dim-text { font-family: 'TESTI', sans-serif !important; }
   .intro h2.hero-desk { top: -30px; }
 }
+
+/* =========================
+   CHECK DEFINITIVI HOME
+   ========================= */
+/* cassetto: testo introduttivo */
+.drawer-intro { max-width: 560px; margin: 0 0 40px; font-family: 'TESTI'; font-size: 17px; line-height: 1.15; letter-spacing: -0.01em; color: #000; }
+.drawer-intro .dim-text { color: #9C9C9A; }
+@media (min-width: 992px) { .drawer-intro { font-size: 18px; } }
+@media (min-width: 1900px) { .drawer-intro { font-size: 20px; max-width: 640px; } }
+
+/* cassetto: Ambito e Anno più leggibili */
+.drawer-panel-meta { font-size: 14px; }
+@media (min-width: 1900px) { .drawer-panel-meta { font-size: 15px; } }
+
+/* navbar: stessa altezza anche sotto i 1200 px */
+@media (max-width: 1199px) {
+  .navbar { padding-top: 20px !important; padding-bottom: 20px !important; }
+}
+
+/* tablet: Non ha sempre questa forma resta di lato */
+@media (min-width: 768px) and (max-width: 991px) {
+  .hero-bottom { justify-content: flex-end; }
+  .intro h2.hero-desk { max-width: 420px !important; margin-left: auto; }
+}
+
+/* telefono e tablet: il progetto aperto nel cassetto sta al centro dello schermo */
+@media (max-width: 991px) {
+  .drawer-panel > .drawer-stage { margin-top: auto; }
+  .drawer-panel > .drawer-panel-info { margin-bottom: auto; }
+}
