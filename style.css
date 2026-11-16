@@ -6862,3 +6862,8 @@ body.project-page .plurale-pdf { font-size: 17px !important; line-height: 1.1 !i
 
 /* cassetto: Ambito e Anno grandi come il testo descrittivo */
 .drawer-panel-meta, .drawer-panel-meta .dp-label { font-family: 'TESTI' !important; font-size: 14px !important; letter-spacing: -0.01em; }
+
+/* About: testo sfalsato rispetto al titolo, come nel cassetto */
+@media (min-width: 992px) {
+  #me .about-grid .spiegazione { margin-top: 49px; }
+}
